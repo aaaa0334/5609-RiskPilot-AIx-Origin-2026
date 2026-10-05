@@ -2,7 +2,7 @@
 
 > 用多智能体分析、确定性风险规则和历史回放，帮助投资新手先理解“最多能承受多少损失”，再讨论仓位与决策。
 
-[在线体验](https://five609-riskpilot-aix-origin-2026.onrender.com/) · [历史决策实验](https://five609-riskpilot-aix-origin-2026.onrender.com/replay) · [系统架构](./RiskPilot_系统架构图.html) · [本地运行](#本地运行)
+**项目已部署上线：** [🚀 立即体验 RiskPilot](https://five609-riskpilot-aix-origin-2026.onrender.com/#analysisForm) · [历史决策实验](https://five609-riskpilot-aix-origin-2026.onrender.com/replay) · [系统架构](./RiskPilot_系统架构图.html) · [本地运行](#本地运行)
 
 > 免费云服务可能休眠，首次打开通常需要等待几十秒。本产品使用固定历史数据，不连接真实证券账户、不自动下单，不构成投资建议或收益承诺。
 
@@ -100,7 +100,7 @@ flowchart TB
 
 ![历史实验结束后的结果与复盘入口](./docs/assets/riskpilot-result-summary.png)
 
-在线体验：[股票风险体验](https://five609-riskpilot-aix-origin-2026.onrender.com/) · [连续历史模拟](https://five609-riskpilot-aix-origin-2026.onrender.com/replay)
+在线体验：[股票风险体验（已上线）](https://five609-riskpilot-aix-origin-2026.onrender.com/#analysisForm) · [连续历史模拟](https://five609-riskpilot-aix-origin-2026.onrender.com/replay)
 
 建议体验路径：输入本金和最大损失预算 → 载入快速体验案例 → 查看 Agent 分析与风险结果 → 进入历史挑战 → 完成 4 关决策 → 查看纪律评分。
 
