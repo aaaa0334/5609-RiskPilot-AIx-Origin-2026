@@ -74,12 +74,35 @@ flowchart TB
 
 ## Demo 截图
 
-> 真实界面截图将放置在 `docs/assets/`。当前可直接打开以下在线 Demo 查看完整交互。
+### 产品入口
 
-- [股票风险体检](https://five609-riskpilot-aix-origin-2026.onrender.com/)
-- [时间穿越挑战](https://five609-riskpilot-aix-origin-2026.onrender.com/replay)
+![RiskPilot 产品入口](./docs/assets/riskpilot-home.png)
 
-建议体验路径：输入本金和最大损失预算 → 载入快速体验案例 → 查看三个 Agent 分析与风险结果 → 进入历史挑战 → 完成 4 关决策 → 查看纪律评分和排行榜。
+产品提供两条互补路径：**股票风险体验**用于形成可解释的风险报告，**连续历史模拟**用于检验用户能否在未知行情中执行风险纪律。
+
+### 1. AI 风险分析：从用户边界到可解释报告
+
+| 输入本金、最大损失与分析标的 | Agent 汇总与风险测算 |
+|---|---|
+| <img src="./docs/assets/riskpilot-analysis-input.png" alt="风险分析输入界面" width="100%"> | <img src="./docs/assets/riskpilot-risk-result.png" alt="Agent 风险分析结果" width="100%"> |
+
+系统将 Agent 的多视角分析与确定性风险规则合并呈现，并把参考仓位、止损情景和风险收益比转化为用户可核验的关键数字。
+
+![价格走势、均线与风险关键价位](./docs/assets/riskpilot-analysis-chart.png)
+
+### 2. 历史决策实验：人在环路中的连续选择
+
+| 只揭示当前节点以前的历史行情 | 用户依据风险预算作出仓位选择 |
+|---|---|
+| <img src="./docs/assets/riskpilot-replay-kline.png" alt="历史模拟行情节点" width="100%"> | <img src="./docs/assets/riskpilot-replay-decision.png" alt="用户仓位决策界面" width="100%"> |
+
+每轮提交后才揭晓下一段行情并更新账户，最终返回收益、风险预算执行情况和复盘入口，形成“观察—决策—反馈—复盘”的闭环。
+
+![历史实验结束后的结果与复盘入口](./docs/assets/riskpilot-result-summary.png)
+
+在线体验：[股票风险体验](https://five609-riskpilot-aix-origin-2026.onrender.com/) · [连续历史模拟](https://five609-riskpilot-aix-origin-2026.onrender.com/replay)
+
+建议体验路径：输入本金和最大损失预算 → 载入快速体验案例 → 查看 Agent 分析与风险结果 → 进入历史挑战 → 完成 4 关决策 → 查看纪律评分。
 
 ## 技术栈
 
