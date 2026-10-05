@@ -1,0 +1,40 @@
+{
+  "code": "600016",
+  "name": "民生银行",
+  "industry": "银行",
+  "retrieved_at": "2026-09-03T15:28:17.342547+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-11",
+      "ex_date": "2025-07-14",
+      "pay_date": "2025-07-14",
+      "gross_per_share": 0.062,
+      "reference_adjustment": 0.062,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600016",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600016",
+    "https://data.eastmoney.com/yjfp/detail/600016.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "87ae6fe18ccacf02c5142dc32d46831ccc337ceb184f289042ae8556ff96e635",
+    "price_daily.csv": "012c4902f08a8c0b96b815c2c2dbc30ab3ead6fbaf67a2126544ab363bff24c2",
+    "price_qfq_check.csv": "6b7b7ec1176a447c2ef802d65726e279916deb5212c8c539af22aeac1f1e1f5b",
+    "retrieval.json": "63789be5ee38779252863a914cee6bc60b672fd5f9fbc14448584ef8c349b9dc",
+    "tencent_daily_raw.json": "0db8edf77a4b1b025b9836ce9d83e1c7daa2775dc61fb75f9bdfd51ac6f1be7f",
+    "tencent_qfq_raw.json": "fc0ad8303f7799b591c45b28bcc782b540682e86b7729350ddcb82aefca4a9f6"
+  }
+}

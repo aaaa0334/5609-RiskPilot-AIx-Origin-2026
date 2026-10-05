@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "stock_code": "601318",
+  "stock_name": "中国平安",
+  "analysis_cutoff": "2025-08-31",
+  "retrieved_at": "2026-09-02T14:24:19+08:00",
+  "akshare_version": "1.18.94",
+  "sources": [
+    {
+      "dataset": "daily_price",
+      "library": "AKShare",
+      "interface": "stock_zh_a_hist",
+      "upstream": "东方财富",
+      "parameters": {
+        "symbol": "601318",
+        "period": "daily",
+        "start_date": "20250101",
+        "end_date": "20250831",
+        "adjust": "qfq"
+      },
+      "raw_file": "raw/price_daily.csv"
+    },
+    {
+      "dataset": "company_profile",
+      "library": "AKShare",
+      "interface": "stock_individual_info_em",
+      "upstream": "东方财富",
+      "raw_file": "raw/fundamental_index.csv",
+      "available": false
+    },
+    {
+      "dataset": "announcement_index",
+      "library": "AKShare",
+      "interface": "stock_zh_a_disclosure_report_cninfo",
+      "upstream": "巨潮资讯；正式报告需逐条核对并保存原始公告 PDF",
+      "parameters": {
+        "symbol": "601318",
+        "market": "沪深京",
+        "category": "",
+        "start_date": "20250101",
+        "end_date": "20250831"
+      },
+      "raw_file": "raw/announcement_index.csv",
+      "available": true
+    }
+  ],
+  "normalization": {
+    "output": "normalized/riskpilot_snapshot.json",
+    "notes": "原始CSV保持不变；标准化JSON只做字段映射。"
+  },
+  "usage_boundary": "研究教育、产品展示、固定历史快照；非实时行情，不自动交易。"
+}

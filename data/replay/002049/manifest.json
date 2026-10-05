@@ -1,0 +1,40 @@
+{
+  "code": "002049",
+  "name": "紫光国微",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:25:36.986496+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-25",
+      "ex_date": "2025-06-26",
+      "pay_date": "2025-06-26",
+      "gross_per_share": 0.21000000000000002,
+      "reference_adjustment": 0.21000000000000002,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002049",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002049",
+    "https://data.eastmoney.com/yjfp/detail/002049.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "0d24ffd4aae2e57f52cc92537dc1796f838cb85486063fa6c0bb41f2b9b31bb0",
+    "price_daily.csv": "fccebf2003410e71e4ffffe20cedeeecdb1a36173d2d1d4aefdbccb10dda4720",
+    "price_qfq_check.csv": "afd10b6eb5ab04fedb2ab50739db11567930c705985a876b65eccc05a0c42d9f",
+    "retrieval.json": "2b99c8591404a41e72296832f37e98fe43b32ec4aca7347584bf085831607292",
+    "tencent_daily_raw.json": "7f85c3a72323e2330cfdbf94b68d9504d5f818a415c918575a2be6e0b975402e",
+    "tencent_qfq_raw.json": "22b25a3a859d2825abcb99e0ca98634e90c378bcbdf39a5e483a910f01dc8551"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "code": "000783",
+  "name": "长江证券",
+  "industry": "证券",
+  "retrieved_at": "2026-09-03T16:25:17.228531+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-11",
+      "ex_date": "2025-06-12",
+      "pay_date": "2025-06-12",
+      "gross_per_share": 0.15,
+      "reference_adjustment": 0.15,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000783",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000783",
+    "https://data.eastmoney.com/yjfp/detail/000783.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "afbf9376598c7231dbcdfc624cefb4095298c9b3bf01a7cf36f22ef39c1da372",
+    "price_daily.csv": "ee2263d629f7f0a77d8cb8833bf4cc4f86b420f9cf356037d337c67b81cd9501",
+    "price_qfq_check.csv": "1fb2559f9948e87eeabb93561f0c320511d6e79e8d475e19d0e02dad5b7e1ce9",
+    "retrieval.json": "e4be594d922db8abb83a865ef9abc7fb50fd19e69a10aa763e2402734389fd46",
+    "tencent_daily_raw.json": "d6167902ca7457c534c7e45be33bac0f904d69e6bfb5c15117caeb76802642ac",
+    "tencent_qfq_raw.json": "da7790615a4d76055d35fd543c9fb641fb9ef197c67092dfffd486f3e2a3a63a"
+  }
+}

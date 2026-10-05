@@ -1,0 +1,48 @@
+{
+  "code": "601800",
+  "name": "中国交建",
+  "industry": "建筑",
+  "retrieved_at": "2026-09-03T15:32:24.781583+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-21",
+      "ex_date": "2025-01-22",
+      "pay_date": "2025-01-22",
+      "gross_per_share": 0.14005,
+      "reference_adjustment": 0.14005,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-06-30",
+      "ex_date": "2025-07-01",
+      "pay_date": "2025-07-01",
+      "gross_per_share": 0.16161,
+      "reference_adjustment": 0.16161,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601800",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601800",
+    "https://data.eastmoney.com/yjfp/detail/601800.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "f45351f0047f2d3ab67d12946a25b8ce3d9c88f2557824771591319dfe237ad6",
+    "price_daily.csv": "12fd7ea84ec9ac071f7a8326931e7c6fc68a503e87a8beac1fe09f15b341af4e",
+    "price_qfq_check.csv": "7f2666ef615ab9671d11c132bc036ecd46cd937c52dcdee8e413432e9effc575",
+    "retrieval.json": "92f9a357527b09113e1d65a94498d5b2bdc2e98c9669c3bc0b241f1c6ece0be5",
+    "tencent_daily_raw.json": "c6b5c71414458a5239db8de3ee7ce03acd95481d0461516790fb924646e48301",
+    "tencent_qfq_raw.json": "a6bd4c39fea4f5ac039286a72c339f03b310f4f616f587a10702304932ec8abc"
+  }
+}

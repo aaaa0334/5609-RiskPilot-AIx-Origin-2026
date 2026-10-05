@@ -1,0 +1,40 @@
+{
+  "code": "600887",
+  "name": "伊利股份",
+  "industry": "食品饮料",
+  "retrieved_at": "2026-09-03T15:31:51.658883+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-05",
+      "ex_date": "2025-06-06",
+      "pay_date": "2025-06-06",
+      "gross_per_share": 1.22,
+      "reference_adjustment": 1.22,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600887",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600887",
+    "https://data.eastmoney.com/yjfp/detail/600887.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "9d70219102147ae7ebb2174ab342c7ca75d21ce6182e39eba333311807d28e42",
+    "price_daily.csv": "c1ad2550b001702d97137687939566969a63a6d1ab4395504b099bc44b641091",
+    "price_qfq_check.csv": "bf44be47f226cc3903db9bf8d02a92f1f713643a7109477397d4615983957315",
+    "retrieval.json": "3774cc5f982ddbed21a6963dacdb69d71699677959a2d1d0cae34efb1db2d84a",
+    "tencent_daily_raw.json": "ff0ce3f5eac88d489a308c7cdda323440cdb53ea64805ad6a4261a857b5c3a98",
+    "tencent_qfq_raw.json": "211d5731a19ab88e8396c63b02035548fbda0a844001f76157e35075d4f35922"
+  }
+}

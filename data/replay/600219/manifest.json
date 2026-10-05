@@ -1,0 +1,40 @@
+{
+  "code": "600219",
+  "name": "南山铝业",
+  "industry": "有色金属",
+  "retrieved_at": "2026-09-03T15:28:38.660476+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-09",
+      "ex_date": "2025-05-12",
+      "pay_date": "2025-05-12",
+      "gross_per_share": 0.09,
+      "reference_adjustment": 0.09,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600219",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600219",
+    "https://data.eastmoney.com/yjfp/detail/600219.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "ca450a7a9a1b0e9f7d850717a93a8f132c3ec376a5958043b3fdbc4773585e06",
+    "price_daily.csv": "1dd0d1873f91389800386c8e735d7497fb6b04fcb36d1846cbf908bcf42828ea",
+    "price_qfq_check.csv": "6cc87377c6f7d2171d545c9f25d1ac9627f972266cc0062fb2b3952ea5d85e96",
+    "retrieval.json": "6c9da5030250d976c08a22224759d2b07f1dc2d0d9ceb269e5d888c409ee50f2",
+    "tencent_daily_raw.json": "1ee7b1a06b984ab3393404a26a2fd9a5fc6008a725609d40304efcf053769bba",
+    "tencent_qfq_raw.json": "0047e32866a040b5b4f152cbd5256780441bf3f127bb3432796f3f2465463e1d"
+  }
+}

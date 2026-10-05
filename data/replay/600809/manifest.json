@@ -1,0 +1,48 @@
+{
+  "code": "600809",
+  "name": "山西汾酒",
+  "industry": "食品饮料",
+  "retrieved_at": "2026-09-03T15:31:48.871407+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-23",
+      "ex_date": "2025-01-24",
+      "pay_date": "2025-01-24",
+      "gross_per_share": 2.46,
+      "reference_adjustment": 2.46,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-07-04",
+      "ex_date": "2025-07-07",
+      "pay_date": "2025-07-07",
+      "gross_per_share": 3.6,
+      "reference_adjustment": 3.6,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600809",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600809",
+    "https://data.eastmoney.com/yjfp/detail/600809.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "0602373456d4ee86caf9be81fb302fef8779236910afcd49d4c2bf508f71ce6a",
+    "price_daily.csv": "304de6aa3d7834cea0c69926716cee0577aaf35be265d0441822da299319e89c",
+    "price_qfq_check.csv": "2e1e9d21d2e5859a8484ccf3dd9ec397db8e63711b9b8e80db55992dc7a2ac65",
+    "retrieval.json": "a9a6ce723e1b02e1dbef7eab346ff7b796d45657668676d3ed7fea9013f2d654",
+    "tencent_daily_raw.json": "348842c291caf7eae7614ef15729f3dfe21b13c1fe41eb6ba225c230760bf7f7",
+    "tencent_qfq_raw.json": "df51795bbabc6f3c78b7a41dc9670ac1aa19aa23f40ae0780730c98c0d05fe62"
+  }
+}

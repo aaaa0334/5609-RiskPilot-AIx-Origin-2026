@@ -1,0 +1,40 @@
+{
+  "code": "000100",
+  "name": "TCL科技",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:24:54.698093+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-17",
+      "ex_date": "2025-07-18",
+      "pay_date": "2025-07-18",
+      "gross_per_share": 0.05,
+      "reference_adjustment": 0.05,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000100",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000100",
+    "https://data.eastmoney.com/yjfp/detail/000100.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "f7dc64eec8c77720bf3c2d40349893784f809a97688ce4311e01c48c19be7d73",
+    "price_daily.csv": "215de7416dc49b9fb2d1547c5c682c9a1b3600688ad667b6ae33102a171743b7",
+    "price_qfq_check.csv": "1d421f2c32d87f1100031f335c40543b229179457b9986ee9811d2bc4c7636b0",
+    "retrieval.json": "bd5dbdd8003c8dee39bad9deb3d3de3522a68806c7577633f4894ed343935d14",
+    "tencent_daily_raw.json": "b3ed1a5f81f94fdb5877408bc7d359e39e39ee7e88478e22cb61ef2cad1da598",
+    "tencent_qfq_raw.json": "65471859f1745e4e854312f164cfb0cf0af3ebb1f6776ff9b8fa29d89c81ce87"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "code": "600660",
+  "name": "福耀玻璃",
+  "industry": "汽车",
+  "retrieved_at": "2026-09-03T16:24:50.368418+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-08",
+      "ex_date": "2025-05-09",
+      "pay_date": "2025-05-09",
+      "gross_per_share": 1.8,
+      "reference_adjustment": 1.8,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600660",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600660",
+    "https://data.eastmoney.com/yjfp/detail/600660.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "10c3db1cc91b7f11581602450288f77287a5e00dd5b83e915101fdd69fd8e125",
+    "price_daily.csv": "6cc4e53173d850ddc3cf44f8f1d12c98248576325aeaacb2c400f560a97e5090",
+    "price_qfq_check.csv": "ef19fb4b83efd54b044ff1aa3718b6050f1a6b7df722146f799a474b1d48c94c",
+    "retrieval.json": "4a46cce6aa7d7146b481de3fe0ad90e54a46f8507bc93f266df3f0d93574356f",
+    "tencent_daily_raw.json": "f79d6ed8dd2ea9af6a70a4ae85c1e89f4732e424919dd81d9a03780636f8dc83",
+    "tencent_qfq_raw.json": "b18d7318e14adb83b8a1479fa4255f1118d7cbdbb567a0ba900accbfef0ace01"
+  }
+}

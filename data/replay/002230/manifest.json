@@ -1,0 +1,40 @@
+{
+  "code": "002230",
+  "name": "科大讯飞",
+  "industry": "软件",
+  "retrieved_at": "2026-09-03T16:25:52.386683+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-03",
+      "ex_date": "2025-07-04",
+      "pay_date": "2025-07-04",
+      "gross_per_share": 0.1,
+      "reference_adjustment": 0.1,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002230",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002230",
+    "https://data.eastmoney.com/yjfp/detail/002230.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "c191418d936ed6ea25e82717ae6a7b634d26a145d48dec61e23951e99fbd2137",
+    "price_daily.csv": "dcca10bb43005d1f0d1cc9379ce107143c0c050836c9f4b2460c871436a54eb9",
+    "price_qfq_check.csv": "5df76cdf790b9e825162eb4cb5fe9cb1b0e51944d88f97ffc31d8cdf8cc67708",
+    "retrieval.json": "e0b40474dc9b30781071852ff7b001ea0dbacf68cb8f0646152a96b1498bdae9",
+    "tencent_daily_raw.json": "012c3fd3fdbc6fc02acedb18e6cbe1497f19616191eab04d838450d09d4e7513",
+    "tencent_qfq_raw.json": "cca4ba6499c9a0852c1a3cb87356c4e11323de34be706e51ff4dd68ae69755db"
+  }
+}

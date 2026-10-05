@@ -1,0 +1,40 @@
+{
+  "code": "600346",
+  "name": "恒力石化",
+  "industry": "化工",
+  "retrieved_at": "2026-09-03T15:31:18.800640+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-18",
+      "ex_date": "2025-06-19",
+      "pay_date": "2025-06-19",
+      "gross_per_share": 0.45,
+      "reference_adjustment": 0.45,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600346",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600346",
+    "https://data.eastmoney.com/yjfp/detail/600346.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "f5420dd9c23538665c1ed70d92c194b02f923a5f9cd57b4421c39eef8afad1f9",
+    "price_daily.csv": "bf6125a2d2058812bc47fcaab6a5c2011a9e8801502a2e27a8e818c954dcec12",
+    "price_qfq_check.csv": "1f2f1fda499869ce6b4f8679eb51083ab7d2903ef540595da0b3f1cedf1a6af6",
+    "retrieval.json": "61f99e83bd07b79b26b570aeb222607611b9eb51ba78d4924368c45a50a87301",
+    "tencent_daily_raw.json": "3a783708bc14ac6adf8701d499fbb5abd6fcb1d23c26a000689eb9b6a7d68e89",
+    "tencent_qfq_raw.json": "807b972d0b01434a12e1937e1c665876fb781012bae0ca9e533413334b090ab3"
+  }
+}

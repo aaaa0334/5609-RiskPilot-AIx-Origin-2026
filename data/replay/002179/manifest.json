@@ -1,0 +1,40 @@
+{
+  "code": "002179",
+  "name": "中航光电",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:25:45.729190+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-16",
+      "ex_date": "2025-06-17",
+      "pay_date": "2025-06-17",
+      "gross_per_share": 0.8,
+      "reference_adjustment": 0.8,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002179",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002179",
+    "https://data.eastmoney.com/yjfp/detail/002179.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "95f156080fb1dcb8550ceb8c220a8e97f83d6189e2f90bbbfe230895d8b034a4",
+    "price_daily.csv": "b7faf1f48ca33848d712f31ea85eab36073115070da4e889016587af61b99212",
+    "price_qfq_check.csv": "970b0817cfcf7b8acbf956438151b1a837841b1fae98619423bb44bd34e6cdde",
+    "retrieval.json": "45834400953249c4d5bcd1632514dce76dd104c2418ae4581828862d2d8e50e8",
+    "tencent_daily_raw.json": "27c8c412a84a38fffce8763ac9179ca9e8baff303ae6594cd604f21a24adbc13",
+    "tencent_qfq_raw.json": "31cff13e2a5c4667c908c217df67cf51716f84bbf906d9c33ea6e7f5825f93da"
+  }
+}

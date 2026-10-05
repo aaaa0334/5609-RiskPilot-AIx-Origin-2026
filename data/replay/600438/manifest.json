@@ -1,0 +1,31 @@
+{
+  "code": "600438",
+  "name": "通威股份",
+  "industry": "光伏",
+  "retrieved_at": "2026-09-03T15:31:27.880736+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [],
+  "price_parameters": {
+    "symbol": "600438",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600438",
+    "https://data.eastmoney.com/yjfp/detail/600438.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "1decb7833cb8736a2e02184d599cf58ec15f6c645ef7f8a504b96fadf11f8d3c",
+    "price_daily.csv": "2a7fde288f0c2b2f97d4ae35f61bdf8b37bac2e178b00991c0fc9cecdf3be68d",
+    "price_qfq_check.csv": "2a7fde288f0c2b2f97d4ae35f61bdf8b37bac2e178b00991c0fc9cecdf3be68d",
+    "retrieval.json": "dba6643397a3943dfe03b6cfbe0278cb12f9846f244dafeaeb2331c43f67960b",
+    "tencent_daily_raw.json": "a3d938604e6f321f16734346494294a6990610ed6c7e98e05237b3bc3ca41e66",
+    "tencent_qfq_raw.json": "bf41f592833ead327f54322e1d07270f0bf3b1d54d81fcf7e4ec11fe3bf4dd2c"
+  }
+}

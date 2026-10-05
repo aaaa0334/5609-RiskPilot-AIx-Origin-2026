@@ -1,0 +1,40 @@
+{
+  "code": "600519",
+  "name": "贵州茅台",
+  "industry": "食品饮料",
+  "retrieved_at": "2026-09-03T15:31:30.673571+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-25",
+      "ex_date": "2025-06-26",
+      "pay_date": "2025-06-26",
+      "gross_per_share": 27.673000000000002,
+      "reference_adjustment": 27.673000000000002,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600519",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600519",
+    "https://data.eastmoney.com/yjfp/detail/600519.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "6db2fc8ee50754a752e1c72feadfc370b9ef78982f1ee55c3f9ab955a287efb8",
+    "price_daily.csv": "81973dea1035c37db71bbe35114775e3871f7755046fdf213efd78cb51a4e0fc",
+    "price_qfq_check.csv": "45e159b506e45be532a5ad9c1fab140f4444744ab86cd05eece44a7c975dd713",
+    "retrieval.json": "2d8d0a10887c6bfc05e35c90b4a5a7208e7d6e6f3b6b971d8d7a3b1fd08e4148",
+    "tencent_daily_raw.json": "b51f32808390a597cebf61272ea0ffc49a5048c1b9becbaa8095f13d1025d3b5",
+    "tencent_qfq_raw.json": "484aff16c87efe5817980ec0b33fb31b950dab1010c214267e87b854ce87e28c"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "code": "002475",
+  "name": "立讯精密",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:26:14.361371+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-11",
+      "ex_date": "2025-07-14",
+      "pay_date": "2025-07-14",
+      "gross_per_share": 0.1998725,
+      "reference_adjustment": 0.1998725,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002475",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002475",
+    "https://data.eastmoney.com/yjfp/detail/002475.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "bf6ddd0b70205536c62e8d09e3a41b505a036809ca3add6902363c151fe3b2a1",
+    "price_daily.csv": "f63c434acd536379609eb02d8e259f3564a8c9e99229014d49c31448e20ad78e",
+    "price_qfq_check.csv": "477b8dea0b006b9dd5b072f00f8666785c239bd5ca57ee6c35dab2f44f571426",
+    "retrieval.json": "7203be6bfc4013c64aa5d903f19039b4913c445df6d7cf24149f2669f0f6a4c7",
+    "tencent_daily_raw.json": "3f2e7b706c1189297420741d87792cacd762c84b7d62f3e7565d72a20e1d3074",
+    "tencent_qfq_raw.json": "c91170ebee7182be7ca3478405d4879babca47c1dc191a4e535669dff26d89f2"
+  }
+}

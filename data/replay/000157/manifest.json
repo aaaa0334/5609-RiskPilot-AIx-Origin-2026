@@ -1,0 +1,40 @@
+{
+  "code": "000157",
+  "name": "中联重科",
+  "industry": "机械",
+  "retrieved_at": "2026-09-03T16:24:56.859018+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-24",
+      "ex_date": "2025-07-25",
+      "pay_date": "2025-07-25",
+      "gross_per_share": 0.3,
+      "reference_adjustment": 0.3,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000157",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000157",
+    "https://data.eastmoney.com/yjfp/detail/000157.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "be96b1211177c2503fca54b529f519c16e70e653f06e909c6c6cd693392c85b7",
+    "price_daily.csv": "5adb922919712f7dbaac4b3631ab6f231a21ba6939cbd7a28c5485202d39e85a",
+    "price_qfq_check.csv": "81aef27715b86524bdc180e80efbf8e89fbef40557f56c4031b3df72c0378aad",
+    "retrieval.json": "365333c25300d2c3a7ef2f9684e69f6f91b0474a23d11b471688963b5d5b8d0e",
+    "tencent_daily_raw.json": "d26aab5d9fc2d05c8e328c7a7fc2fb0fda678c03a56285eaf356a86f864e280b",
+    "tencent_qfq_raw.json": "e043d88f0023407bb6ca97deafafe4cae39e8845dac810c29bdbc2c3ea1cb0c5"
+  }
+}

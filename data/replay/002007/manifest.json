@@ -1,0 +1,40 @@
+{
+  "code": "002007",
+  "name": "华兰生物",
+  "industry": "医药",
+  "retrieved_at": "2026-09-03T16:25:32.615758+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-16",
+      "ex_date": "2025-06-17",
+      "pay_date": "2025-06-17",
+      "gross_per_share": 0.2,
+      "reference_adjustment": 0.2,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002007",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002007",
+    "https://data.eastmoney.com/yjfp/detail/002007.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "81e9e448256a27e15564ec0652b52d461d32b60a7bba5facacac5b192832fc8d",
+    "price_daily.csv": "2bd586958979b91fc8a5919a0a38f9b391e2f3259c63f7e170dbb1ee9578a1ea",
+    "price_qfq_check.csv": "8b433e334d7d853c9d8b1eb2b45b62eff27d0c0c47973a8ccd146f12190df751",
+    "retrieval.json": "4d47d6ae3b66050742081c576f8ae77faa9f0abf24422dc4889fc1bd3d277c66",
+    "tencent_daily_raw.json": "8bcc65154035e96a52e516cc56f0ae63a02f47578f98fecf8f197389ce680ac5",
+    "tencent_qfq_raw.json": "8dc823bf6f86b4288bc155b43ae5f6236ef12386192ff6bb3b7a33c3006524f8"
+  }
+}

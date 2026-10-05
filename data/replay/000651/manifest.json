@@ -1,0 +1,48 @@
+{
+  "code": "000651",
+  "name": "格力电器",
+  "industry": "家电",
+  "retrieved_at": "2026-09-03T16:24:32.960506+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-14",
+      "ex_date": "2025-05-15",
+      "pay_date": "2025-05-15",
+      "gross_per_share": 1.0,
+      "reference_adjustment": 1.0,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-08-28",
+      "ex_date": "2025-08-29",
+      "pay_date": "2025-08-29",
+      "gross_per_share": 2.0,
+      "reference_adjustment": 2.0,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000651",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000651",
+    "https://data.eastmoney.com/yjfp/detail/000651.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "30014c074628cc1a46babf4f85c7dfc9cd173cca87962fb0fe8f84c39ff051fb",
+    "price_daily.csv": "d1fcaf2ba1196e91498d618b473d350d976d5fe36d5cde0fc16db5a82540a96d",
+    "price_qfq_check.csv": "feba07ea19e923a11d284f1fdcde074ac045c798f715fb8c4495396b5a76c892",
+    "retrieval.json": "ac7b009ffd9b8136c82699394c87a60a73c4fc79f88dc2aa4278e039164d320e",
+    "tencent_daily_raw.json": "bd76f023d5816bdfa7f46425b95fe1dc70b4f168f734289ab8344b0ed0e798f8",
+    "tencent_qfq_raw.json": "28246c5777a6d83cacb80c10a2df28c1785dff58d8f509ffbc23e7ccdf792dd4"
+  }
+}

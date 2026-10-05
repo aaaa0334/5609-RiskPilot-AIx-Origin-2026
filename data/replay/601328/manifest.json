@@ -1,0 +1,48 @@
+{
+  "code": "601328",
+  "name": "交通银行",
+  "industry": "银行",
+  "retrieved_at": "2026-09-03T15:32:12.995866+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-23",
+      "ex_date": "2025-01-24",
+      "pay_date": "2025-01-24",
+      "gross_per_share": 0.182,
+      "reference_adjustment": 0.182,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-04-17",
+      "ex_date": "2025-04-18",
+      "pay_date": "2025-04-18",
+      "gross_per_share": 0.197,
+      "reference_adjustment": 0.197,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601328",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601328",
+    "https://data.eastmoney.com/yjfp/detail/601328.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "cb397c0447043565ab118e066059aea4d68ac5a89fa2840cdafd7b989a16b71e",
+    "price_daily.csv": "3ba4a5b8f532ed20dc19cf659249c20999a2bb254438d067ae16faecf3ae45b5",
+    "price_qfq_check.csv": "86292f68fd92002a1eed883746f05127db378ffb0bd26eb58e8441bb5c2275ac",
+    "retrieval.json": "4a258c108ce9f8b6d3c4d3ed73d2d38dd1deacb5c0ccbfc363f9d8193baf7e34",
+    "tencent_daily_raw.json": "2a17381e1c1228a98c8afa0da03ad29d2b1ce68ab29f3a5908da6722f4d3945e",
+    "tencent_qfq_raw.json": "5a4762e92ea3edd5b607762a036ae25faa9e605c867b8e02a6fa351993975ac6"
+  }
+}

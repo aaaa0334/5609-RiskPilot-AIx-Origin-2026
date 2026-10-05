@@ -1,0 +1,252 @@
+{
+  "601318": {
+    "name": "中国平安",
+    "industry": "保险",
+    "board": "main"
+  },
+  "000876": {
+    "name": "新希望",
+    "industry": "农牧",
+    "board": "main"
+  },
+  "600010": {
+    "name": "包钢股份",
+    "industry": "钢铁",
+    "board": "main"
+  },
+  "600000": {
+    "name": "浦发银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "600036": {
+    "name": "招商银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "600016": {
+    "name": "民生银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "600015": {
+    "name": "华夏银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "600019": {
+    "name": "宝钢股份",
+    "industry": "钢铁",
+    "board": "main"
+  },
+  "600028": {
+    "name": "中国石化",
+    "industry": "能源",
+    "board": "main"
+  },
+  "600030": {
+    "name": "中信证券",
+    "industry": "证券",
+    "board": "main"
+  },
+  "600031": {
+    "name": "三一重工",
+    "industry": "机械",
+    "board": "main"
+  },
+  "600048": {
+    "name": "保利发展",
+    "industry": "地产",
+    "board": "main"
+  },
+  "600050": {
+    "name": "中国联通",
+    "industry": "通信",
+    "board": "main"
+  },
+  "600089": {
+    "name": "特变电工",
+    "industry": "电气设备",
+    "board": "main"
+  },
+  "600104": {
+    "name": "上汽集团",
+    "industry": "汽车",
+    "board": "main"
+  },
+  "600111": {
+    "name": "北方稀土",
+    "industry": "有色金属",
+    "board": "main"
+  },
+  "600161": {
+    "name": "天坛生物",
+    "industry": "医药",
+    "board": "main"
+  },
+  "600176": {
+    "name": "中国巨石",
+    "industry": "建材",
+    "board": "main"
+  },
+  "600183": {
+    "name": "生益科技",
+    "industry": "电子",
+    "board": "main"
+  },
+  "600188": {
+    "name": "兖矿能源",
+    "industry": "能源",
+    "board": "main"
+  },
+  "600196": {
+    "name": "复星医药",
+    "industry": "医药",
+    "board": "main"
+  },
+  "600219": {
+    "name": "南山铝业",
+    "industry": "有色金属",
+    "board": "main"
+  },
+  "600276": {
+    "name": "恒瑞医药",
+    "industry": "医药",
+    "board": "main"
+  },
+  "600309": {
+    "name": "万华化学",
+    "industry": "化工",
+    "board": "main"
+  },
+  "600346": {
+    "name": "恒力石化",
+    "industry": "化工",
+    "board": "main"
+  },
+  "600406": {
+    "name": "国电南瑞",
+    "industry": "电气设备",
+    "board": "main"
+  },
+  "600436": {
+    "name": "片仔癀",
+    "industry": "医药",
+    "board": "main"
+  },
+  "600438": {
+    "name": "通威股份",
+    "industry": "光伏",
+    "board": "main"
+  },
+  "600519": {
+    "name": "贵州茅台",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "600585": {
+    "name": "海螺水泥",
+    "industry": "建材",
+    "board": "main"
+  },
+  "600588": {
+    "name": "用友网络",
+    "industry": "软件",
+    "board": "main"
+  },
+  "600690": {
+    "name": "海尔智家",
+    "industry": "家电",
+    "board": "main"
+  },
+  "600741": {
+    "name": "华域汽车",
+    "industry": "汽车",
+    "board": "main"
+  },
+  "600795": {
+    "name": "国电电力",
+    "industry": "电力",
+    "board": "main"
+  },
+  "600809": {
+    "name": "山西汾酒",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "600887": {
+    "name": "伊利股份",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "600900": {
+    "name": "长江电力",
+    "industry": "电力",
+    "board": "main"
+  },
+  "601006": {
+    "name": "大秦铁路",
+    "industry": "交通运输",
+    "board": "main"
+  },
+  "601166": {
+    "name": "兴业银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601169": {
+    "name": "北京银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601288": {
+    "name": "农业银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601328": {
+    "name": "交通银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601398": {
+    "name": "工商银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601668": {
+    "name": "中国建筑",
+    "industry": "建筑",
+    "board": "main"
+  },
+  "601766": {
+    "name": "中国中车",
+    "industry": "轨道交通",
+    "board": "main"
+  },
+  "601800": {
+    "name": "中国交建",
+    "industry": "建筑",
+    "board": "main"
+  },
+  "601818": {
+    "name": "光大银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601857": {
+    "name": "中国石油",
+    "industry": "能源",
+    "board": "main"
+  },
+  "601888": {
+    "name": "中国中免",
+    "industry": "商贸",
+    "board": "main"
+  },
+  "601988": {
+    "name": "中国银行",
+    "industry": "银行",
+    "board": "main"
+  }
+}

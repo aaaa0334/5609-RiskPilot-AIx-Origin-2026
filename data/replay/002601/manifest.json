@@ -1,0 +1,40 @@
+{
+  "code": "002601",
+  "name": "龙佰集团",
+  "industry": "化工",
+  "retrieved_at": "2026-09-03T16:26:18.794407+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-10",
+      "ex_date": "2025-06-11",
+      "pay_date": "2025-06-11",
+      "gross_per_share": 0.5,
+      "reference_adjustment": 0.5,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002601",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002601",
+    "https://data.eastmoney.com/yjfp/detail/002601.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "b31c2bb2f31f3025fd951a5214e385bae1748461d4785fa489b24dcac967fcbf",
+    "price_daily.csv": "ef30a5c56bfa79c0f332f781a3946561ce0af2e8c0a72896f7492acd1f96ecb5",
+    "price_qfq_check.csv": "c6dcae2432c0ff5c1cbd7bc60d22e98932abe8dab10cfe38717d58ebb24ea2ba",
+    "retrieval.json": "92a4a9633f5b39e4ab71ad5b93fee811c464aa7ed762be2c8b6354c4a790e986",
+    "tencent_daily_raw.json": "3169c592f4de4414b22914e64947f180833a15e60d75e2770404ec7684e44780",
+    "tencent_qfq_raw.json": "5f1c9411a834860902308d55dcf0322fa13e5cfea476ebfcd71966018ab1d512"
+  }
+}

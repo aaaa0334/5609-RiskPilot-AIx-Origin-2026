@@ -1,0 +1,40 @@
+{
+  "code": "002493",
+  "name": "荣盛石化",
+  "industry": "化工",
+  "retrieved_at": "2026-09-03T16:26:16.555541+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-27",
+      "ex_date": "2025-05-28",
+      "pay_date": "2025-05-28",
+      "gross_per_share": 0.1,
+      "reference_adjustment": 0.1,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002493",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002493",
+    "https://data.eastmoney.com/yjfp/detail/002493.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "db89797639a8bf405dbbee5296fc5a93577d0f65863e813f4e67f90ff3bbd01d",
+    "price_daily.csv": "e70ed955afaa9a97bd362478a5f514f14a483e477cd9e73a5e1f6a5cfa85e223",
+    "price_qfq_check.csv": "e906d949c8331c0cea77ec33c60720558478647b5ddf93bba8ae4eafed4c79cd",
+    "retrieval.json": "3b46c2e7f2e1ab2753f25637910410ed9456b40ef1e1336f14af82f88c44edc6",
+    "tencent_daily_raw.json": "25ee35bd5719eddc85891a150a9330ef99de5563b1d38f7b510ef054dd4fd243",
+    "tencent_qfq_raw.json": "aec2ee0710635204eb4c1527535cd7be224fdae2eb884625182f74d3fa47297f"
+  }
+}

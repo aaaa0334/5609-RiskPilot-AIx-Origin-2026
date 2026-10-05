@@ -1,0 +1,2025 @@
+{
+  "stock_code": "601318",
+  "stock_name": "中国平安",
+  "industry": "保险",
+  "board": "main",
+  "latest_price": 57.18,
+  "latest_date": "2025-08-29",
+  "snapshot_date": "2025-08-31",
+  "analysis_cutoff": "2025-08-31",
+  "retrieved_at": "2026-09-02T14:24:19+08:00",
+  "data_source": "AKShare固定历史行情（上游：东方财富）+ 巨潮资讯官方公告原文",
+  "is_synthetic": false,
+  "evidence_pack": "data/evidence/601318/2025-08-31",
+  "daily": [
+    {
+      "date": "2025-01-02",
+      "open": 48.4,
+      "close": 46.41,
+      "high": 48.43,
+      "low": 46.09,
+      "volume": 948579.0,
+      "amount": 4877807223.0,
+      "change_pct": -4.01
+    },
+    {
+      "date": "2025-01-03",
+      "open": 46.7,
+      "close": 46.0,
+      "high": 46.79,
+      "low": 45.78,
+      "volume": 551352.0,
+      "amount": 2788346287.0,
+      "change_pct": -0.88
+    },
+    {
+      "date": "2025-01-06",
+      "open": 46.25,
+      "close": 46.04,
+      "high": 46.32,
+      "low": 45.53,
+      "volume": 413490.0,
+      "amount": 2077171909.0,
+      "change_pct": 0.09
+    },
+    {
+      "date": "2025-01-07",
+      "open": 45.89,
+      "close": 45.87,
+      "high": 46.06,
+      "low": 45.51,
+      "volume": 392787.0,
+      "amount": 1967557698.0,
+      "change_pct": -0.37
+    },
+    {
+      "date": "2025-01-08",
+      "open": 45.88,
+      "close": 46.0,
+      "high": 46.28,
+      "low": 45.25,
+      "volume": 510383.0,
+      "amount": 2555823167.0,
+      "change_pct": 0.28
+    },
+    {
+      "date": "2025-01-09",
+      "open": 45.96,
+      "close": 45.51,
+      "high": 46.11,
+      "low": 45.5,
+      "volume": 400821.0,
+      "amount": 2005089617.0,
+      "change_pct": -1.07
+    },
+    {
+      "date": "2025-01-10",
+      "open": 45.52,
+      "close": 44.65,
+      "high": 45.78,
+      "low": 44.6,
+      "volume": 522704.0,
+      "amount": 2576373866.0,
+      "change_pct": -1.89
+    },
+    {
+      "date": "2025-01-13",
+      "open": 44.18,
+      "close": 44.29,
+      "high": 44.5,
+      "low": 43.8,
+      "volume": 511393.0,
+      "amount": 2474824396.0,
+      "change_pct": -0.81
+    },
+    {
+      "date": "2025-01-14",
+      "open": 44.29,
+      "close": 45.06,
+      "high": 45.28,
+      "low": 44.2,
+      "volume": 615774.0,
+      "amount": 3024006484.0,
+      "change_pct": 1.74
+    },
+    {
+      "date": "2025-01-15",
+      "open": 44.95,
+      "close": 44.81,
+      "high": 45.36,
+      "low": 44.61,
+      "volume": 458029.0,
+      "amount": 2251226874.0,
+      "change_pct": -0.55
+    },
+    {
+      "date": "2025-01-16",
+      "open": 45.0,
+      "close": 44.95,
+      "high": 45.45,
+      "low": 44.63,
+      "volume": 415761.0,
+      "amount": 2052212529.0,
+      "change_pct": 0.31
+    },
+    {
+      "date": "2025-01-17",
+      "open": 44.8,
+      "close": 45.08,
+      "high": 45.27,
+      "low": 44.47,
+      "volume": 460747.0,
+      "amount": 2273441157.0,
+      "change_pct": 0.29
+    },
+    {
+      "date": "2025-01-20",
+      "open": 45.42,
+      "close": 45.51,
+      "high": 46.0,
+      "low": 45.36,
+      "volume": 491736.0,
+      "amount": 2458746694.0,
+      "change_pct": 0.95
+    },
+    {
+      "date": "2025-01-21",
+      "open": 45.9,
+      "close": 45.6,
+      "high": 46.09,
+      "low": 45.36,
+      "volume": 409951.0,
+      "amount": 2049216698.0,
+      "change_pct": 0.2
+    },
+    {
+      "date": "2025-01-22",
+      "open": 45.42,
+      "close": 44.65,
+      "high": 45.62,
+      "low": 44.55,
+      "volume": 530780.0,
+      "amount": 2606595142.0,
+      "change_pct": -2.08
+    },
+    {
+      "date": "2025-01-23",
+      "open": 45.52,
+      "close": 46.07,
+      "high": 47.15,
+      "low": 45.48,
+      "volume": 969105.0,
+      "amount": 4910872825.0,
+      "change_pct": 3.18
+    },
+    {
+      "date": "2025-01-24",
+      "open": 45.88,
+      "close": 46.56,
+      "high": 47.07,
+      "low": 45.8,
+      "volume": 616779.0,
+      "amount": 3140198840.0,
+      "change_pct": 1.06
+    },
+    {
+      "date": "2025-01-27",
+      "open": 46.73,
+      "close": 46.55,
+      "high": 47.32,
+      "low": 46.51,
+      "volume": 524547.0,
+      "amount": 2681560916.0,
+      "change_pct": -0.02
+    },
+    {
+      "date": "2025-02-05",
+      "open": 46.68,
+      "close": 45.42,
+      "high": 46.7,
+      "low": 45.37,
+      "volume": 583072.0,
+      "amount": 2921528575.0,
+      "change_pct": -2.43
+    },
+    {
+      "date": "2025-02-06",
+      "open": 45.43,
+      "close": 45.95,
+      "high": 46.2,
+      "low": 45.38,
+      "volume": 415037.0,
+      "amount": 2078321191.0,
+      "change_pct": 1.17
+    },
+    {
+      "date": "2025-02-07",
+      "open": 45.88,
+      "close": 46.58,
+      "high": 47.14,
+      "low": 45.54,
+      "volume": 725812.0,
+      "amount": 3679372001.0,
+      "change_pct": 1.37
+    },
+    {
+      "date": "2025-02-10",
+      "open": 46.59,
+      "close": 46.6,
+      "high": 47.06,
+      "low": 46.5,
+      "volume": 431815.0,
+      "amount": 2203839896.0,
+      "change_pct": 0.04
+    },
+    {
+      "date": "2025-02-11",
+      "open": 46.9,
+      "close": 46.22,
+      "high": 46.94,
+      "low": 46.07,
+      "volume": 381844.0,
+      "amount": 1931993468.0,
+      "change_pct": -0.82
+    },
+    {
+      "date": "2025-02-12",
+      "open": 46.22,
+      "close": 46.78,
+      "high": 46.82,
+      "low": 45.88,
+      "volume": 446994.0,
+      "amount": 2261445451.0,
+      "change_pct": 1.21
+    },
+    {
+      "date": "2025-02-13",
+      "open": 46.62,
+      "close": 46.72,
+      "high": 47.48,
+      "low": 46.51,
+      "volume": 590363.0,
+      "amount": 3019334998.0,
+      "change_pct": -0.13
+    },
+    {
+      "date": "2025-02-14",
+      "open": 46.69,
+      "close": 47.4,
+      "high": 47.56,
+      "low": 46.5,
+      "volume": 599772.0,
+      "amount": 3080098770.0,
+      "change_pct": 1.46
+    },
+    {
+      "date": "2025-02-17",
+      "open": 47.53,
+      "close": 47.54,
+      "high": 48.08,
+      "low": 47.11,
+      "volume": 625710.0,
+      "amount": 3245003133.0,
+      "change_pct": 0.3
+    },
+    {
+      "date": "2025-02-18",
+      "open": 47.37,
+      "close": 47.01,
+      "high": 47.88,
+      "low": 46.9,
+      "volume": 650082.0,
+      "amount": 3362664791.0,
+      "change_pct": -1.11
+    },
+    {
+      "date": "2025-02-19",
+      "open": 46.89,
+      "close": 47.15,
+      "high": 47.53,
+      "low": 46.72,
+      "volume": 464426.0,
+      "amount": 2388611401.0,
+      "change_pct": 0.3
+    },
+    {
+      "date": "2025-02-20",
+      "open": 46.93,
+      "close": 46.48,
+      "high": 47.01,
+      "low": 46.36,
+      "volume": 515385.0,
+      "amount": 2620444374.0,
+      "change_pct": -1.42
+    },
+    {
+      "date": "2025-02-21",
+      "open": 46.69,
+      "close": 46.9,
+      "high": 47.2,
+      "low": 46.16,
+      "volume": 668761.0,
+      "amount": 3415352331.0,
+      "change_pct": 0.9
+    },
+    {
+      "date": "2025-02-24",
+      "open": 46.9,
+      "close": 47.7,
+      "high": 48.18,
+      "low": 46.75,
+      "volume": 835823.0,
+      "amount": 4341042760.0,
+      "change_pct": 1.71
+    },
+    {
+      "date": "2025-02-25",
+      "open": 47.2,
+      "close": 46.68,
+      "high": 47.8,
+      "low": 46.55,
+      "volume": 642429.0,
+      "amount": 3298896562.0,
+      "change_pct": -2.14
+    },
+    {
+      "date": "2025-02-26",
+      "open": 46.8,
+      "close": 47.32,
+      "high": 47.48,
+      "low": 46.73,
+      "volume": 536578.0,
+      "amount": 2758370362.0,
+      "change_pct": 1.37
+    },
+    {
+      "date": "2025-02-27",
+      "open": 47.48,
+      "close": 47.32,
+      "high": 47.5,
+      "low": 46.82,
+      "volume": 547240.0,
+      "amount": 2813972257.0,
+      "change_pct": 0.0
+    },
+    {
+      "date": "2025-02-28",
+      "open": 47.1,
+      "close": 46.08,
+      "high": 47.35,
+      "low": 46.08,
+      "volume": 805268.0,
+      "amount": 4102825272.0,
+      "change_pct": -2.62
+    },
+    {
+      "date": "2025-03-03",
+      "open": 46.25,
+      "close": 46.03,
+      "high": 46.52,
+      "low": 45.76,
+      "volume": 423161.0,
+      "amount": 2135730015.0,
+      "change_pct": -0.11
+    },
+    {
+      "date": "2025-03-04",
+      "open": 45.78,
+      "close": 45.78,
+      "high": 45.99,
+      "low": 45.7,
+      "volume": 372432.0,
+      "amount": 1867141471.0,
+      "change_pct": -0.54
+    },
+    {
+      "date": "2025-03-05",
+      "open": 45.88,
+      "close": 46.08,
+      "high": 46.25,
+      "low": 45.71,
+      "volume": 455072.0,
+      "amount": 2287766876.0,
+      "change_pct": 0.66
+    },
+    {
+      "date": "2025-03-06",
+      "open": 46.47,
+      "close": 47.34,
+      "high": 47.63,
+      "low": 46.23,
+      "volume": 1045821.0,
+      "amount": 5369202399.0,
+      "change_pct": 2.73
+    },
+    {
+      "date": "2025-03-07",
+      "open": 47.3,
+      "close": 47.2,
+      "high": 47.54,
+      "low": 47.02,
+      "volume": 481479.0,
+      "amount": 2481121736.0,
+      "change_pct": -0.3
+    },
+    {
+      "date": "2025-03-10",
+      "open": 47.21,
+      "close": 46.95,
+      "high": 47.36,
+      "low": 46.48,
+      "volume": 611283.0,
+      "amount": 3121852670.0,
+      "change_pct": -0.53
+    },
+    {
+      "date": "2025-03-11",
+      "open": 46.41,
+      "close": 47.2,
+      "high": 47.2,
+      "low": 46.3,
+      "volume": 529147.0,
+      "amount": 2702757544.0,
+      "change_pct": 0.53
+    },
+    {
+      "date": "2025-03-12",
+      "open": 47.2,
+      "close": 46.85,
+      "high": 47.3,
+      "low": 46.71,
+      "volume": 470578.0,
+      "amount": 2410921164.0,
+      "change_pct": -0.74
+    },
+    {
+      "date": "2025-03-13",
+      "open": 46.85,
+      "close": 46.84,
+      "high": 47.25,
+      "low": 46.63,
+      "volume": 411448.0,
+      "amount": 2107254552.0,
+      "change_pct": -0.02
+    },
+    {
+      "date": "2025-03-14",
+      "open": 47.03,
+      "close": 49.17,
+      "high": 49.59,
+      "low": 46.91,
+      "volume": 1502449.0,
+      "amount": 7945017156.0,
+      "change_pct": 4.97
+    },
+    {
+      "date": "2025-03-17",
+      "open": 49.17,
+      "close": 49.08,
+      "high": 49.32,
+      "low": 48.8,
+      "volume": 605172.0,
+      "amount": 3229662145.0,
+      "change_pct": -0.18
+    },
+    {
+      "date": "2025-03-18",
+      "open": 49.4,
+      "close": 49.46,
+      "high": 49.89,
+      "low": 49.34,
+      "volume": 587740.0,
+      "amount": 3164655447.0,
+      "change_pct": 0.77
+    },
+    {
+      "date": "2025-03-19",
+      "open": 49.38,
+      "close": 49.77,
+      "high": 50.0,
+      "low": 49.27,
+      "volume": 509874.0,
+      "amount": 2751845206.0,
+      "change_pct": 0.63
+    },
+    {
+      "date": "2025-03-20",
+      "open": 49.75,
+      "close": 48.19,
+      "high": 49.76,
+      "low": 47.93,
+      "volume": 1140723.0,
+      "amount": 6007424559.0,
+      "change_pct": -3.17
+    },
+    {
+      "date": "2025-03-21",
+      "open": 48.1,
+      "close": 47.45,
+      "high": 48.36,
+      "low": 47.38,
+      "volume": 795715.0,
+      "amount": 4145943295.0,
+      "change_pct": -1.54
+    },
+    {
+      "date": "2025-03-24",
+      "open": 47.52,
+      "close": 47.83,
+      "high": 47.98,
+      "low": 47.52,
+      "volume": 508657.0,
+      "amount": 2646991166.0,
+      "change_pct": 0.8
+    },
+    {
+      "date": "2025-03-25",
+      "open": 47.85,
+      "close": 47.66,
+      "high": 47.91,
+      "low": 47.52,
+      "volume": 344402.0,
+      "amount": 1790739699.0,
+      "change_pct": -0.36
+    },
+    {
+      "date": "2025-03-26",
+      "open": 47.68,
+      "close": 47.42,
+      "high": 47.79,
+      "low": 47.42,
+      "volume": 403995.0,
+      "amount": 2094936176.0,
+      "change_pct": -0.5
+    },
+    {
+      "date": "2025-03-27",
+      "open": 47.41,
+      "close": 47.76,
+      "high": 48.15,
+      "low": 47.23,
+      "volume": 432169.0,
+      "amount": 2248679011.0,
+      "change_pct": 0.72
+    },
+    {
+      "date": "2025-03-28",
+      "open": 47.9,
+      "close": 47.66,
+      "high": 48.07,
+      "low": 47.55,
+      "volume": 353664.0,
+      "amount": 1841078406.0,
+      "change_pct": -0.21
+    },
+    {
+      "date": "2025-03-31",
+      "open": 47.6,
+      "close": 47.33,
+      "high": 47.95,
+      "low": 47.09,
+      "volume": 468390.0,
+      "amount": 2423816080.0,
+      "change_pct": -0.69
+    },
+    {
+      "date": "2025-04-01",
+      "open": 47.3,
+      "close": 47.32,
+      "high": 47.56,
+      "low": 47.11,
+      "volume": 394321.0,
+      "amount": 2035352505.0,
+      "change_pct": -0.02
+    },
+    {
+      "date": "2025-04-02",
+      "open": 47.28,
+      "close": 47.56,
+      "high": 47.66,
+      "low": 47.23,
+      "volume": 283274.0,
+      "amount": 1467236071.0,
+      "change_pct": 0.51
+    },
+    {
+      "date": "2025-04-03",
+      "open": 47.09,
+      "close": 47.18,
+      "high": 47.7,
+      "low": 47.08,
+      "volume": 373348.0,
+      "amount": 1927750540.0,
+      "change_pct": -0.8
+    },
+    {
+      "date": "2025-04-07",
+      "open": 45.0,
+      "close": 44.26,
+      "high": 45.47,
+      "low": 42.7,
+      "volume": 1727558.0,
+      "amount": 8362219629.0,
+      "change_pct": -6.19
+    },
+    {
+      "date": "2025-04-08",
+      "open": 44.25,
+      "close": 44.96,
+      "high": 44.96,
+      "low": 43.8,
+      "volume": 1117530.0,
+      "amount": 5446468218.0,
+      "change_pct": 1.58
+    },
+    {
+      "date": "2025-04-09",
+      "open": 44.5,
+      "close": 44.63,
+      "high": 44.95,
+      "low": 44.06,
+      "volume": 737907.0,
+      "amount": 3604799242.0,
+      "change_pct": -0.73
+    },
+    {
+      "date": "2025-04-10",
+      "open": 45.06,
+      "close": 45.18,
+      "high": 45.5,
+      "low": 44.91,
+      "volume": 657915.0,
+      "amount": 3258096138.0,
+      "change_pct": 1.23
+    },
+    {
+      "date": "2025-04-11",
+      "open": 45.18,
+      "close": 45.05,
+      "high": 45.24,
+      "low": 44.68,
+      "volume": 450121.0,
+      "amount": 2216984586.0,
+      "change_pct": -0.29
+    },
+    {
+      "date": "2025-04-14",
+      "open": 45.3,
+      "close": 45.18,
+      "high": 45.55,
+      "low": 45.14,
+      "volume": 387484.0,
+      "amount": 1922228962.0,
+      "change_pct": 0.29
+    },
+    {
+      "date": "2025-04-15",
+      "open": 45.18,
+      "close": 45.53,
+      "high": 45.67,
+      "low": 44.96,
+      "volume": 407762.0,
+      "amount": 2021902572.0,
+      "change_pct": 0.77
+    },
+    {
+      "date": "2025-04-16",
+      "open": 45.42,
+      "close": 45.58,
+      "high": 45.87,
+      "low": 45.1,
+      "volume": 467924.0,
+      "amount": 2323052330.0,
+      "change_pct": 0.11
+    },
+    {
+      "date": "2025-04-17",
+      "open": 45.39,
+      "close": 45.86,
+      "high": 45.98,
+      "low": 45.28,
+      "volume": 377043.0,
+      "amount": 1884423296.0,
+      "change_pct": 0.61
+    },
+    {
+      "date": "2025-04-18",
+      "open": 45.75,
+      "close": 46.14,
+      "high": 46.36,
+      "low": 45.65,
+      "volume": 338811.0,
+      "amount": 1706307228.0,
+      "change_pct": 0.61
+    },
+    {
+      "date": "2025-04-21",
+      "open": 46.1,
+      "close": 45.98,
+      "high": 46.31,
+      "low": 45.9,
+      "volume": 263784.0,
+      "amount": 1329681852.0,
+      "change_pct": -0.35
+    },
+    {
+      "date": "2025-04-22",
+      "open": 45.9,
+      "close": 46.27,
+      "high": 46.49,
+      "low": 45.82,
+      "volume": 355098.0,
+      "amount": 1793621626.0,
+      "change_pct": 0.63
+    },
+    {
+      "date": "2025-04-23",
+      "open": 46.46,
+      "close": 46.4,
+      "high": 46.65,
+      "low": 46.16,
+      "volume": 298773.0,
+      "amount": 1515452317.0,
+      "change_pct": 0.28
+    },
+    {
+      "date": "2025-04-24",
+      "open": 46.4,
+      "close": 46.92,
+      "high": 47.18,
+      "low": 46.4,
+      "volume": 423839.0,
+      "amount": 2170142049.0,
+      "change_pct": 1.12
+    },
+    {
+      "date": "2025-04-25",
+      "open": 46.94,
+      "close": 47.03,
+      "high": 47.29,
+      "low": 46.92,
+      "volume": 368499.0,
+      "amount": 1894916291.0,
+      "change_pct": 0.23
+    },
+    {
+      "date": "2025-04-28",
+      "open": 46.12,
+      "close": 46.91,
+      "high": 47.04,
+      "low": 45.73,
+      "volume": 518666.0,
+      "amount": 2632952959.0,
+      "change_pct": -0.26
+    },
+    {
+      "date": "2025-04-29",
+      "open": 46.87,
+      "close": 46.7,
+      "high": 47.34,
+      "low": 46.56,
+      "volume": 337540.0,
+      "amount": 1725062887.0,
+      "change_pct": -0.45
+    },
+    {
+      "date": "2025-04-30",
+      "open": 46.8,
+      "close": 46.41,
+      "high": 47.25,
+      "low": 46.38,
+      "volume": 377944.0,
+      "amount": 1927976843.0,
+      "change_pct": -0.62
+    },
+    {
+      "date": "2025-05-06",
+      "open": 46.7,
+      "close": 46.5,
+      "high": 46.85,
+      "low": 46.25,
+      "volume": 391512.0,
+      "amount": 1992284115.0,
+      "change_pct": 0.19
+    },
+    {
+      "date": "2025-05-07",
+      "open": 47.12,
+      "close": 46.88,
+      "high": 47.33,
+      "low": 46.73,
+      "volume": 420640.0,
+      "amount": 2156676084.0,
+      "change_pct": 0.82
+    },
+    {
+      "date": "2025-05-08",
+      "open": 46.71,
+      "close": 47.66,
+      "high": 48.05,
+      "low": 46.6,
+      "volume": 671350.0,
+      "amount": 3487932290.0,
+      "change_pct": 1.66
+    },
+    {
+      "date": "2025-05-09",
+      "open": 47.61,
+      "close": 47.45,
+      "high": 47.86,
+      "low": 47.45,
+      "volume": 290709.0,
+      "amount": 1507958915.0,
+      "change_pct": -0.44
+    },
+    {
+      "date": "2025-05-12",
+      "open": 47.93,
+      "close": 48.3,
+      "high": 48.45,
+      "low": 47.7,
+      "volume": 577372.0,
+      "amount": 3028226079.0,
+      "change_pct": 1.79
+    },
+    {
+      "date": "2025-05-13",
+      "open": 48.49,
+      "close": 48.16,
+      "high": 48.49,
+      "low": 47.95,
+      "volume": 403920.0,
+      "amount": 2117089329.0,
+      "change_pct": -0.29
+    },
+    {
+      "date": "2025-05-14",
+      "open": 48.15,
+      "close": 50.39,
+      "high": 50.88,
+      "low": 48.04,
+      "volume": 1577230.0,
+      "amount": 8541172666.0,
+      "change_pct": 4.63
+    },
+    {
+      "date": "2025-05-15",
+      "open": 50.09,
+      "close": 49.95,
+      "high": 50.5,
+      "low": 49.8,
+      "volume": 569303.0,
+      "amount": 3095268721.0,
+      "change_pct": -0.87
+    },
+    {
+      "date": "2025-05-16",
+      "open": 49.75,
+      "close": 49.09,
+      "high": 50.14,
+      "low": 49.08,
+      "volume": 466130.0,
+      "amount": 2499109899.0,
+      "change_pct": -1.72
+    },
+    {
+      "date": "2025-05-19",
+      "open": 48.99,
+      "close": 49.0,
+      "high": 49.43,
+      "low": 48.9,
+      "volume": 324266.0,
+      "amount": 1730493312.0,
+      "change_pct": -0.18
+    },
+    {
+      "date": "2025-05-20",
+      "open": 49.15,
+      "close": 49.38,
+      "high": 49.88,
+      "low": 49.1,
+      "volume": 352669.0,
+      "amount": 1895934592.0,
+      "change_pct": 0.78
+    },
+    {
+      "date": "2025-05-21",
+      "open": 49.4,
+      "close": 49.55,
+      "high": 50.1,
+      "low": 49.4,
+      "volume": 333066.0,
+      "amount": 1800759244.0,
+      "change_pct": 0.34
+    },
+    {
+      "date": "2025-05-22",
+      "open": 49.46,
+      "close": 49.54,
+      "high": 49.69,
+      "low": 49.23,
+      "volume": 240658.0,
+      "amount": 1294403114.0,
+      "change_pct": -0.02
+    },
+    {
+      "date": "2025-05-23",
+      "open": 49.51,
+      "close": 48.93,
+      "high": 50.16,
+      "low": 48.87,
+      "volume": 430491.0,
+      "amount": 2314052457.0,
+      "change_pct": -1.23
+    },
+    {
+      "date": "2025-05-26",
+      "open": 48.86,
+      "close": 49.1,
+      "high": 49.85,
+      "low": 48.7,
+      "volume": 388130.0,
+      "amount": 2078107531.0,
+      "change_pct": 0.35
+    },
+    {
+      "date": "2025-05-27",
+      "open": 49.1,
+      "close": 49.1,
+      "high": 49.56,
+      "low": 49.0,
+      "volume": 255725.0,
+      "amount": 1368911112.0,
+      "change_pct": 0.0
+    },
+    {
+      "date": "2025-05-28",
+      "open": 49.1,
+      "close": 48.99,
+      "high": 49.39,
+      "low": 48.82,
+      "volume": 261698.0,
+      "amount": 1396312012.0,
+      "change_pct": -0.22
+    },
+    {
+      "date": "2025-05-29",
+      "open": 49.0,
+      "close": 49.22,
+      "high": 49.53,
+      "low": 48.79,
+      "volume": 348683.0,
+      "amount": 1868004330.0,
+      "change_pct": 0.47
+    },
+    {
+      "date": "2025-05-30",
+      "open": 49.07,
+      "close": 48.98,
+      "high": 49.39,
+      "low": 48.55,
+      "volume": 417239.0,
+      "amount": 2221553128.0,
+      "change_pct": -0.49
+    },
+    {
+      "date": "2025-06-03",
+      "open": 48.91,
+      "close": 49.55,
+      "high": 49.81,
+      "low": 48.7,
+      "volume": 453738.0,
+      "amount": 2430686987.0,
+      "change_pct": 1.16
+    },
+    {
+      "date": "2025-06-04",
+      "open": 49.31,
+      "close": 49.46,
+      "high": 49.85,
+      "low": 49.31,
+      "volume": 430897.0,
+      "amount": 2322941429.0,
+      "change_pct": -0.18
+    },
+    {
+      "date": "2025-06-05",
+      "open": 49.47,
+      "close": 49.69,
+      "high": 49.88,
+      "low": 49.36,
+      "volume": 419100.0,
+      "amount": 2260023900.0,
+      "change_pct": 0.47
+    },
+    {
+      "date": "2025-06-06",
+      "open": 49.7,
+      "close": 49.11,
+      "high": 49.82,
+      "low": 49.05,
+      "volume": 408553.0,
+      "amount": 2191002621.0,
+      "change_pct": -1.17
+    },
+    {
+      "date": "2025-06-09",
+      "open": 49.25,
+      "close": 49.42,
+      "high": 49.64,
+      "low": 49.2,
+      "volume": 397887.0,
+      "amount": 2137162081.0,
+      "change_pct": 0.63
+    },
+    {
+      "date": "2025-06-10",
+      "open": 49.41,
+      "close": 49.13,
+      "high": 49.8,
+      "low": 49.01,
+      "volume": 467079.0,
+      "amount": 2510066317.0,
+      "change_pct": -0.59
+    },
+    {
+      "date": "2025-06-11",
+      "open": 49.1,
+      "close": 50.16,
+      "high": 50.35,
+      "low": 49.1,
+      "volume": 681830.0,
+      "amount": 3704026068.0,
+      "change_pct": 2.1
+    },
+    {
+      "date": "2025-06-12",
+      "open": 50.0,
+      "close": 50.51,
+      "high": 51.03,
+      "low": 49.73,
+      "volume": 589999.0,
+      "amount": 3231103730.0,
+      "change_pct": 0.7
+    },
+    {
+      "date": "2025-06-13",
+      "open": 50.53,
+      "close": 50.18,
+      "high": 50.6,
+      "low": 49.98,
+      "volume": 480229.0,
+      "amount": 2616565694.0,
+      "change_pct": -0.65
+    },
+    {
+      "date": "2025-06-16",
+      "open": 50.03,
+      "close": 50.02,
+      "high": 50.28,
+      "low": 49.76,
+      "volume": 496771.0,
+      "amount": 2697778320.0,
+      "change_pct": -0.32
+    },
+    {
+      "date": "2025-06-17",
+      "open": 50.0,
+      "close": 49.93,
+      "high": 50.21,
+      "low": 49.64,
+      "volume": 506289.0,
+      "amount": 2745763183.0,
+      "change_pct": -0.18
+    },
+    {
+      "date": "2025-06-18",
+      "open": 49.88,
+      "close": 49.51,
+      "high": 49.98,
+      "low": 49.0,
+      "volume": 469364.0,
+      "amount": 2518852918.0,
+      "change_pct": -0.84
+    },
+    {
+      "date": "2025-06-19",
+      "open": 49.39,
+      "close": 48.9,
+      "high": 49.5,
+      "low": 48.82,
+      "volume": 401881.0,
+      "amount": 2143533731.0,
+      "change_pct": -1.23
+    },
+    {
+      "date": "2025-06-20",
+      "open": 48.89,
+      "close": 50.44,
+      "high": 50.56,
+      "low": 48.89,
+      "volume": 847430.0,
+      "amount": 4606219515.0,
+      "change_pct": 3.15
+    },
+    {
+      "date": "2025-06-23",
+      "open": 50.2,
+      "close": 50.8,
+      "high": 50.95,
+      "low": 49.96,
+      "volume": 614705.0,
+      "amount": 3373267494.0,
+      "change_pct": 0.71
+    },
+    {
+      "date": "2025-06-24",
+      "open": 50.91,
+      "close": 52.49,
+      "high": 52.67,
+      "low": 50.9,
+      "volume": 1040798.0,
+      "amount": 5873914857.0,
+      "change_pct": 3.33
+    },
+    {
+      "date": "2025-06-25",
+      "open": 52.5,
+      "close": 53.58,
+      "high": 53.7,
+      "low": 52.28,
+      "volume": 1046131.0,
+      "amount": 5998384734.0,
+      "change_pct": 2.08
+    },
+    {
+      "date": "2025-06-26",
+      "open": 53.49,
+      "close": 53.28,
+      "high": 53.78,
+      "low": 53.17,
+      "volume": 500740.0,
+      "amount": 2888896788.0,
+      "change_pct": -0.56
+    },
+    {
+      "date": "2025-06-27",
+      "open": 53.28,
+      "close": 52.66,
+      "high": 53.83,
+      "low": 52.31,
+      "volume": 667632.0,
+      "amount": 3832894682.0,
+      "change_pct": -1.16
+    },
+    {
+      "date": "2025-06-30",
+      "open": 52.8,
+      "close": 52.78,
+      "high": 53.25,
+      "low": 52.43,
+      "volume": 564782.0,
+      "amount": 3133724720.0,
+      "change_pct": 0.23
+    },
+    {
+      "date": "2025-07-01",
+      "open": 52.96,
+      "close": 53.0,
+      "high": 53.19,
+      "low": 52.6,
+      "volume": 352746.0,
+      "amount": 1961556961.0,
+      "change_pct": 0.42
+    },
+    {
+      "date": "2025-07-02",
+      "open": 53.0,
+      "close": 53.11,
+      "high": 53.31,
+      "low": 52.65,
+      "volume": 395629.0,
+      "amount": 2204210316.0,
+      "change_pct": 0.21
+    },
+    {
+      "date": "2025-07-03",
+      "open": 53.2,
+      "close": 53.1,
+      "high": 53.5,
+      "low": 52.96,
+      "volume": 325101.0,
+      "amount": 1817404362.0,
+      "change_pct": -0.02
+    },
+    {
+      "date": "2025-07-04",
+      "open": 53.0,
+      "close": 53.87,
+      "high": 54.69,
+      "low": 52.73,
+      "volume": 654544.0,
+      "amount": 3695501729.0,
+      "change_pct": 1.45
+    },
+    {
+      "date": "2025-07-07",
+      "open": 53.89,
+      "close": 53.73,
+      "high": 54.1,
+      "low": 53.36,
+      "volume": 321763.0,
+      "amount": 1813966809.0,
+      "change_pct": -0.26
+    },
+    {
+      "date": "2025-07-08",
+      "open": 53.7,
+      "close": 53.75,
+      "high": 54.08,
+      "low": 53.41,
+      "volume": 343460.0,
+      "amount": 1939149952.0,
+      "change_pct": 0.04
+    },
+    {
+      "date": "2025-07-09",
+      "open": 53.75,
+      "close": 53.2,
+      "high": 54.08,
+      "low": 53.18,
+      "volume": 395463.0,
+      "amount": 2223715808.0,
+      "change_pct": -1.02
+    },
+    {
+      "date": "2025-07-10",
+      "open": 53.2,
+      "close": 54.43,
+      "high": 54.88,
+      "low": 53.11,
+      "volume": 828882.0,
+      "amount": 4726621457.0,
+      "change_pct": 2.31
+    },
+    {
+      "date": "2025-07-11",
+      "open": 54.3,
+      "close": 55.01,
+      "high": 56.32,
+      "low": 54.26,
+      "volume": 1076429.0,
+      "amount": 6269330973.0,
+      "change_pct": 1.07
+    },
+    {
+      "date": "2025-07-14",
+      "open": 54.99,
+      "close": 54.87,
+      "high": 55.54,
+      "low": 54.87,
+      "volume": 449058.0,
+      "amount": 2598863547.0,
+      "change_pct": -0.25
+    },
+    {
+      "date": "2025-07-15",
+      "open": 55.05,
+      "close": 54.4,
+      "high": 55.26,
+      "low": 54.28,
+      "volume": 441726.0,
+      "amount": 2535144762.0,
+      "change_pct": -0.86
+    },
+    {
+      "date": "2025-07-16",
+      "open": 54.47,
+      "close": 54.13,
+      "high": 54.54,
+      "low": 53.51,
+      "volume": 481825.0,
+      "amount": 2728239344.0,
+      "change_pct": -0.5
+    },
+    {
+      "date": "2025-07-17",
+      "open": 54.0,
+      "close": 54.11,
+      "high": 54.36,
+      "low": 53.98,
+      "volume": 277123.0,
+      "amount": 1575012870.0,
+      "change_pct": -0.04
+    },
+    {
+      "date": "2025-07-18",
+      "open": 54.25,
+      "close": 54.37,
+      "high": 54.75,
+      "low": 54.16,
+      "volume": 436240.0,
+      "amount": 2492884493.0,
+      "change_pct": 0.48
+    },
+    {
+      "date": "2025-07-21",
+      "open": 54.45,
+      "close": 54.49,
+      "high": 55.05,
+      "low": 54.2,
+      "volume": 466733.0,
+      "amount": 2671242929.0,
+      "change_pct": 0.22
+    },
+    {
+      "date": "2025-07-22",
+      "open": 54.49,
+      "close": 54.0,
+      "high": 54.5,
+      "low": 53.4,
+      "volume": 695203.0,
+      "amount": 3930402694.0,
+      "change_pct": -0.9
+    },
+    {
+      "date": "2025-07-23",
+      "open": 54.14,
+      "close": 55.3,
+      "high": 55.68,
+      "low": 54.11,
+      "volume": 869407.0,
+      "amount": 5020698335.0,
+      "change_pct": 2.41
+    },
+    {
+      "date": "2025-07-24",
+      "open": 55.27,
+      "close": 55.94,
+      "high": 56.3,
+      "low": 55.01,
+      "volume": 707737.0,
+      "amount": 4142271385.0,
+      "change_pct": 1.16
+    },
+    {
+      "date": "2025-07-25",
+      "open": 55.6,
+      "close": 55.38,
+      "high": 55.85,
+      "low": 55.12,
+      "volume": 508335.0,
+      "amount": 2958837440.0,
+      "change_pct": -1.0
+    },
+    {
+      "date": "2025-07-28",
+      "open": 55.5,
+      "close": 57.39,
+      "high": 57.5,
+      "low": 55.5,
+      "volume": 1221217.0,
+      "amount": 7297531197.0,
+      "change_pct": 3.63
+    },
+    {
+      "date": "2025-07-29",
+      "open": 57.36,
+      "close": 56.79,
+      "high": 57.58,
+      "low": 56.67,
+      "volume": 566092.0,
+      "amount": 3380012575.0,
+      "change_pct": -1.05
+    },
+    {
+      "date": "2025-07-30",
+      "open": 56.78,
+      "close": 58.01,
+      "high": 58.63,
+      "low": 56.65,
+      "volume": 921993.0,
+      "amount": 5600001966.0,
+      "change_pct": 2.15
+    },
+    {
+      "date": "2025-07-31",
+      "open": 57.71,
+      "close": 55.99,
+      "high": 57.8,
+      "low": 55.68,
+      "volume": 827601.0,
+      "amount": 4910516274.0,
+      "change_pct": -3.48
+    },
+    {
+      "date": "2025-08-01",
+      "open": 55.98,
+      "close": 55.5,
+      "high": 56.36,
+      "low": 55.38,
+      "volume": 488786.0,
+      "amount": 2860162236.0,
+      "change_pct": -0.88
+    },
+    {
+      "date": "2025-08-04",
+      "open": 55.4,
+      "close": 55.51,
+      "high": 55.64,
+      "low": 55.15,
+      "volume": 360078.0,
+      "amount": 2092312969.0,
+      "change_pct": 0.02
+    },
+    {
+      "date": "2025-08-05",
+      "open": 55.6,
+      "close": 56.44,
+      "high": 56.71,
+      "low": 55.5,
+      "volume": 482956.0,
+      "amount": 2837798909.0,
+      "change_pct": 1.68
+    },
+    {
+      "date": "2025-08-06",
+      "open": 56.44,
+      "close": 56.36,
+      "high": 56.94,
+      "low": 56.12,
+      "volume": 324469.0,
+      "amount": 1916931441.0,
+      "change_pct": -0.14
+    },
+    {
+      "date": "2025-08-07",
+      "open": 56.41,
+      "close": 56.18,
+      "high": 56.76,
+      "low": 55.83,
+      "volume": 327972.0,
+      "amount": 1932522823.0,
+      "change_pct": -0.32
+    },
+    {
+      "date": "2025-08-08",
+      "open": 56.18,
+      "close": 55.84,
+      "high": 56.2,
+      "low": 55.52,
+      "volume": 397933.0,
+      "amount": 2331643860.0,
+      "change_pct": -0.61
+    },
+    {
+      "date": "2025-08-11",
+      "open": 56.07,
+      "close": 55.77,
+      "high": 56.44,
+      "low": 55.77,
+      "volume": 431869.0,
+      "amount": 2535939661.0,
+      "change_pct": -0.13
+    },
+    {
+      "date": "2025-08-12",
+      "open": 55.77,
+      "close": 56.05,
+      "high": 56.37,
+      "low": 55.77,
+      "volume": 426985.0,
+      "amount": 2507882892.0,
+      "change_pct": 0.5
+    },
+    {
+      "date": "2025-08-13",
+      "open": 56.22,
+      "close": 55.91,
+      "high": 56.7,
+      "low": 55.76,
+      "volume": 728453.0,
+      "amount": 4285477115.0,
+      "change_pct": -0.25
+    },
+    {
+      "date": "2025-08-14",
+      "open": 56.1,
+      "close": 56.92,
+      "high": 57.9,
+      "low": 56.07,
+      "volume": 1022768.0,
+      "amount": 6132887145.0,
+      "change_pct": 1.81
+    },
+    {
+      "date": "2025-08-15",
+      "open": 56.9,
+      "close": 57.1,
+      "high": 57.75,
+      "low": 56.3,
+      "volume": 892968.0,
+      "amount": 5342602447.0,
+      "change_pct": 0.32
+    },
+    {
+      "date": "2025-08-18",
+      "open": 57.22,
+      "close": 56.64,
+      "high": 57.65,
+      "low": 56.64,
+      "volume": 957263.0,
+      "amount": 5730767230.0,
+      "change_pct": -0.81
+    },
+    {
+      "date": "2025-08-19",
+      "open": 57.07,
+      "close": 55.5,
+      "high": 57.48,
+      "low": 55.38,
+      "volume": 954810.0,
+      "amount": 5626016600.0,
+      "change_pct": -2.01
+    },
+    {
+      "date": "2025-08-20",
+      "open": 55.39,
+      "close": 56.5,
+      "high": 56.5,
+      "low": 54.99,
+      "volume": 762725.0,
+      "amount": 4453267555.0,
+      "change_pct": 1.8
+    },
+    {
+      "date": "2025-08-21",
+      "open": 56.5,
+      "close": 56.92,
+      "high": 57.26,
+      "low": 56.21,
+      "volume": 574601.0,
+      "amount": 3420554066.0,
+      "change_pct": 0.74
+    },
+    {
+      "date": "2025-08-22",
+      "open": 56.81,
+      "close": 57.8,
+      "high": 57.81,
+      "low": 56.74,
+      "volume": 780974.0,
+      "amount": 4689312103.0,
+      "change_pct": 1.55
+    },
+    {
+      "date": "2025-08-25",
+      "open": 57.9,
+      "close": 58.3,
+      "high": 58.35,
+      "low": 57.41,
+      "volume": 670113.0,
+      "amount": 4065994394.0,
+      "change_pct": 0.87
+    },
+    {
+      "date": "2025-08-26",
+      "open": 58.2,
+      "close": 57.82,
+      "high": 58.3,
+      "low": 57.75,
+      "volume": 491986.0,
+      "amount": 2984830238.0,
+      "change_pct": -0.82
+    },
+    {
+      "date": "2025-08-27",
+      "open": 57.68,
+      "close": 55.99,
+      "high": 57.75,
+      "low": 55.99,
+      "volume": 1064558.0,
+      "amount": 6325335934.0,
+      "change_pct": -3.16
+    },
+    {
+      "date": "2025-08-28",
+      "open": 56.05,
+      "close": 56.14,
+      "high": 56.42,
+      "low": 55.61,
+      "volume": 636105.0,
+      "amount": 3734301053.0,
+      "change_pct": 0.27
+    },
+    {
+      "date": "2025-08-29",
+      "open": 56.25,
+      "close": 57.18,
+      "high": 58.4,
+      "low": 56.24,
+      "volume": 1080309.0,
+      "amount": 6488619820.0,
+      "change_pct": 1.85
+    }
+  ],
+  "fundamental": {
+    "schema_version": "1.0.0",
+    "stock_code": "601318",
+    "stock_name": "中国平安",
+    "industry": "保险",
+    "analysis_cutoff": "2025-08-31",
+    "latest_reporting_period": "2025-H1",
+    "currency": "CNY",
+    "monetary_unit": "人民币百万元",
+    "latest_period": {
+      "period_end": "2025-06-30",
+      "revenue": 500076,
+      "revenue_yoy_pct": 1.0,
+      "net_profit_attributable_to_parent": 68047,
+      "net_profit_yoy_pct": -8.8,
+      "adjusted_net_profit_attributable_to_parent": 73571,
+      "adjusted_net_profit_yoy_pct": -0.9,
+      "operating_cash_flow": 338185,
+      "operating_cash_flow_yoy_pct": 10.9,
+      "basic_eps_cny": 3.87,
+      "weighted_average_roe_non_annualized_pct": 7.2,
+      "operating_profit_attributable_to_parent": 77732,
+      "operating_profit_yoy_pct": 3.7,
+      "group_comprehensive_solvency_adequacy_pct": 225.2,
+      "interim_dividend_per_share_cny": 0.95
+    },
+    "balance_sheet": {
+      "as_of": "2025-06-30",
+      "total_assets": 13509559,
+      "total_liabilities": 12166459,
+      "equity_attributable_to_parent": 943952,
+      "asset_liability_ratio_pct": 90.1,
+      "sector_context": "保险金融集团的负债结构与一般工商企业不同，资产负债率不可脱离偿付能力和资产负债匹配单独评价。"
+    },
+    "insurance_business": {
+      "life_and_health_new_business_value": 22335,
+      "life_and_health_new_business_value_yoy_pct": 39.8,
+      "life_comprehensive_solvency_adequacy_pct": 229.4,
+      "property_premium_income": 171857,
+      "property_premium_income_yoy_pct": 7.1,
+      "property_insurance_service_revenue": 165661,
+      "property_insurance_service_revenue_yoy_pct": 2.3,
+      "property_combined_ratio_pct": 95.2,
+      "property_combined_ratio_change_pp": -2.6
+    },
+    "investment_portfolio": {
+      "as_of": "2025-06-30",
+      "portfolio_scale_description": "超过6.20万亿元",
+      "comprehensive_investment_yield_non_annualized_pct": 3.1,
+      "comprehensive_investment_yield_yoy_change_pp": 0.3,
+      "net_investment_yield_non_annualized_pct": 1.8,
+      "net_investment_yield_yoy_change_pp": -0.2
+    },
+    "audited_annual_baseline": {
+      "period": "2024-FY",
+      "revenue": 1028925,
+      "revenue_yoy_pct": 12.6,
+      "net_profit_attributable_to_parent": 126607,
+      "net_profit_yoy_pct": 47.8,
+      "adjusted_net_profit_attributable_to_parent": 117392,
+      "adjusted_net_profit_yoy_pct": 36.1,
+      "operating_cash_flow": 382474,
+      "operating_cash_flow_yoy_pct": 6.1,
+      "weighted_average_roe_pct": 13.8,
+      "group_comprehensive_solvency_adequacy_pct": 204.1,
+      "comprehensive_investment_yield_pct": 5.8,
+      "net_investment_yield_pct": 3.8
+    },
+    "not_applicable_or_missing": {
+      "gross_margin": "不适用于综合保险金融集团",
+      "pe_ttm": "未接入截止日估值数据，不得推测",
+      "pb": "未接入截止日估值数据，不得推测",
+      "dividend_yield": "未接入截止日估值数据，不得推测",
+      "industry_index_change_20d": "未接入行业指数数据，不得推测"
+    },
+    "evidence": [
+      {
+        "report": "中国平安2025年中期报告",
+        "report_page": 15,
+        "local_file": "raw/02_中国平安2025年中期报告.pdf",
+        "supports": [
+          "营业收入",
+          "归母净利润",
+          "扣非归母净利润",
+          "经营现金流",
+          "EPS",
+          "ROE",
+          "总资产",
+          "总负债",
+          "归母权益"
+        ],
+        "excerpt": "2025年上半年营业收入500,076百万元；归母净利润68,047百万元；经营活动现金流量净额338,185百万元。"
+      },
+      {
+        "report": "中国平安2025年中期报告",
+        "report_page": 16,
+        "local_file": "raw/02_中国平安2025年中期报告.pdf",
+        "supports": [
+          "归母营运利润",
+          "集团偿付能力",
+          "中期股息",
+          "新业务价值",
+          "财险综合成本率"
+        ],
+        "excerpt": "归母营运利润77,732百万元；集团综合偿付能力充足率225.2%；上半年新业务价值22,335百万元。"
+      },
+      {
+        "report": "中国平安2025年中期报告",
+        "report_page": 48,
+        "local_file": "raw/02_中国平安2025年中期报告.pdf",
+        "supports": [
+          "保险资金投资收益率"
+        ],
+        "excerpt": "非年化综合投资收益率3.1%，非年化净投资收益率1.8%。"
+      },
+      {
+        "report": "中国平安2025年中期报告",
+        "report_page": 75,
+        "local_file": "raw/02_中国平安2025年中期报告.pdf",
+        "supports": [
+          "资产负债率",
+          "流动性风险"
+        ],
+        "excerpt": "2025年6月30日资产负债率90.1%，集团统一管理流动性和资本资源。"
+      },
+      {
+        "report": "中国平安2024年年度报告",
+        "report_page": 14,
+        "local_file": "raw/01_中国平安2024年年度报告.pdf",
+        "supports": [
+          "经审计年度财务基准",
+          "年度EPS",
+          "年度ROE"
+        ],
+        "excerpt": "2024年营业收入1,028,925百万元；归母净利润126,607百万元；经营活动现金流量净额382,474百万元。"
+      },
+      {
+        "report": "中国平安2024年年度报告",
+        "report_page": 48,
+        "local_file": "raw/01_中国平安2024年年度报告.pdf",
+        "supports": [
+          "年度投资收益率"
+        ],
+        "excerpt": "2024年综合投资收益率5.8%，净投资收益率3.8%。"
+      }
+    ],
+    "review_note": "字段由官方报告人工核对后结构化；金额保留报告原始单位。AI必须区分事实、推断与缺失字段。"
+  },
+  "news": [
+    {
+      "date": "2025-08-27 00:00:00",
+      "title": "中国平安2025年中期投资者保护工作报告暨“提质增效重回报”执行情况报告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224583363&orgId=9900002221&announcementTime=2025-08-27 00:00:00"
+    },
+    {
+      "date": "2025-08-27 00:00:00",
+      "title": "中国平安第十三届董事会第十次会议决议公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224583362&orgId=9900002221&announcementTime=2025-08-27 00:00:00"
+    },
+    {
+      "date": "2025-08-27 00:00:00",
+      "title": "中国平安2025年中期利润分配方案公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224583361&orgId=9900002221&announcementTime=2025-08-27 00:00:00"
+    },
+    {
+      "date": "2025-08-27 00:00:00",
+      "title": "中国平安2025年中期业绩报告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224583360&orgId=9900002221&announcementTime=2025-08-27 00:00:00"
+    },
+    {
+      "date": "2025-08-27 00:00:00",
+      "title": "中国平安2025年中期报告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224583359&orgId=9900002221&announcementTime=2025-08-27 00:00:00"
+    },
+    {
+      "date": "2025-08-27 00:00:00",
+      "title": "中国平安2025年中期报告摘要",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224583358&orgId=9900002221&announcementTime=2025-08-27 00:00:00"
+    },
+    {
+      "date": "2025-08-27 00:00:00",
+      "title": "中国平安第十一届监事会第八次会议决议公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224583357&orgId=9900002221&announcementTime=2025-08-27 00:00:00"
+    },
+    {
+      "date": "2025-08-23 00:00:00",
+      "title": "中国平安：平安银行股份有限公司2025年半年度报告摘要",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224560039&orgId=9900002221&announcementTime=2025-08-23 00:00:00"
+    },
+    {
+      "date": "2025-08-23 00:00:00",
+      "title": "中国平安关于披露平安银行2025年半年度报告摘要的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224560038&orgId=9900002221&announcementTime=2025-08-23 00:00:00"
+    },
+    {
+      "date": "2025-08-20 00:00:00",
+      "title": "中国平安关于召开2025年中期业绩发布会的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224519435&orgId=9900002221&announcementTime=2025-08-20 00:00:00"
+    },
+    {
+      "date": "2025-08-20 00:00:00",
+      "title": "中国平安关于2025年度长期服务计划实施进展的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224519434&orgId=9900002221&announcementTime=2025-08-20 00:00:00"
+    },
+    {
+      "date": "2025-08-02 00:00:00",
+      "title": "中国平安H股公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224367848&orgId=9900002221&announcementTime=2025-08-02 00:00:00"
+    },
+    {
+      "date": "2025-07-19 00:00:00",
+      "title": "中国平安关于2025年度长期服务计划实施进展的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224214885&orgId=9900002221&announcementTime=2025-07-19 00:00:00"
+    },
+    {
+      "date": "2025-07-03 00:00:00",
+      "title": "中国平安H股公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1224067183&orgId=9900002221&announcementTime=2025-07-03 00:00:00"
+    },
+    {
+      "date": "2025-06-27 00:00:00",
+      "title": "中国平安H股公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223998982&orgId=9900002221&announcementTime=2025-06-27 00:00:00"
+    },
+    {
+      "date": "2025-06-20 00:00:00",
+      "title": "平安证券股份有限公司关于中国平安保险(集团)股份有限公司差异化分红事项的核查意见",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223934700&orgId=9900002221&announcementTime=2025-06-20 00:00:00"
+    },
+    {
+      "date": "2025-06-20 00:00:00",
+      "title": "中国平安关于2025年度核心人员持股计划完成股票购买的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223934699&orgId=9900002221&announcementTime=2025-06-20 00:00:00"
+    },
+    {
+      "date": "2025-06-20 00:00:00",
+      "title": "中国平安2024年年度权益分派实施公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223934698&orgId=9900002221&announcementTime=2025-06-20 00:00:00"
+    },
+    {
+      "date": "2025-06-20 00:00:00",
+      "title": "中国平安关于2025年度长期服务计划实施进展的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223934697&orgId=9900002221&announcementTime=2025-06-20 00:00:00"
+    },
+    {
+      "date": "2025-06-12 00:00:00",
+      "title": "中国平安关于H股可转换债券发行完成的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223848354&orgId=9900002221&announcementTime=2025-06-12 00:00:00"
+    },
+    {
+      "date": "2025-06-04 08:04:00",
+      "title": "中国平安关于拟根据一般性授权发行11,765,000,000港元于2030年到期的零息H股可转换债券的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223751909&orgId=9900002221&announcementTime=2025-06-04 08:04:00"
+    },
+    {
+      "date": "2025-06-04 00:00:00",
+      "title": "中国平安H股公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223748232&orgId=9900002221&announcementTime=2025-06-04 00:00:00"
+    },
+    {
+      "date": "2025-05-20 00:00:00",
+      "title": "中国平安关于2025年度核心人员持股计划及2025年度长期服务计划购股进展的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223587423&orgId=9900002221&announcementTime=2025-05-20 00:00:00"
+    },
+    {
+      "date": "2025-05-14 00:00:00",
+      "title": "中国平安关于注销回购股份并减少注册资本通知债权人的公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223537467&orgId=9900002221&announcementTime=2025-05-14 00:00:00"
+    },
+    {
+      "date": "2025-05-14 00:00:00",
+      "title": "中国平安2024年年度股东会、2025年第一次A股类别股东会及2025年第一次H股类别股东会法律意见书",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223537466&orgId=9900002221&announcementTime=2025-05-14 00:00:00"
+    },
+    {
+      "date": "2025-05-14 00:00:00",
+      "title": "中国平安2024年年度股东会、2025年第一次A股类别股东会及2025年第一次H股类别股东会决议公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223537465&orgId=9900002221&announcementTime=2025-05-14 00:00:00"
+    },
+    {
+      "date": "2025-05-01 00:00:00",
+      "title": "中国平安H股公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223444959&orgId=9900002221&announcementTime=2025-05-01 00:00:00"
+    },
+    {
+      "date": "2025-04-26 00:00:00",
+      "title": "中国平安第十三届董事会第九次会议决议公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223314259&orgId=9900002221&announcementTime=2025-04-26 00:00:00"
+    },
+    {
+      "date": "2025-04-26 00:00:00",
+      "title": "中国平安2025年第一季度报告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223314258&orgId=9900002221&announcementTime=2025-04-26 00:00:00"
+    },
+    {
+      "date": "2025-04-26 00:00:00",
+      "title": "中国平安第十一届监事会第七次会议决议公告",
+      "type": "公司公告",
+      "source": "巨潮资讯（经 AKShare 公告接口获取）",
+      "source_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1223314257&orgId=9900002221&announcementTime=2025-04-26 00:00:00"
+    }
+  ],
+  "official_documents": [
+    {
+      "title": "中国平安2024年年度报告",
+      "document_type": "经审计年度报告",
+      "reporting_period_end": "2024-12-31",
+      "board_approval_date": "2025-03-19",
+      "published_date": "2025-03-20",
+      "source": "巨潮资讯网",
+      "source_url": "https://dataclouds.cninfo.com.cn/shgonggao/2025/2025-03-20/ec1d835e04c911f0aa83fa163e957f7a.pdf",
+      "local_file": "raw/01_中国平安2024年年度报告.pdf",
+      "pages": 346,
+      "role_in_demo": "经审计年度财务基准、风险管理和年度经营情况"
+    },
+    {
+      "title": "中国平安2025年中期报告",
+      "document_type": "中期报告全文",
+      "reporting_period_end": "2025-06-30",
+      "board_approval_date": "2025-08-26",
+      "published_date": "2025-08-27",
+      "source": "巨潮资讯网",
+      "source_url": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601318",
+      "cross_check_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0826/2025082601310_c.pdf",
+      "local_file": "raw/02_中国平安2025年中期报告.pdf",
+      "pages": 172,
+      "role_in_demo": "截止日前最新完整财务、经营、投资和偿付能力资料"
+    },
+    {
+      "title": "中国平安2025年中期利润分配方案公告",
+      "document_type": "临时公告",
+      "announcement_number": "临2025-035",
+      "board_approval_date": "2025-08-26",
+      "published_date": "2025-08-27",
+      "source": "巨潮资讯网",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2025-08-27/1224583361.PDF",
+      "local_file": "raw/03_中国平安2025年中期利润分配方案公告.pdf",
+      "pages": 3,
+      "role_in_demo": "公告事件分析；中期每股现金股息0.95元"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "code": "000895",
+  "name": "双汇发展",
+  "industry": "食品饮料",
+  "retrieved_at": "2026-09-03T16:25:21.682100+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-04-29",
+      "ex_date": "2025-04-30",
+      "pay_date": "2025-04-30",
+      "gross_per_share": 0.75,
+      "reference_adjustment": 0.75,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-08-21",
+      "ex_date": "2025-08-22",
+      "pay_date": "2025-08-22",
+      "gross_per_share": 0.65,
+      "reference_adjustment": 0.65,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000895",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000895",
+    "https://data.eastmoney.com/yjfp/detail/000895.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "c035c8df502004c97acf7ed79e107588e5c139aa31ef68c61815d0a3572c94a4",
+    "price_daily.csv": "b5d6d432d4e40f99193fa56f3320cb65bb7f2450c31bdd9ea43e320eaa6decde",
+    "price_qfq_check.csv": "06c092adb7c910ca26e8de8ff06776ad02965b76786755a4ba1baa0055f01162",
+    "retrieval.json": "1f2260a60c32a59ec53e7bc9f1963ce3b484cbebef3f1ffaa54b1e6e7ec9845b",
+    "tencent_daily_raw.json": "8c1ce1d619d8337f20fcb3b15e266fc46ae8ed320c1d7d45f502a85c425efd06",
+    "tencent_qfq_raw.json": "6d497f640f10c1457f2a9c45b4a5879c55b0db30ccb474e3f2dd436be4b1bd6d"
+  }
+}

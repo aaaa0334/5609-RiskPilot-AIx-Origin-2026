@@ -1,0 +1,40 @@
+{
+  "code": "600048",
+  "name": "保利发展",
+  "industry": "地产",
+  "retrieved_at": "2026-09-03T15:28:24.556566+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-08-19",
+      "ex_date": "2025-08-20",
+      "pay_date": "2025-08-20",
+      "gross_per_share": 0.16999999999999998,
+      "reference_adjustment": 0.16999999999999998,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600048",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600048",
+    "https://data.eastmoney.com/yjfp/detail/600048.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "64f6f1e5ed7d0b0b0937a9a310766ed3121326b0395a7f87fbfb567f5b813762",
+    "price_daily.csv": "0f2744f1634a56f54ed0d86d623b09ae3a779d58d4e62d67e249e9e7e25089c5",
+    "price_qfq_check.csv": "3a98d4c3781e52fd0be84ce3402c06b5cc2d6d99faa7c3141d33b8839b7cc455",
+    "retrieval.json": "913e1576a17b2bb98088d9d5c074c799f5bf3ea3bd58c756494f94d0ab924176",
+    "tencent_daily_raw.json": "3b6a8c2fee2ec33945fe4b199f6b269057b505da5d283c5efca75d93207923bc",
+    "tencent_qfq_raw.json": "cfdaedfbcbc3175ddc5187a8e7536756fe2bc1a4d63be1298eb3c3469367d281"
+  }
+}

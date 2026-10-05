@@ -1,0 +1,40 @@
+{
+  "code": "600028",
+  "name": "中国石化",
+  "industry": "能源",
+  "retrieved_at": "2026-09-03T15:28:20.803491+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-17",
+      "ex_date": "2025-06-18",
+      "pay_date": "2025-06-18",
+      "gross_per_share": 0.13999999999999999,
+      "reference_adjustment": 0.13999999999999999,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600028",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600028",
+    "https://data.eastmoney.com/yjfp/detail/600028.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "78bd035ed52236592cd0d5159d50369e32addeca3eb6898969efe1156f9012e7",
+    "price_daily.csv": "9d65a7fdf322c3aaa5e391e92b8bd51c733e0bc54b369f414afec1d1ab887c74",
+    "price_qfq_check.csv": "1e03dd3e5312bc5489ea2f9afa585de59a304f2c5e84be01002f4e721144f3fd",
+    "retrieval.json": "902d9edffb979f3e74f141ad371352b626755467f5a219a69690fda8d01f689b",
+    "tencent_daily_raw.json": "35ec56caec63a4cab107ddfb563f8e4b31099e4734ee9bc0638bc7d66d15f0ba",
+    "tencent_qfq_raw.json": "82dbf95d202cc018a25fa4dbb03ed9fc98e83f268ba8434dbefbadb3b272fdcc"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "code": "601818",
+  "name": "光大银行",
+  "industry": "银行",
+  "retrieved_at": "2026-09-03T15:32:27.611715+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-21",
+      "ex_date": "2025-01-22",
+      "pay_date": "2025-01-22",
+      "gross_per_share": 0.10400000000000001,
+      "reference_adjustment": 0.10400000000000001,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-07-23",
+      "ex_date": "2025-07-24",
+      "pay_date": "2025-07-24",
+      "gross_per_share": 0.08499999999999999,
+      "reference_adjustment": 0.08499999999999999,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601818",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601818",
+    "https://data.eastmoney.com/yjfp/detail/601818.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "38eb48e5fcea9fa0a8a290dc165701fc9906b85c604b64c6d499cccb5a0bc8bd",
+    "price_daily.csv": "72f1dde399b9ba3c349562e3fecd9ccb2f7e2e2a4b082f7e891500b7cd2050b9",
+    "price_qfq_check.csv": "1d5318ddf2fbf82615064425df903b1166c40b4413a2b76ebecb3b4d6ed74e75",
+    "retrieval.json": "ab3f4dbe77d34533b75d047b631b06bcb64cd3c993dc9c47adba5ef14b252a44",
+    "tencent_daily_raw.json": "32c6b68a246cfbb499dd2267ac55b63cb0d7c4eb266c82e7e1b0c1999d0f320f",
+    "tencent_qfq_raw.json": "a86f9eaaaeb5e083c965061018053b911353af986d2970ac5c059faf207b3e46"
+  }
+}

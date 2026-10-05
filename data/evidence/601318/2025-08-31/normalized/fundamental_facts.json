@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "stock_code": "601318",
+  "stock_name": "中国平安",
+  "industry": "保险",
+  "analysis_cutoff": "2025-08-31",
+  "latest_reporting_period": "2025-H1",
+  "currency": "CNY",
+  "monetary_unit": "人民币百万元",
+  "latest_period": {
+    "period_end": "2025-06-30",
+    "revenue": 500076,
+    "revenue_yoy_pct": 1.0,
+    "net_profit_attributable_to_parent": 68047,
+    "net_profit_yoy_pct": -8.8,
+    "adjusted_net_profit_attributable_to_parent": 73571,
+    "adjusted_net_profit_yoy_pct": -0.9,
+    "operating_cash_flow": 338185,
+    "operating_cash_flow_yoy_pct": 10.9,
+    "basic_eps_cny": 3.87,
+    "weighted_average_roe_non_annualized_pct": 7.2,
+    "operating_profit_attributable_to_parent": 77732,
+    "operating_profit_yoy_pct": 3.7,
+    "group_comprehensive_solvency_adequacy_pct": 225.2,
+    "interim_dividend_per_share_cny": 0.95
+  },
+  "balance_sheet": {
+    "as_of": "2025-06-30",
+    "total_assets": 13509559,
+    "total_liabilities": 12166459,
+    "equity_attributable_to_parent": 943952,
+    "asset_liability_ratio_pct": 90.1,
+    "sector_context": "保险金融集团的负债结构与一般工商企业不同，资产负债率不可脱离偿付能力和资产负债匹配单独评价。"
+  },
+  "insurance_business": {
+    "life_and_health_new_business_value": 22335,
+    "life_and_health_new_business_value_yoy_pct": 39.8,
+    "life_comprehensive_solvency_adequacy_pct": 229.4,
+    "property_premium_income": 171857,
+    "property_premium_income_yoy_pct": 7.1,
+    "property_insurance_service_revenue": 165661,
+    "property_insurance_service_revenue_yoy_pct": 2.3,
+    "property_combined_ratio_pct": 95.2,
+    "property_combined_ratio_change_pp": -2.6
+  },
+  "investment_portfolio": {
+    "as_of": "2025-06-30",
+    "portfolio_scale_description": "超过6.20万亿元",
+    "comprehensive_investment_yield_non_annualized_pct": 3.1,
+    "comprehensive_investment_yield_yoy_change_pp": 0.3,
+    "net_investment_yield_non_annualized_pct": 1.8,
+    "net_investment_yield_yoy_change_pp": -0.2
+  },
+  "audited_annual_baseline": {
+    "period": "2024-FY",
+    "revenue": 1028925,
+    "revenue_yoy_pct": 12.6,
+    "net_profit_attributable_to_parent": 126607,
+    "net_profit_yoy_pct": 47.8,
+    "adjusted_net_profit_attributable_to_parent": 117392,
+    "adjusted_net_profit_yoy_pct": 36.1,
+    "operating_cash_flow": 382474,
+    "operating_cash_flow_yoy_pct": 6.1,
+    "weighted_average_roe_pct": 13.8,
+    "group_comprehensive_solvency_adequacy_pct": 204.1,
+    "comprehensive_investment_yield_pct": 5.8,
+    "net_investment_yield_pct": 3.8
+  },
+  "not_applicable_or_missing": {
+    "gross_margin": "不适用于综合保险金融集团",
+    "pe_ttm": "未接入截止日估值数据，不得推测",
+    "pb": "未接入截止日估值数据，不得推测",
+    "dividend_yield": "未接入截止日估值数据，不得推测",
+    "industry_index_change_20d": "未接入行业指数数据，不得推测"
+  },
+  "evidence": [
+    {
+      "report": "中国平安2025年中期报告",
+      "report_page": 15,
+      "local_file": "raw/02_中国平安2025年中期报告.pdf",
+      "supports": ["营业收入", "归母净利润", "扣非归母净利润", "经营现金流", "EPS", "ROE", "总资产", "总负债", "归母权益"],
+      "excerpt": "2025年上半年营业收入500,076百万元；归母净利润68,047百万元；经营活动现金流量净额338,185百万元。"
+    },
+    {
+      "report": "中国平安2025年中期报告",
+      "report_page": 16,
+      "local_file": "raw/02_中国平安2025年中期报告.pdf",
+      "supports": ["归母营运利润", "集团偿付能力", "中期股息", "新业务价值", "财险综合成本率"],
+      "excerpt": "归母营运利润77,732百万元；集团综合偿付能力充足率225.2%；上半年新业务价值22,335百万元。"
+    },
+    {
+      "report": "中国平安2025年中期报告",
+      "report_page": 48,
+      "local_file": "raw/02_中国平安2025年中期报告.pdf",
+      "supports": ["保险资金投资收益率"],
+      "excerpt": "非年化综合投资收益率3.1%，非年化净投资收益率1.8%。"
+    },
+    {
+      "report": "中国平安2025年中期报告",
+      "report_page": 75,
+      "local_file": "raw/02_中国平安2025年中期报告.pdf",
+      "supports": ["资产负债率", "流动性风险"],
+      "excerpt": "2025年6月30日资产负债率90.1%，集团统一管理流动性和资本资源。"
+    },
+    {
+      "report": "中国平安2024年年度报告",
+      "report_page": 14,
+      "local_file": "raw/01_中国平安2024年年度报告.pdf",
+      "supports": ["经审计年度财务基准", "年度EPS", "年度ROE"],
+      "excerpt": "2024年营业收入1,028,925百万元；归母净利润126,607百万元；经营活动现金流量净额382,474百万元。"
+    },
+    {
+      "report": "中国平安2024年年度报告",
+      "report_page": 48,
+      "local_file": "raw/01_中国平安2024年年度报告.pdf",
+      "supports": ["年度投资收益率"],
+      "excerpt": "2024年综合投资收益率5.8%，净投资收益率3.8%。"
+    }
+  ],
+  "review_note": "字段由官方报告人工核对后结构化；金额保留报告原始单位。AI必须区分事实、推断与缺失字段。"
+}

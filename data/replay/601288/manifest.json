@@ -1,0 +1,48 @@
+{
+  "code": "601288",
+  "name": "农业银行",
+  "industry": "银行",
+  "retrieved_at": "2026-09-03T15:32:09.819595+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-07",
+      "ex_date": "2025-01-08",
+      "pay_date": "2025-01-08",
+      "gross_per_share": 0.11639999999999999,
+      "reference_adjustment": 0.11639999999999999,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-07-16",
+      "ex_date": "2025-07-17",
+      "pay_date": "2025-07-17",
+      "gross_per_share": 0.1255,
+      "reference_adjustment": 0.1255,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601288",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601288",
+    "https://data.eastmoney.com/yjfp/detail/601288.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "f2c6d6f13d51b13fd4654b51b62c6b0659ac50ba2185aa94dc8cf1c066c91a40",
+    "price_daily.csv": "ff3d036016e5462bd7964447d08395383ce398ee8ab47517357be7faaebd66ba",
+    "price_qfq_check.csv": "eec9b3cc4a74ae1f5a7e49717b224639701f9a44e3d657e8f2e1224bfa62da37",
+    "retrieval.json": "4acca92bd08b88b6f538cb78cbaf0bbfecac4a40cb2d500bf5391d491196d81e",
+    "tencent_daily_raw.json": "7f2b69d5516c0c758ce0a3dbe9c408ccf755faab700babc971b8e24a301951ee",
+    "tencent_qfq_raw.json": "029fd63186d82079c222912f75034033148d19c9de478e6df07c07699ec6d546"
+  }
+}

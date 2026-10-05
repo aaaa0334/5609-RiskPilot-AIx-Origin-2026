@@ -1,0 +1,40 @@
+{
+  "code": "000963",
+  "name": "华东医药",
+  "industry": "医药",
+  "retrieved_at": "2026-09-03T16:25:26.055242+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-04",
+      "ex_date": "2025-06-05",
+      "pay_date": "2025-06-05",
+      "gross_per_share": 0.58,
+      "reference_adjustment": 0.58,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000963",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000963",
+    "https://data.eastmoney.com/yjfp/detail/000963.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "0267c222fcfb8d2bac61af5ffd89d092783bcb204b177e1a4f8d2603cd722fdd",
+    "price_daily.csv": "ab765150497ba527ae1fef349613268c43660e8e3f5f285e3f4d2c311c80ab62",
+    "price_qfq_check.csv": "3c564d9a0d4ee5a62d385fd3bec3fd947f258a785adf777b1fb921f6a46d000a",
+    "retrieval.json": "39785f4f0735d11f0e2cf8a9c7f4697ed3a91284c6adeb1226f82d6b873944ca",
+    "tencent_daily_raw.json": "9e4016e41f5735ac0156de7e57e677f51200d7e0094caedc12de05c61d50ee54",
+    "tencent_qfq_raw.json": "ccc98f108fcdcfc7e604be46c7bf1574f9baaabfd462316db971ab568f0ea81e"
+  }
+}

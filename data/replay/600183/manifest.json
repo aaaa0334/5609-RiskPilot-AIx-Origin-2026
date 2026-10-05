@@ -1,0 +1,40 @@
+{
+  "code": "600183",
+  "name": "生益科技",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T15:28:34.935859+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-22",
+      "ex_date": "2025-05-23",
+      "pay_date": "2025-05-23",
+      "gross_per_share": 0.6,
+      "reference_adjustment": 0.6,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600183",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600183",
+    "https://data.eastmoney.com/yjfp/detail/600183.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "540d6b718389e8bafd56737fe70a539180b37e6cbb46344c3c7fd0eab009327f",
+    "price_daily.csv": "892987cf2e26aa3aafb99d211173fad412e2bd9ef6965f0b075ddb3d255ee0fb",
+    "price_qfq_check.csv": "0ffb05254af19d4b57079a3f6a5b4a0fef8af6ba289d023981ba383ccaf719f1",
+    "retrieval.json": "d0c4d5f02d0810114cef957c8f7e6d2bc93467beaeb9c6cfd464e7903d72467e",
+    "tencent_daily_raw.json": "73286ab5f1561a29cc979ebfdc1050494fc6f4ee23b6122500685889e84cc380",
+    "tencent_qfq_raw.json": "a75bfc130bfaa822746c3415a47dd3d14ff656a238eebf56f04db4cfa9dd99ee"
+  }
+}

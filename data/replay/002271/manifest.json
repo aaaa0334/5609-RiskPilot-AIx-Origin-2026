@@ -1,0 +1,48 @@
+{
+  "code": "002271",
+  "name": "东方雨虹",
+  "industry": "建材",
+  "retrieved_at": "2026-09-03T16:25:59.018479+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-03-31",
+      "ex_date": "2025-04-01",
+      "pay_date": "2025-04-01",
+      "gross_per_share": 0.925,
+      "reference_adjustment": 0.925,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-08-26",
+      "ex_date": "2025-08-27",
+      "pay_date": "2025-08-27",
+      "gross_per_share": 0.925,
+      "reference_adjustment": 0.925,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002271",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002271",
+    "https://data.eastmoney.com/yjfp/detail/002271.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "e0a8a3103d52dbeed35c8d35eae69e9f6b676a55499513b3f046287d5987b551",
+    "price_daily.csv": "79aad61c484166e32d6300f1f78beb32674dad1836dd21e0b44bf8772f07e648",
+    "price_qfq_check.csv": "8ccf06fb09f3ec0497e2f247d8c2c0b5fd84c0c4c3084b089bf132472aeb4bef",
+    "retrieval.json": "cab7263ea9587d6c2c073125d5e2bcd627f8253545f4e7021c5defe44f025cf9",
+    "tencent_daily_raw.json": "78729294c3cf57a43ddfd75dca1a5b3bf414bd31a866227b9462df7485b62bde",
+    "tencent_qfq_raw.json": "310896438ad8ad135d12886bfb8abce7032b9bfdb54bf959e28a8ef482f57c97"
+  }
+}

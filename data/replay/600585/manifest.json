@@ -1,0 +1,40 @@
+{
+  "code": "600585",
+  "name": "海螺水泥",
+  "industry": "建材",
+  "retrieved_at": "2026-09-03T15:31:33.578293+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-26",
+      "ex_date": "2025-06-27",
+      "pay_date": "2025-06-27",
+      "gross_per_share": 0.71,
+      "reference_adjustment": 0.71,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600585",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600585",
+    "https://data.eastmoney.com/yjfp/detail/600585.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "3121414235bd014bd4eef9ed3792742d0da69f50ac8b7da704deb76ef1071e42",
+    "price_daily.csv": "a15e90196e2413c9328ef84c967f711aa646a3d202696bb330caf0eaa2460ee8",
+    "price_qfq_check.csv": "3c5fd0188e474849e0d423644f64c124b3db7153e3cc165b2fa0837399ff0f25",
+    "retrieval.json": "046dfc295b1324360cb88f51b3f6f26bec0ef1d6ad95f8deb4708bd422dd5314",
+    "tencent_daily_raw.json": "4c3f0c6dd62f257782f512d6d5c7c1903f0dfa593de23bd79c880c7d28df33be",
+    "tencent_qfq_raw.json": "d2db693d847d7496924e5e46f07e9950559bb72d7199880f166f253ae2156725"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "code": "000725",
+  "name": "京东方A",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:24:35.118466+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-24",
+      "ex_date": "2025-06-25",
+      "pay_date": "2025-06-25",
+      "gross_per_share": 0.05,
+      "reference_adjustment": 0.05,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000725",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000725",
+    "https://data.eastmoney.com/yjfp/detail/000725.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "443d4ead0b108412c5dec146d306d319d5051569d84524b5283100de09ec6ab2",
+    "price_daily.csv": "8f7bc08981b43f841a215e077ae1628386352f69b531fc4db5f30c78d79ce1ff",
+    "price_qfq_check.csv": "d66f643b49d3d6aa5e46f87eb21cb87f8e15c373ea6bb6213eecaa807cd2c6b7",
+    "retrieval.json": "783951522f9b676fdf87b91105e7e88808f9c15da9af0a0783bfc8b0f933b00c",
+    "tencent_daily_raw.json": "46875828114508b6865be59249ad919e6d2b2bf98e94652a14af2f6bb4b6f4e9",
+    "tencent_qfq_raw.json": "468851daae65a4df8dd36f11c0e542b6064a311ed4e2cb131b4eda82d38bde23"
+  }
+}

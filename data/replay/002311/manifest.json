@@ -1,0 +1,40 @@
+{
+  "code": "002311",
+  "name": "海大集团",
+  "industry": "农牧",
+  "retrieved_at": "2026-09-03T16:26:03.456623+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-26",
+      "ex_date": "2025-06-27",
+      "pay_date": "2025-06-27",
+      "gross_per_share": 1.1,
+      "reference_adjustment": 1.1,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002311",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002311",
+    "https://data.eastmoney.com/yjfp/detail/002311.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "5d279c7eae76f953a4c63cb9b42f8cccb1e9440d80d27ccfcdf89091a58f9dee",
+    "price_daily.csv": "3edec5b1107b768217c7604612634f56569da1f2e3fef267da19ed5e17524496",
+    "price_qfq_check.csv": "de5fcffed0d4e5e63961ca793a8ade43d24964c2cd871dab8cea1cef7cd24807",
+    "retrieval.json": "1c61666b76b44ff61c4be66b6de391dbf439d2948210df5d885966a0f04f1c31",
+    "tencent_daily_raw.json": "c236f99e57b9f321280580db3a9d63514bcb5c4365c74b0ba01450bb966b3444",
+    "tencent_qfq_raw.json": "b5aaa253f6a33f27b0d284bc9e2613c09958080d47798646f101de32f5543f63"
+  }
+}

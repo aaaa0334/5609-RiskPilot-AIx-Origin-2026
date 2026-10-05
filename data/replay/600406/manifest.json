@@ -1,0 +1,40 @@
+{
+  "code": "600406",
+  "name": "国电南瑞",
+  "industry": "电气设备",
+  "retrieved_at": "2026-09-03T15:31:21.872495+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-26",
+      "ex_date": "2025-06-27",
+      "pay_date": "2025-06-27",
+      "gross_per_share": 0.43499999999999994,
+      "reference_adjustment": 0.43499999999999994,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600406",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600406",
+    "https://data.eastmoney.com/yjfp/detail/600406.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "d7a806aa5398da5976e103dd6debb5a3aed74a181055d80759cfcdbc3519ece7",
+    "price_daily.csv": "8f7ae1cc40595a941c72e9691ee426e5406f36af4c66e6f28e278e3d47eb09b4",
+    "price_qfq_check.csv": "1c328d0d1309764e1b381c29c67d102ee700a3a49b47ba1d2535744394c16e5f",
+    "retrieval.json": "8af2737f9b6e0a16b55518f9f6e47d0c6d5fa71ff6735c8b1243d4728dde618f",
+    "tencent_daily_raw.json": "bcd8904cc833540feb4b6366132dcac44b7c6cacb38cc5c836ff69c859df1bcc",
+    "tencent_qfq_raw.json": "066b8342dce3f86d9e20a7b1f3ab4ce6e1f338ff84938eff586f4894e017b251"
+  }
+}

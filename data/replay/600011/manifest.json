@@ -1,0 +1,40 @@
+{
+  "code": "600011",
+  "name": "华能国际",
+  "industry": "电力",
+  "retrieved_at": "2026-09-03T16:24:41.814531+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-09",
+      "ex_date": "2025-07-10",
+      "pay_date": "2025-07-10",
+      "gross_per_share": 0.27,
+      "reference_adjustment": 0.27,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600011",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600011",
+    "https://data.eastmoney.com/yjfp/detail/600011.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "ea692016ff3eb00ae05e76888c5d24cd9123cf4cf885a7c53bfa7979999a9ea0",
+    "price_daily.csv": "54b71f26a300e65b034d32fc720b72708b9120274a3f91711adc39bbea06e45b",
+    "price_qfq_check.csv": "91a17410338285084641634629ee64fe1d5015bd33285c87b6868879d07c05eb",
+    "retrieval.json": "ef2bc6a2cf850015e98c280ea5350ea3da83c364e75ebe39086d3570b303260f",
+    "tencent_daily_raw.json": "e11135bc9d431152a16d594ad66a6d4c9e95db0c23134fb51a9892f0f38b8083",
+    "tencent_qfq_raw.json": "d75bcad95b993b40a67d6127ea8f78581e793d3aa3ffaf551d615594348e2468"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "code": "600010",
+  "name": "包钢股份",
+  "retrieved_at": "2026-09-03T03:28:47.021922+00:00",
+  "sources": [
+    "AKShare stock_zh_a_hist / 东方财富",
+    "AKShare stock_zh_a_disclosure_report_cninfo / 巨潮资讯"
+  ],
+  "price_parameters": {
+    "symbol": "600010",
+    "period": "daily",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "sha256": {
+    "announcement_index.csv": "0ad92b17fb2021f9145d364e000fb7aec7bf678d2ab0d9516eeb776d5a91eb79",
+    "price_daily.csv": "6fa7d98cd2698c0dcc309cf6dfbc4732d84a78a5f00efaba35620ca18c952bd1",
+    "price_qfq_check.csv": "6fa7d98cd2698c0dcc309cf6dfbc4732d84a78a5f00efaba35620ca18c952bd1"
+  }
+}

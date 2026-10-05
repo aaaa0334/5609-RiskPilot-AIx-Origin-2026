@@ -1,0 +1,40 @@
+{
+  "code": "000001",
+  "name": "平安银行",
+  "industry": "银行",
+  "retrieved_at": "2026-09-03T16:24:28.445362+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-11",
+      "ex_date": "2025-06-12",
+      "pay_date": "2025-06-12",
+      "gross_per_share": 0.362,
+      "reference_adjustment": 0.362,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000001",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000001",
+    "https://data.eastmoney.com/yjfp/detail/000001.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "84b42f0b8686ffb00fdbdf403e66499d7f64e377a8ea326cf42effb3a576d359",
+    "price_daily.csv": "4cf5df76bfc8303705c60ab990ba81f3e4e349903b71feaec7f3eb1dcbecd0a3",
+    "price_qfq_check.csv": "393c0743139789f035967370bd4fb32102228d1083331154070eb974d2bad691",
+    "retrieval.json": "1b2b8b1ccfdf18012f8796d27d9b3d3a090ff3c66d74d20707b2911de50bd442",
+    "tencent_daily_raw.json": "418b8a278498916d300e7f0f56cd0195b9446784011bfb76757345fc0a9fa969",
+    "tencent_qfq_raw.json": "9bd9eb9fac7be012503b11dbb968e280616a3479344ff4f4c33c7394bf129440"
+  }
+}

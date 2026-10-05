@@ -1,0 +1,40 @@
+{
+  "code": "002202",
+  "name": "金风科技",
+  "industry": "风电",
+  "retrieved_at": "2026-09-03T16:25:50.187506+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-08-14",
+      "ex_date": "2025-08-15",
+      "pay_date": "2025-08-15",
+      "gross_per_share": 0.13999999999999999,
+      "reference_adjustment": 0.13999999999999999,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002202",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002202",
+    "https://data.eastmoney.com/yjfp/detail/002202.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "5c8712d161f32330b99ff0db9c5d0485bd50be7280ca1477ec55d9b99c953c1b",
+    "price_daily.csv": "7c70ccfa48abbcdd0d9234f14979ab2d6556a42766b32b6ea76c79001b06ca13",
+    "price_qfq_check.csv": "6677e088c9e1deaf588c12b0539cf83889d3afb3fbc5d3c8779e32f86d85c28a",
+    "retrieval.json": "646f66e90f1f0ca89793c6daf6cb82eca9deb75d786226ff2fb993c3e8babc11",
+    "tencent_daily_raw.json": "69ccaa2c0bc6c47841df36c89a9bf3725530327e786e48f259aa01cc5c4a2372",
+    "tencent_qfq_raw.json": "64d322ea1a79a6e159783c912292961be642fa7dea0bea402bc0e1ff2655603c"
+  }
+}

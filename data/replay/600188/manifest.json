@@ -1,0 +1,40 @@
+{
+  "code": "600188",
+  "name": "兖矿能源",
+  "industry": "能源",
+  "retrieved_at": "2026-09-03T15:28:36.172668+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-17",
+      "ex_date": "2025-06-18",
+      "pay_date": "2025-06-18",
+      "gross_per_share": 0.54,
+      "reference_adjustment": 0.54,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600188",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600188",
+    "https://data.eastmoney.com/yjfp/detail/600188.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "f7d018940b1fb5e57e6cf5065f12168333b51be48d867a35663b8d61c7dcedb0",
+    "price_daily.csv": "f284c279f5aaa04fd4e4d378ca1da1e44300e126183a8737b8b5e173521fa748",
+    "price_qfq_check.csv": "8a7b734809e7bc6810b92383aaad69142f479573149177afb916d05a6c091511",
+    "retrieval.json": "fabee0aad8c8f05a7bb14e69193fac565f48fe841a39322b518f0dfb3aa04bc4",
+    "tencent_daily_raw.json": "6ee47b4972a88e49aaf40af7996e318d7231e236d334ab9ef24f3fee4e3cb463",
+    "tencent_qfq_raw.json": "51af2bdc9e938dc4298a0003496f705a650118fd4ab74fc035ce5eaf27e22cae"
+  }
+}

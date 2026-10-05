@@ -1,0 +1,40 @@
+{
+  "code": "600741",
+  "name": "华域汽车",
+  "industry": "汽车",
+  "retrieved_at": "2026-09-03T15:31:42.600948+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-24",
+      "ex_date": "2025-07-25",
+      "pay_date": "2025-07-25",
+      "gross_per_share": 0.8,
+      "reference_adjustment": 0.8,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600741",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600741",
+    "https://data.eastmoney.com/yjfp/detail/600741.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "fc23d97bbf36c00ecca9bd6f6ea6f2f4f3ccf673af524ad29b4fea758de0f39c",
+    "price_daily.csv": "65f8015da27af2215cc9d8a5ab85f0fb3d2785e4d7eeb31ff89cc6d30b005181",
+    "price_qfq_check.csv": "882ff945b051b26c79db6503e18ebee94341e7a00bca26b0720a06f5b71cc746",
+    "retrieval.json": "416b74c9870027d66fc88a0361e54a248ff00acf2d4a63136e4b3c281ebb374d",
+    "tencent_daily_raw.json": "17723ef31d5c0636d76f3c47f491deeaf52fac8fa254ef653d0af61cceab09c0",
+    "tencent_qfq_raw.json": "f3a17811aec6a030cc87803b6c15ace4e8a4b4b797e42b252a2ed3b8bfc8d9df"
+  }
+}

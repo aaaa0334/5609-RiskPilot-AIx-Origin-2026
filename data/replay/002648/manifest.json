@@ -1,0 +1,40 @@
+{
+  "code": "002648",
+  "name": "卫星化学",
+  "industry": "化工",
+  "retrieved_at": "2026-09-03T16:26:20.953314+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-06",
+      "ex_date": "2025-06-09",
+      "pay_date": "2025-06-09",
+      "gross_per_share": 0.5,
+      "reference_adjustment": 0.5,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002648",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002648",
+    "https://data.eastmoney.com/yjfp/detail/002648.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "54f825ead2c88e77aa93010a4e9ec407eae04133e66dd931d886deb80cb3f472",
+    "price_daily.csv": "e0f10ffbfdb818288a458d75bc2ebdc10b4c539fcf73ef7ed53963e26b8e1845",
+    "price_qfq_check.csv": "8ce2e216c43bf6309ed625f35b447a1b4ff4233a04fa01b695971d11f2a653ed",
+    "retrieval.json": "0691580813da1f498d41c0b63d66909f48aa7de8aa739079bc2d2f2ae6dadaad",
+    "tencent_daily_raw.json": "21f22c7e4d9e3c99b9b2a0952c4a86f35c1033199e2a33702c17e1bc4308331a",
+    "tencent_qfq_raw.json": "36840068a63cda12cf3f171c264f55c4aeac9fea0ee40a2508bac53b0923ecd5"
+  }
+}

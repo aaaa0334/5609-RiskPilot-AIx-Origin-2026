@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>RiskPilot 系统架构图</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #60a5fa, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .layer {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .layer-label {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #1e293b;
+    padding: 2px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+  }
+  .cards {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+    flex: 1;
+    min-width: 160px;
+    max-width: 220px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .card:hover {
+    border-color: rgba(96, 165, 250, 0.5);
+    transform: translateY(-2px);
+  }
+  .card-icon { font-size: 32px; margin-bottom: 8px; }
+  .card-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: #f1f5f9; }
+  .card-desc { font-size: 11px; color: #94a3b8; line-height: 1.5; }
+  .arrow {
+    text-align: center;
+    color: #475569;
+    font-size: 20px;
+    margin: 4px 0;
+  }
+  .flow-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0;
+    color: #64748b;
+    font-size: 12px;
+  }
+  .flow-line .dot {
+    width: 8px; height: 8px;
+    background: #34d399;
+    border-radius: 50%;
+  }
+  .flow-line .line {
+    width: 40px; height: 2px;
+    background: linear-gradient(90deg, #34d399, #60a5fa);
+  }
+  .highlight {
+    border-color: rgba(52, 211, 153, 0.4) !important;
+    background: rgba(52, 211, 153, 0.05) !important;
+  }
+  .highlight .card-title { color: #34d399; }
+  .footer-note {
+    text-align: center;
+    margin-top: 30px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #94a3b8;
+  }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>RiskPilot 系统架构图</h1>
+  <p class="subtitle">最大账户损失约束下的多智能体 A 股研究与可验证风险决策系统</p>
+
+  <!-- 用户输入层 -->
+  <div class="layer">
+    <div class="layer-label">① 用户输入层</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <div class="card-title">本金</div>
+        <div class="card-desc">用户投入的总资金</div>
+      </div>
+      <div class="card highlight">
+        <div class="card-icon">🛡️</div>
+        <div class="card-title">最大可承受损失</div>
+        <div class="card-desc">核心约束：最多亏多少<br>（演示默认值：本金的3%，可调整）</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <div class="card-title">选择股票</div>
+        <div class="card-desc">100只真实A股历史样本<br>30个项目自定义行业标签</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- 数据层 -->
+  <div class="layer">
+    <div class="layer-label">② 数据层（可验证）</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <div class="card-title">行情数据</div>
+        <div class="card-desc">2025年1-8月日K线<br>161个交易日/只</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📑</div>
+        <div class="card-title">财报公告</div>
+        <div class="card-desc">少数样本已保存巨潮公告<br>其余明确标记资料缺失</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <div class="card-title">分红数据</div>
+        <div class="card-desc">东方财富分红记录<br>税前金额，除息日到账</div>
+      </div>
+      <div class="card highlight">
+        <div class="card-icon">🔐</div>
+        <div class="card-title">SHA256 校验</div>
+        <div class="card-desc">每只股票数据哈希校验<br>防篡改、可追溯</div>
+      </div>
+    </div>
+    <div class="flow-line">
+      <span class="dot"></span><span class="line"></span>
+      <span>Point-in-Time 原则：只用节点之前的数据，不偷看未来</span>
+      <span class="line"></span><span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- AI多智能体层 -->
+  <div class="layer">
+    <div class="layer-label">③ 多角色研究分析层</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📉</div>
+        <div class="card-title">K线占卜师</div>
+        <div class="card-desc">技术面Agent<br>均线/支撑压力/量价</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🩺</div>
+        <div class="card-title">财报老中医</div>
+        <div class="card-desc">基本面角色<br>仅使用已接入的可用资料</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <div class="card-title">资金侦探</div>
+        <div class="card-desc">资金面角色<br>量价指标与数据边界</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📰</div>
+        <div class="card-title">消息包打听</div>
+        <div class="card-desc">消息面角色<br>缺失资料不由AI补写</div>
+      </div>
+    </div>
+    <div class="flow-line">
+      <span class="dot"></span><span class="line"></span>
+      <span>多角色分析框架 → 规则与风险计算 → 可解释结论（离线预设或连接LLM）</span>
+      <span class="line"></span><span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- 风险引擎层 -->
+  <div class="layer">
+    <div class="layer-label">④ 风险决策引擎（核心）</div>
+    <div class="cards">
+      <div class="card highlight">
+        <div class="card-icon">🎯</div>
+        <div class="card-title">仓位计算</div>
+        <div class="card-desc">根据最大损失约束<br>算出可承受股数</div>
+      </div>
+      <div class="card highlight">
+        <div class="card-icon">⛔</div>
+        <div class="card-title">止损定价</div>
+        <div class="card-desc">近20日低点作为风险参考<br>不自动下单或承诺成交</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <div class="card-title">风险收益比</div>
+        <div class="card-desc">目标位/止损位比值<br>1:1.5以上较理想</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📉</div>
+        <div class="card-title">压力测试</div>
+        <div class="card-desc">跌3%/5%/10%情景<br>测算账户损失</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- 历史价格触及检验层 -->
+  <div class="layer">
+    <div class="layer-label">⑤ 历史模拟验证层</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🗓️</div>
+        <div class="card-title">月度模式</div>
+        <div class="card-desc">4关快速体验<br>每月决策一次</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📆</div>
+        <div class="card-title">周度模式</div>
+        <div class="card-desc">17关精细操作<br>每周决策一次</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💸</div>
+        <div class="card-title">真实费用模拟</div>
+        <div class="card-desc">佣金/印花税/滑点<br>分红到账</div>
+      </div>
+      <div class="card highlight">
+        <div class="card-icon">🚨</div>
+        <div class="card-title">预算超限退出</div>
+        <div class="card-desc">亏损超过预算<br>强制止损退出</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- 输出层 -->
+  <div class="layer">
+    <div class="layer-label">⑥ 输出与游戏化层</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <div class="card-title">分析报告</div>
+        <div class="card-desc">4Agent结论+风险测算<br>可导出Markdown</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <div class="card-title">权益曲线</div>
+        <div class="card-desc">模拟过程净值变化<br>最大回撤统计</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <div class="card-title">牛人排行榜</div>
+        <div class="card-desc">12个虚拟玩家陪跑<br>进榜恭喜动画</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚔️</div>
+        <div class="card-title">五行阵营</div>
+        <div class="card-desc">金木水火土5阵营<br>各有独特天赋</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 合规层 -->
+  <div class="layer" style="border-color: rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.03);">
+    <div class="layer-label" style="color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);">⑦ 合规与安全层（贯穿全流程）</div>
+    <div class="cards">
+      <div class="card" style="border-color: rgba(251, 191, 36, 0.2);">
+        <div class="card-icon">⚠️</div>
+        <div class="card-title">非持牌声明</div>
+        <div class="card-desc">明确标注非证券服务<br>不构成投资建议</div>
+      </div>
+      <div class="card" style="border-color: rgba(251, 191, 36, 0.2);">
+        <div class="card-icon">🤖</div>
+        <div class="card-title">AI误差标注</div>
+        <div class="card-desc">真实调用成功标注AI生成<br>离线时明确标注预设分析</div>
+      </div>
+      <div class="card" style="border-color: rgba(251, 191, 36, 0.2);">
+        <div class="card-icon">🔒</div>
+        <div class="card-title">数据隐私</div>
+        <div class="card-desc">用户数据本地存储<br>不上传不收集</div>
+      </div>
+      <div class="card" style="border-color: rgba(251, 191, 36, 0.2);">
+        <div class="card-icon">🧪</div>
+        <div class="card-title">测试覆盖</div>
+        <div class="card-desc">35个单元测试<br>全部通过</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background: rgba(52, 211, 153, 0.3); border: 1px solid #34d399;"></div>
+      <span>核心创新模块</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background: rgba(251, 191, 36, 0.2); border: 1px solid #fbbf24;"></div>
+      <span>合规安全模块</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background: rgba(148, 163, 184, 0.2); border: 1px solid #94a3b8;"></div>
+      <span>标准功能模块</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p><strong>技术栈：</strong>Python (FastAPI) + 原生 HTML/JS/CSS + 本地 JSON/CSV 数据存储</p>
+    <p><strong>数据来源：</strong>东方财富 / 腾讯财经 / 巨潮资讯（公开历史数据，2025年1-8月）</p>
+    <p><strong>链上 / TEE / ZKP 边界：</strong>当前未使用区块链、TEE或ZKP，也不声称链上存证；SHA-256仅检查本地内容变化，Point-in-Time规则用于隔离未来信息</p>
+    <p><strong>人工确认点：</strong>用户确认模拟本金、可承受损失、数据截止日、AI/预设标签及免责声明后，才进入历史实验；系统不触发真实交易</p>
+    <p style="margin-top: 12px; color: #475569;">RiskPilot · 最大账户损失约束下的多智能体A股研究与可验证风险决策系统</p>
+  </div>
+</div>
+</body>
+</html>

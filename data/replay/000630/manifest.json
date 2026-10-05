@@ -1,0 +1,40 @@
+{
+  "code": "000630",
+  "name": "铜陵有色",
+  "industry": "有色金属",
+  "retrieved_at": "2026-09-03T16:25:10.601047+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-20",
+      "ex_date": "2025-06-23",
+      "pay_date": "2025-06-23",
+      "gross_per_share": 0.1,
+      "reference_adjustment": 0.1,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000630",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000630",
+    "https://data.eastmoney.com/yjfp/detail/000630.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "9b979457f7b2312f5963ad66a688d422a2d58a9880b62cba18a624d011bb1ec9",
+    "price_daily.csv": "8de31fbf9273085583abaf5d6ac7ea9b449dec745ce130724dd89999acd7eb3a",
+    "price_qfq_check.csv": "a4fdf2319569e39829d6fc711530cd6377648d6b31d0d8e45abd7cd14d2b87c7",
+    "retrieval.json": "59be53e36d64406834676e5b62be9528eec1698bd9cb41c201ab65aa8fac9219",
+    "tencent_daily_raw.json": "5f6bf7a585426a95310fe03eb725c19753a615da744302b5368960c369d452df",
+    "tencent_qfq_raw.json": "35441dcbdfde2860932464926e8c495df8bcdb4349378cbc86b9c5565d47ddb6"
+  }
+}

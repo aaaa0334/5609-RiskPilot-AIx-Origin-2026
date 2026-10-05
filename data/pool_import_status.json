@@ -1,0 +1,21 @@
+{
+  "count": 100,
+  "rejected": [
+    {
+      "code": "600150",
+      "reason": "requires complete 161-day historical sample"
+    },
+    {
+      "code": "601088",
+      "reason": "requires complete 161-day historical sample"
+    },
+    {
+      "code": "002001",
+      "reason": "unexplained adjustment on 2025-01-22"
+    },
+    {
+      "code": "002371",
+      "reason": "unsupported bonus/split event"
+    }
+  ]
+}

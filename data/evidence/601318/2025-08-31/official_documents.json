@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "stock_code": "601318",
+  "analysis_cutoff": "2025-08-31",
+  "documents": [
+    {
+      "title": "中国平安2024年年度报告",
+      "document_type": "经审计年度报告",
+      "reporting_period_end": "2024-12-31",
+      "board_approval_date": "2025-03-19",
+      "published_date": "2025-03-20",
+      "source": "巨潮资讯网",
+      "source_url": "https://dataclouds.cninfo.com.cn/shgonggao/2025/2025-03-20/ec1d835e04c911f0aa83fa163e957f7a.pdf",
+      "local_file": "raw/01_中国平安2024年年度报告.pdf",
+      "pages": 346,
+      "role_in_demo": "经审计年度财务基准、风险管理和年度经营情况"
+    },
+    {
+      "title": "中国平安2025年中期报告",
+      "document_type": "中期报告全文",
+      "reporting_period_end": "2025-06-30",
+      "board_approval_date": "2025-08-26",
+      "published_date": "2025-08-27",
+      "source": "巨潮资讯网",
+      "source_url": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601318",
+      "cross_check_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0826/2025082601310_c.pdf",
+      "local_file": "raw/02_中国平安2025年中期报告.pdf",
+      "pages": 172,
+      "role_in_demo": "截止日前最新完整财务、经营、投资和偿付能力资料"
+    },
+    {
+      "title": "中国平安2025年中期利润分配方案公告",
+      "document_type": "临时公告",
+      "announcement_number": "临2025-035",
+      "board_approval_date": "2025-08-26",
+      "published_date": "2025-08-27",
+      "source": "巨潮资讯网",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2025-08-27/1224583361.PDF",
+      "local_file": "raw/03_中国平安2025年中期利润分配方案公告.pdf",
+      "pages": 3,
+      "role_in_demo": "公告事件分析；中期每股现金股息0.95元"
+    }
+  ],
+  "verification_note": "已核对PDF首页、目录、董事会批准日期、报告期和页数。中期报告的巨潮精确静态下载地址未由动态搜索页暴露，因此保留巨潮搜索页并增加同一报告的港交所官方交叉核验链接。"
+}

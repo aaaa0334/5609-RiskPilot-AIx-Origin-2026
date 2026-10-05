@@ -1,0 +1,40 @@
+{
+  "code": "600104",
+  "name": "上汽集团",
+  "industry": "汽车",
+  "retrieved_at": "2026-09-03T15:28:28.687778+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-30",
+      "ex_date": "2025-07-31",
+      "pay_date": "2025-07-31",
+      "gross_per_share": 0.088,
+      "reference_adjustment": 0.088,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600104",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600104",
+    "https://data.eastmoney.com/yjfp/detail/600104.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "4e77febb07a224d26d056a99a2327f0d74d699a7f9b03ba3115fff452676869b",
+    "price_daily.csv": "1b673a0420db23326fd54c4c8b7fd73d1406118547b92f7721ff5507d1a3361e",
+    "price_qfq_check.csv": "0e7112787eb769fc3433104af07d55a6624b7a01cb55f9bb56d40dab20e102e8",
+    "retrieval.json": "0ba98d28e284aa55a01c665a7ef614a140fae2b72bc193b7f31eef7815796295",
+    "tencent_daily_raw.json": "5a8c4f75ba12de132585e758279025e604f50f28bb96cad1f491f8e97cf9d116",
+    "tencent_qfq_raw.json": "c533dca161ca805e4c37ab1f357142f6cc95c654d31f26c3998b5b890ac24558"
+  }
+}

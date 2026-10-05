@@ -1,0 +1,40 @@
+{
+  "code": "600089",
+  "name": "特变电工",
+  "industry": "电气设备",
+  "retrieved_at": "2026-09-03T15:28:27.437569+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-09",
+      "ex_date": "2025-07-10",
+      "pay_date": "2025-07-10",
+      "gross_per_share": 0.25,
+      "reference_adjustment": 0.25,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600089",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600089",
+    "https://data.eastmoney.com/yjfp/detail/600089.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "549ed60a8c81dc44817f843ae9bb518a6fc681a5615d37d79cda2e56214c52c2",
+    "price_daily.csv": "71d70736f863a32ba3703e15cfcf9d90288cf75e17f0aaf5c8a70ac24ac68099",
+    "price_qfq_check.csv": "8805a19a375021bd8f2ec3b83f860acb4842eb77da709e42f8d6abb9352a8dfd",
+    "retrieval.json": "1fd61b465ffc5db9354556839c68faf9235bd50807d8d8c7f6b612a861f4529b",
+    "tencent_daily_raw.json": "033a9f57852b1335df938d2a59a2b85c37166cf498bab5c19515d6861dc6a03f",
+    "tencent_qfq_raw.json": "9ffad4a2eb537f03ce8b4e4bb1fed83f0d76295670d1e074de8a92266d87217c"
+  }
+}

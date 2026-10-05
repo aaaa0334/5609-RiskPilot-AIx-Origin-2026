@@ -1,0 +1,16 @@
+{
+  "algorithm": "SHA-256",
+  "generated_at": "2026-09-02T14:52:16+08:00",
+  "files": {
+    "EVIDENCE_STATUS.md": "4ba5bbbcd23fc71a25149acdee4482c716d671d430415fdad021735e82489bcb",
+    "normalized/fundamental_facts.json": "e27e0fe00daa90c144ea0699a675af8037382877ad9bce29ac5bb9f2dba5cfa6",
+    "normalized/riskpilot_snapshot.json": "707de756e5fdaccea31dbfe69c33dda2f44222d08bb748fd8b93331187d2bc67",
+    "official_documents.json": "2f1febc0c4d347a6d44c02f55c3d3eecdbd548b5ca92ebfc4742b9d9463995b0",
+    "raw/01_中国平安2024年年度报告.pdf": "6ffff1cade59c64c8178494c083cac8a4011ef5ae2fed32f85dd488a64a809b2",
+    "raw/02_中国平安2025年中期报告.pdf": "318810d1b887d90d15946043450b1fedc5941ed982dac030a2edabf5a16054a6",
+    "raw/03_中国平安2025年中期利润分配方案公告.pdf": "6314f0a92de15e75887ae1b5681be208b1c0a2ae747cdf3ea1402f449f2d8209",
+    "raw/announcement_index.csv": "e452bc222804086fd7948c654f5a069867b9f4d17ff19c51c3ef7375ce0c4441",
+    "raw/price_daily.csv": "43f387a941252f5342867637a44f112555398a1d25ad17f2693f1593d22d5289",
+    "source_manifest.json": "b8a012fe12ae2ada69326d3b0ce7f4d036a9e7765e468e18cc75dccd1639f5c9"
+  }
+}

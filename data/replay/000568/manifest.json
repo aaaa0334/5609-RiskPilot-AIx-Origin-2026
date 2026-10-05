@@ -1,0 +1,48 @@
+{
+  "code": "000568",
+  "name": "泸州老窖",
+  "industry": "食品饮料",
+  "retrieved_at": "2026-09-03T16:25:05.810211+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-23",
+      "ex_date": "2025-01-24",
+      "pay_date": "2025-01-24",
+      "gross_per_share": 1.358,
+      "reference_adjustment": 1.358,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-08-07",
+      "ex_date": "2025-08-08",
+      "pay_date": "2025-08-08",
+      "gross_per_share": 4.5920000000000005,
+      "reference_adjustment": 4.5920000000000005,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000568",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000568",
+    "https://data.eastmoney.com/yjfp/detail/000568.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "f641e0495436f4b5c399f6db2bb0486cc984a7de97174b01e01f3c03c06e73b0",
+    "price_daily.csv": "73fa64860c868560e6e710b39824b86383be75f0eaa2f8f3beb9ff2cc2529205",
+    "price_qfq_check.csv": "94760f542dd58e8f6ad231a95848b43681731327d3d600507ef7a94159b94a27",
+    "retrieval.json": "bb34c838cdfb068be6e8781750f891bd09e2f11d334b84956e2a43a8e2d62214",
+    "tencent_daily_raw.json": "a50907cacc606bef6be546f4ba3a5fadc61635470152549e063584e8b6374b91",
+    "tencent_qfq_raw.json": "d8d367a13ef4374e61e94b29398eccf44a1575f4f2142382fd1ffc9b966e6a97"
+  }
+}

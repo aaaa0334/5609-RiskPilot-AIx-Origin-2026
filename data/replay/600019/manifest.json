@@ -1,0 +1,40 @@
+{
+  "code": "600019",
+  "name": "宝钢股份",
+  "industry": "钢铁",
+  "retrieved_at": "2026-09-03T15:28:19.559199+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-10",
+      "ex_date": "2025-06-11",
+      "pay_date": "2025-06-11",
+      "gross_per_share": 0.1,
+      "reference_adjustment": 0.1,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600019",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600019",
+    "https://data.eastmoney.com/yjfp/detail/600019.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "260f797d8b14f94da3ade2ea3d677851b9048ffd0f9e792a015c608076e84152",
+    "price_daily.csv": "00e995814c9cb4698e556dbd0849efe32c3d5137066415cafe2681ed0cc23739",
+    "price_qfq_check.csv": "93c4b7f54b90fe6bbc7664abc46dfc6ea39fb22eb56ce4e4471aca89aa91ff70",
+    "retrieval.json": "bb3670cd518485ba0a3f59fa43da12f05fb0e9e4248fd467ebe0fc4cdec77376",
+    "tencent_daily_raw.json": "86c03ec09614687e750584101403f3cb01a768c8042efb4008a9996adf360f2f",
+    "tencent_qfq_raw.json": "ac525be3f9536dae0e39aedcc4989fa81b0b3f07ab2f8d3ed7fa87a3003994bd"
+  }
+}

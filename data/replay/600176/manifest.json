@@ -1,0 +1,40 @@
+{
+  "code": "600176",
+  "name": "中国巨石",
+  "industry": "建材",
+  "retrieved_at": "2026-09-03T15:28:33.660179+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-20",
+      "ex_date": "2025-05-21",
+      "pay_date": "2025-05-21",
+      "gross_per_share": 0.24,
+      "reference_adjustment": 0.24,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600176",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600176",
+    "https://data.eastmoney.com/yjfp/detail/600176.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "06ce282e44d4e0958c637c18c77e368785315346a564466ec63ec702d7111a4e",
+    "price_daily.csv": "7783bed911f6ae938650813803328ec936851a8c2565108d9889e3cf7465f9f9",
+    "price_qfq_check.csv": "b3bee8d981d38bfb8fcb57654e4a8e84dddd76c8a09194bfa883363c7d20d629",
+    "retrieval.json": "bb32ad2f9f32b5428cb0dc7505813ce44dc09be9dabc726aa81d3b6927bbd044",
+    "tencent_daily_raw.json": "75dd9c4e7a0910865de31c25c0c69f501b097f3a05a513abd06f220fb547787d",
+    "tencent_qfq_raw.json": "b1659f527b93faa45e2d637cac02ebe7ba274a375ba845448eefc25c5285756a"
+  }
+}

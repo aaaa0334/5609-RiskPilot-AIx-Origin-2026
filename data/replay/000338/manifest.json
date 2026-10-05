@@ -1,0 +1,40 @@
+{
+  "code": "000338",
+  "name": "潍柴动力",
+  "industry": "机械",
+  "retrieved_at": "2026-09-03T16:24:59.004228+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-24",
+      "ex_date": "2025-07-25",
+      "pay_date": "2025-07-25",
+      "gross_per_share": 0.34700000000000003,
+      "reference_adjustment": 0.34700000000000003,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000338",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000338",
+    "https://data.eastmoney.com/yjfp/detail/000338.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "9173cedfb3ade45fbdd7f430f8376fb45d4f8941712f813644ba6d0791f1e74e",
+    "price_daily.csv": "982c1f9abac38bcac99f20762364ae01807a8da4f153759e123b0f2bc2fc4ba9",
+    "price_qfq_check.csv": "3a0d4ad6f2768975e5ac7f605e530537f5bfd663285f95e25645bfbb2eaa1dca",
+    "retrieval.json": "bc0111115358f444fa081182acb5ab2ce5ce77e29b59fc3a876248b2968e4b36",
+    "tencent_daily_raw.json": "7bb8411e5e7d1a205d70536993119e923c6b5771c71a3981e762db48ae853627",
+    "tencent_qfq_raw.json": "5e7998e39eb68695c9b0ce1f7c4d4c9bd38449466973560d159071e07c3af900"
+  }
+}

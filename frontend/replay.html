@@ -1,0 +1,2248 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RiskPilot · 时间穿越实验</title>
+<style>
+:root{color-scheme:dark;--bg:#0a0e1a;--panel:#131a2a;--panel2:#0d1320;--line:#252f45;--text:#e8eef8;--muted:#8a9ab5;--mint:#5eead4;--mint-dim:rgba(94,234,212,.15);--orange:#fbbf24;--orange-dim:rgba(251,191,36,.15);--red:#f87171;--red-dim:rgba(248,113,113,.15);--blue:#60a5fa;--purple:#c084fc}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 80% -10%,#16253d 0,transparent 50%),var(--bg);color:var(--text);font:15px/1.7 'Segoe UI','Microsoft YaHei',sans-serif;min-height:100vh}
+main{max-width:1100px;margin:auto;padding:24px 20px 60px}
+a{color:var(--mint)}
+.hidden{display:none!important}
+
+/* ===== 开场弹窗 ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-card{background:linear-gradient(160deg,#1a2540,#0f1628);border:1px solid var(--mint);border-radius:20px;max-width:560px;width:100%;padding:36px 32px;box-shadow:0 0 60px rgba(94,234,212,.2);animation:modalIn .5s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:none}}
+.modal-tag{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--mint);border:1px solid var(--mint);border-radius:20px;padding:4px 14px;margin-bottom:16px}
+.modal-title{font-size:30px;font-weight:800;margin:0 0 8px;line-height:1.3}
+.modal-title span{color:var(--mint)}
+.modal-sub{color:var(--muted);font-size:14px;margin:0 0 24px}
+.modal-rules{background:var(--panel2);border-radius:12px;padding:18px 20px;margin-bottom:24px}
+.modal-rules h4{margin:0 0 10px;font-size:14px;color:var(--orange)}
+.modal-rules ol{margin:0;padding-left:20px;color:var(--muted);font-size:13px;line-height:2}
+.modal-rules ol li b{color:var(--text)}
+.modal-btn{width:100%;padding:16px;font-size:17px;font-weight:700;border:none;border-radius:12px;background:var(--mint);color:#062822;cursor:pointer;transition:all .2s}
+.modal-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(94,234,212,.4)}
+.modal-skip{display:block;text-align:center;color:var(--muted);font-size:12px;margin-top:14px;cursor:pointer;text-decoration:underline}
+
+/* ===== 用户设置弹窗 ===== */
+.setup-step{display:none}
+.setup-step.active{display:block}
+.setup-nav{display:flex;justify-content:space-between;margin-top:20px}
+.setup-btn{padding:10px 24px;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.setup-btn.primary{background:var(--mint);color:#062822}
+.setup-btn.primary:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(94,234,212,.3)}
+.setup-btn.secondary{background:var(--panel2);color:var(--muted);border:1px solid var(--line)}
+.avatar-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin:16px 0}
+.avatar-item{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:24px;border-radius:12px;background:var(--panel2);border:2px solid transparent;cursor:pointer;transition:all .2s}
+.avatar-item:hover{transform:scale(1.1);border-color:var(--mint)}
+.avatar-item.selected{border-color:var(--mint);background:var(--mint-dim);box-shadow:0 0 15px rgba(94,234,212,.3)}
+.name-input{width:100%;padding:12px 16px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:15px;outline:none;transition:border .2s}
+.name-input:focus{border-color:var(--mint)}
+
+/* ===== 阵营选择卡片 ===== */
+.faction-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}
+.faction-card{padding:14px 8px;border-radius:14px;background:var(--panel2);border:2px solid transparent;cursor:pointer;transition:all .25s;text-align:center}
+.faction-card:hover{transform:translateY(-3px)}
+.faction-card.selected{border-color:var(--mint);box-shadow:0 0 20px rgba(94,234,212,.2)}
+.faction-card .f-icon{font-size:32px;margin-bottom:6px}
+.faction-card .f-name{font-size:16px;font-weight:700;margin-bottom:2px}
+.faction-card .f-style{font-size:11px;color:var(--muted)}
+.faction-card .f-trait{font-size:10px;color:var(--orange);margin-top:6px;line-height:1.4}
+
+/* ===== 用户信息栏 ===== */
+.user-bar{display:flex;align-items:center;gap:10px;padding:8px 14px;background:var(--panel2);border-radius:12px;border:1px solid var(--line)}
+.user-avatar{width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:20px;border-radius:10px;background:var(--panel);position:relative}
+.user-avatar.frame-gold{border:2px solid #fbbf24;box-shadow:0 0 12px rgba(251,191,36,.4)}
+.user-avatar.frame-silver{border:2px solid #cbd5e1;box-shadow:0 0 12px rgba(203,213,225,.4)}
+.user-avatar.frame-bronze{border:2px solid #d97706;box-shadow:0 0 12px rgba(217,119,6,.4)}
+.user-avatar.frame-star{border:2px solid var(--mint);box-shadow:0 0 12px rgba(94,234,212,.4)}
+.user-info{flex:1}
+.user-name{font-size:14px;font-weight:600}
+.user-faction{font-size:11px;color:var(--muted)}
+.user-edit{font-size:12px;color:var(--mint);cursor:pointer;text-decoration:underline}
+
+/* ===== 排行榜面板 ===== */
+.rank-panel{position:fixed;top:0;right:-420px;width:400px;height:100vh;background:var(--panel);border-left:1px solid var(--line);z-index:90;transition:right .35s ease;overflow-y:auto;padding:24px 20px}
+.rank-panel.open{right:0}
+.rank-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:85;opacity:0;pointer-events:none;transition:opacity .3s}
+.rank-overlay.show{opacity:1;pointer-events:auto}
+.rank-tabs{display:flex;gap:8px;margin-bottom:20px}
+.rank-tab{flex:1;padding:10px;text-align:center;border-radius:10px;background:var(--panel2);border:1px solid var(--line);cursor:pointer;font-size:13px;font-weight:600;transition:all .2s}
+.rank-tab.active{background:var(--mint-dim);border-color:var(--mint);color:var(--mint)}
+.rank-list{display:flex;flex-direction:column;gap:8px}
+.rank-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;background:var(--panel2);border:1px solid transparent;transition:all .2s}
+.rank-item.top1{border-color:#fbbf24;background:linear-gradient(135deg,rgba(251,191,36,.1),var(--panel2))}
+.rank-item.top2{border-color:#cbd5e1;background:linear-gradient(135deg,rgba(203,213,225,.08),var(--panel2))}
+.rank-item.top3{border-color:#d97706;background:linear-gradient(135deg,rgba(217,119,6,.08),var(--panel2))}
+.rank-item.is-me{border-color:var(--mint);background:var(--mint-dim)}
+.rank-num{width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;border-radius:8px;background:var(--panel);color:var(--muted)}
+.rank-num.top1{background:#fbbf24;color:#000}
+.rank-num.top2{background:#cbd5e1;color:#000}
+.rank-num.top3{background:#d97706;color:#fff}
+.rank-avatar{width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:20px;border-radius:10px;background:var(--panel);position:relative}
+.rank-avatar.frame-gold{border:2px solid #fbbf24}
+.rank-avatar.frame-silver{border:2px solid #cbd5e1}
+.rank-avatar.frame-bronze{border:2px solid #d97706}
+.rank-avatar.frame-star{border:2px solid var(--mint)}
+.rank-detail{flex:1;min-width:0}
+.rank-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-meta{font-size:11px;color:var(--muted)}
+.rank-pnl{font-size:15px;font-weight:700;text-align:right}
+.rank-pnl.positive{color:var(--red)}
+.rank-pnl.negative{color:var(--mint)}
+
+/* ===== 阵营榜 ===== */
+.faction-rank-item{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;background:var(--panel2);border:2px solid transparent;margin-bottom:10px;transition:all .2s}
+.faction-rank-item.rank1{border-color:#fbbf24;background:linear-gradient(135deg,rgba(251,191,36,.12),var(--panel2))}
+.faction-rank-item.rank2{border-color:#cbd5e1;background:linear-gradient(135deg,rgba(203,213,225,.08),var(--panel2))}
+.faction-rank-item.rank3{border-color:#d97706;background:linear-gradient(135deg,rgba(217,119,6,.08),var(--panel2))}
+.faction-rank-icon{font-size:32px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--panel)}
+.faction-rank-info{flex:1}
+.faction-rank-name{font-size:16px;font-weight:700}
+.faction-rank-style{font-size:11px;color:var(--muted)}
+.faction-rank-score{text-align:right}
+.faction-rank-score .score-val{font-size:20px;font-weight:800}
+.faction-rank-score .score-label{font-size:10px;color:var(--muted)}
+.faction-reward{font-size:11px;color:var(--orange);margin-top:4px;font-weight:600}
+
+/* ===== 排名恭喜弹窗 ===== */
+.congrats-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+.congrats-overlay.show{opacity:1;pointer-events:auto}
+.congrats-card{background:linear-gradient(160deg,#1a2540,#0f1628);border:2px solid var(--mint);border-radius:24px;max-width:480px;width:90%;padding:40px 32px;text-align:center;box-shadow:0 0 80px rgba(94,234,212,.3);transform:scale(.8);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.congrats-overlay.show .congrats-card{transform:scale(1)}
+.congrats-card.flying{animation:flyToRank .8s ease-in-out forwards!important}
+@keyframes flyToRank{
+  0%{transform:scale(1);opacity:1}
+  60%{transform:scale(.3) translate(40vw,-35vh);opacity:.8}
+  100%{transform:scale(.1) translate(45vw,-42vh);opacity:0}
+}
+.rank-item.highlight-me{animation:highlightPulse 1.5s ease-in-out 3;box-shadow:0 0 20px var(--mint)}
+@keyframes highlightPulse{0%,100%{box-shadow:0 0 5px var(--mint)}50%{box-shadow:0 0 25px var(--mint)}}
+.congrats-icon{font-size:72px;margin-bottom:16px;animation:bounce 1s ease infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.congrats-title{font-size:28px;font-weight:800;margin:0 0 12px;background:linear-gradient(90deg,var(--mint),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.congrats-text{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:24px}
+.congrats-rank{display:inline-block;padding:8px 24px;background:var(--mint-dim);border:1px solid var(--mint);border-radius:20px;font-size:18px;font-weight:700;color:var(--mint);margin-bottom:20px}
+.confetti{position:fixed;width:10px;height:10px;top:-10px;z-index:199;animation:confetti-fall 3s linear forwards}
+@keyframes confetti-fall{to{transform:translateY(100vh) rotate(720deg);opacity:0}}
+
+/* ===== 阵营胜利动画 ===== */
+.faction-victory-overlay{position:fixed;inset:0;z-index:150;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s}
+.faction-victory-overlay.show{opacity:1;pointer-events:auto}
+.faction-victory-bg{position:absolute;inset:0;background:radial-gradient(circle at center,rgba(251,191,36,.15),rgba(0,0,0,.9))}
+.faction-victory-card{position:relative;text-align:center;z-index:1}
+.faction-victory-totem{font-size:120px;animation:totem-pulse 2s ease infinite}
+@keyframes totem-pulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 20px rgba(251,191,36,.5))}50%{transform:scale(1.1);filter:drop-shadow(0 0 40px rgba(251,191,36,.8))}}
+.faction-victory-title{font-size:36px;font-weight:800;margin:16px 0 8px;color:#fbbf24;text-shadow:0 0 30px rgba(251,191,36,.5)}
+.faction-victory-sub{font-size:18px;color:var(--muted);margin-bottom:24px}
+.faction-victory-btn{padding:14px 40px;font-size:16px;font-weight:700;border:none;border-radius:12px;background:var(--mint);color:#062822;cursor:pointer;transition:all .2s}
+.faction-victory-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(94,234,212,.4)}
+
+/* ===== 顶部按钮组 ===== */
+.header-actions{display:flex;gap:8px;align-items:center}
+.icon-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--panel2);border:1px solid var(--line);cursor:pointer;font-size:18px;transition:all .2s}
+.icon-btn:hover{border-color:var(--mint);background:var(--mint-dim)}
+.rank-badge{position:absolute;top:-4px;right:-4px;width:18px;height:18px;background:var(--red);color:#fff;font-size:10px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* ===== 顶部 ===== */
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:20px;flex-wrap:wrap}
+.brand{font-size:20px;font-weight:800}
+.brand span{color:var(--mint)}
+.tag{font-size:11px;border:1px solid #2d5a52;color:var(--mint);border-radius:20px;padding:4px 12px}
+.mode-switch{display:flex;gap:6px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:4px}
+.mode-switch a{flex:1;padding:10px 16px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:600;font-size:13px;text-align:center}
+.mode-switch a[aria-current=page]{background:var(--mint);color:#062822}
+
+/* ===== 关卡进度 ===== */
+.level-bar{display:flex;align-items:center;gap:12px;margin-bottom:20px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.level-icon{font-size:24px}
+.level-info{flex:1}
+.level-label{font-size:12px;color:var(--muted)}
+.level-text{font-size:16px;font-weight:700}
+.level-dots{display:flex;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.dot.done{background:var(--mint)}
+.dot.active{background:var(--orange);box-shadow:0 0 10px var(--orange);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ===== 设置区 ===== */
+.setup-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:18px}
+.setup-card h2{margin:0 0 6px;font-size:22px}
+.setup-card>p{color:var(--muted);font-size:14px;margin:0 0 24px}
+.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.setup-grid label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.setup-grid input,.setup-grid select{width:100%;background:var(--panel2);border:1px solid #3a4a66;border-radius:10px;color:var(--text);padding:12px;font-size:16px;font-family:inherit}
+.setup-grid .hint{font-size:11px;color:var(--muted);margin-top:4px}
+.stock-row{display:flex;gap:12px;align-items:end;margin-bottom:20px;flex-wrap:wrap}
+.stock-row>div{flex:1;min-width:200px}
+.stock-tools{display:grid;grid-template-columns:1fr 220px auto;gap:12px;margin:12px 0}
+.case-btn{border:1px solid var(--orange);background:rgba(251,191,36,.1);color:var(--orange);border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:700}
+@media(max-width:700px){.stock-tools{grid-template-columns:1fr}.stock-tools>*{width:100%}}
+.draw-btn{padding:12px 20px;background:var(--purple);color:#1a0a2e;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:14px;white-space:nowrap;transition:all .2s}
+.draw-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(192,132,252,.4)}
+.draw-btn:disabled{opacity:.5;cursor:wait}
+.start-btn{width:100%;padding:18px;font-size:18px;font-weight:800;border:none;border-radius:14px;background:linear-gradient(135deg,var(--mint),#2dd4bf);color:#062822;cursor:pointer;transition:all .2s}
+.start-btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(94,234,212,.4)}
+.start-btn:disabled{opacity:.5;cursor:wait}
+/* 发光指引动画 */
+@keyframes glow-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(94,234,212,.5)} 50%{box-shadow:0 0 0 8px rgba(94,234,212,0),0 0 30px rgba(94,234,212,.4)} }
+.glow-guide { animation:glow-pulse 1.8s ease-in-out infinite; border-color:var(--mint)!important; }
+.start-btn.glow-guide { animation:glow-pulse 1.5s ease-in-out infinite; background:linear-gradient(135deg,#5eead4,#2dd4bf)!important; }
+/* 股票锁定状态 */
+.stock-locked { opacity:.7; pointer-events:none; }
+.stock-locked::after { content:'🔒 已锁定'; position:absolute; top:50%; right:12px; transform:translateY(-50%); font-size:12px; color:var(--mint); font-weight:700; }
+/* 阵营选择弹窗 */
+.faction-select-overlay { position:fixed; inset:0; z-index:180; background:rgba(0,0,0,.8); display:flex; align-items:center; justify-content:center; backdrop-filter:blur(6px); }
+.faction-select-card { background:linear-gradient(160deg,#1a2a40,#0f1628); border:2px solid var(--mint); border-radius:20px; padding:28px; max-width:640px; width:92%; position:relative; }
+.faction-select-card h2 { font-size:22px; font-weight:800; text-align:center; margin:0 0 4px; }
+.faction-select-card .fs-sub { font-size:13px; color:var(--muted); text-align:center; margin:0 0 16px; }
+.faction-select-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin:12px 0; }
+.faction-select-card .faction-card { padding:12px 6px; }
+.faction-select-card .faction-card .f-icon { font-size:28px; }
+.faction-select-card .faction-card .f-name { font-size:14px; }
+.faction-select-card .faction-card .f-trait { font-size:9px; }
+.fs-desc-box { min-height:40px; padding:10px 14px; background:var(--panel2); border-radius:10px; font-size:12px; color:var(--muted); line-height:1.6; margin:8px 0 16px; text-align:center; }
+.fs-actions { display:flex; justify-content:center; align-items:center; gap:16px; }
+.fs-create-btn { padding:12px 28px; background:linear-gradient(135deg,var(--mint),#2dd4bf); color:#062822; border:none; border-radius:10px; font-size:15px; font-weight:800; cursor:pointer; transition:all .2s; }
+.fs-create-btn:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(94,234,212,.35); }
+.fs-skip-btn { background:none; border:1px solid var(--muted); color:var(--muted); padding:10px 20px; border-radius:10px; font-size:13px; cursor:pointer; transition:all .2s; }
+.fs-skip-btn:hover { border-color:var(--mint); color:var(--mint); }
+/* 已有账户列表弹窗 */
+.user-list-overlay { position:fixed; inset:0; z-index:190; background:rgba(0,0,0,.8); display:flex; align-items:center; justify-content:center; backdrop-filter:blur(6px); }
+.user-list-card { background:linear-gradient(160deg,#1a2a40,#0f1628); border:2px solid var(--mint); border-radius:16px; padding:24px; max-width:420px; width:90%; }
+.user-list-card h3 { font-size:18px; font-weight:800; text-align:center; margin:0 0 16px; }
+.user-list-item { display:flex; align-items:center; gap:12px; padding:12px 14px; background:var(--panel2); border-radius:10px; margin-bottom:8px; cursor:pointer; transition:all .2s; border:2px solid transparent; }
+.user-list-item:hover { border-color:var(--mint); transform:translateX(4px); }
+.user-list-item .uli-avatar { font-size:28px; }
+.user-list-item .uli-info { flex:1; }
+.user-list-item .uli-name { font-size:15px; font-weight:700; }
+.user-list-item .uli-meta { font-size:11px; color:var(--muted); }
+.user-list-close { display:block; margin:12px auto 0; background:none; border:none; color:var(--muted); font-size:13px; cursor:pointer; text-decoration:underline; }
+
+/* ===== 游戏主界面 ===== */
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.hero-stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;position:relative;overflow:hidden}
+.hero-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.hero-stat.blue::before{background:var(--blue)}
+.hero-stat.green::before{background:var(--mint)}
+.hero-stat.orange::before{background:var(--orange)}
+.hero-stat.red::before{background:var(--red)}
+.hero-stat .stat-label{font-size:12px;color:var(--muted);margin-bottom:6px}
+.hero-stat .stat-value{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums}
+.hero-stat .stat-sub{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* ===== 操作区 ===== */
+.action-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:18px}
+.action-card h3{margin:0 0 4px;font-size:18px;display:flex;align-items:center;gap:8px}
+.action-card .action-sub{color:var(--muted);font-size:13px;margin:0 0 18px}
+.pos-buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.pos-btn{padding:16px 8px;border:2px solid var(--line);border-radius:12px;background:var(--panel2);color:var(--text);cursor:pointer;font-family:inherit;transition:all .2s;text-align:center}
+.pos-btn:hover{border-color:var(--mint);transform:translateY(-2px)}
+.pos-btn.selected{border-color:var(--mint);background:var(--mint-dim);box-shadow:0 0 20px rgba(94,234,212,.2)}
+.pos-btn .pos-pct{font-size:22px;font-weight:800;display:block}
+.pos-btn .pos-label{font-size:11px;color:var(--muted);margin-top:2px}
+.slider-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.slider-row input[type=range]{flex:1;accent-color:var(--mint);height:6px}
+.slider-val{font-size:18px;font-weight:700;min-width:100px;text-align:right}
+.advance-btn{width:100%;padding:16px;font-size:16px;font-weight:700;border:none;border-radius:12px;background:var(--mint);color:#062822;cursor:pointer;transition:all .2s}
+.advance-btn:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(94,234,212,.4)}
+.advance-btn:disabled{opacity:.5;cursor:wait}
+.action-note{background:var(--orange-dim);border-left:3px solid var(--orange);border-radius:6px;padding:10px 14px;font-size:12px;color:#fde68a;margin-top:14px}
+
+/* ===== 可折叠面板 ===== */
+.collapse-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.collapse-header{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px;transition:background .2s}
+.collapse-header:hover{background:var(--panel2)}
+.collapse-header .arrow{transition:transform .3s;font-size:12px;color:var(--muted)}
+.collapse-card.open .collapse-header .arrow{transform:rotate(180deg)}
+.collapse-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.collapse-card.open .collapse-body{max-height:5000px}
+.collapse-inner{padding:0 20px 20px}
+
+/* ===== 分析区 ===== */
+.analysis-hero{background:linear-gradient(115deg,#112d29,#0c181f);border:1px solid #377266;border-radius:14px;padding:20px;margin-bottom:16px}
+.analysis-hero.caution{background:linear-gradient(115deg,#302919,#101b25);border-color:#846a35}
+.analysis-verdict{font-size:15px;font-weight:700;color:var(--mint)}
+.analysis-hero.caution .analysis-verdict{color:var(--orange)}
+.analysis-headline{font-size:22px;font-weight:800;margin:10px 0;line-height:1.4}
+.analysis-msg{font-size:14px;color:#bccedf;line-height:1.8}
+.analysis-trend{background:#ffffff08;border-left:3px solid var(--orange);border-radius:6px;margin-top:14px;padding:10px 14px;color:#ffcf88;font-size:13px}
+.analysis-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.analysis-num{background:#0a121d;padding:16px 12px;border-radius:10px;min-height:120px}
+.analysis-num small:first-child{font-size:12px;font-weight:600;color:var(--muted);display:block}
+.analysis-num b{font-size:20px;display:block;margin:10px 0;line-height:1.3}
+.analysis-num.blue b{color:var(--blue)}
+.analysis-num.amber b{color:var(--orange)}
+.analysis-num.green b{color:#8bda9a}
+.analysis-num.red b{color:var(--red)}
+
+/* ===== 压力测试 ===== */
+.stress-row{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center;margin:14px 0}
+.stress-track{position:relative;min-height:50px;background:#09121e;border-radius:10px;overflow:hidden}
+.stress-fill{position:absolute;inset:0 auto 0 0;background:#295e44;min-width:0;transition:width .5s}
+.stress-track.over .stress-fill{background:#81373d}
+.stress-line{position:absolute;top:0;bottom:0;width:3px;background:var(--orange)}
+.stress-value{position:relative;z-index:1;display:block;padding:12px 16px;font-size:17px;font-weight:700}
+
+/* ===== K线图 ===== */
+.chart-wrap{overflow:auto;background:#09121e;border-radius:12px;padding:10px}
+.chart-svg{display:block;width:100%;min-width:600px;height:auto}
+.chart-legend{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);margin:10px 0;font-size:12px}
+
+/* ===== 流水表 ===== */
+.ledger-table{width:100%;border-collapse:collapse;font-size:13px}
+.ledger-table th,.ledger-table td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+.ledger-table th{color:var(--muted);font-weight:500}
+
+/* ===== 止损触发戏剧效果 ===== */
+.stop-overlay{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.9);animation:flashRed .5s ease}
+@keyframes flashRed{0%{background:rgba(248,113,113,.4)}100%{background:rgba(0,0,0,.9)}}
+.stop-card{text-align:center;animation:stopIn .6s ease}
+@keyframes stopIn{0%{transform:scale(.5);opacity:0}60%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+.stop-icon{font-size:80px;margin-bottom:16px;animation:shake .5s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+.stop-title{font-size:36px;font-weight:800;color:var(--red);margin:0 0 12px}
+.stop-detail{font-size:16px;color:var(--muted);margin-bottom:28px;line-height:1.8}
+.stop-btn{padding:14px 40px;font-size:16px;font-weight:700;border:none;border-radius:12px;background:var(--red);color:#fff;cursor:pointer}
+/* ===== 每轮行情揭晓 ===== */
+.round-reveal{position:fixed;inset:0;z-index:420;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(circle at 50% 42%,rgba(30,64,90,.92),rgba(3,8,18,.97) 62%);backdrop-filter:blur(12px)}
+.round-reveal-card{width:min(760px,100%);text-align:center;animation:revealIn .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes revealIn{from{opacity:0;transform:scale(.9) translateY(24px)}to{opacity:1;transform:none}}
+.round-reveal-kicker{color:var(--mint);font-size:12px;letter-spacing:4px;text-transform:uppercase}
+.round-reveal-date{margin:12px 0 4px;font-size:24px;font-weight:800;color:#cbd5e1}
+.round-reveal-stock{color:var(--muted);font-size:14px}
+.round-reveal-price{margin:22px 0 4px;font:900 clamp(58px,9vw,104px)/1 monospace;letter-spacing:-5px;text-shadow:0 0 36px currentColor}
+.round-reveal-price.up,.round-reveal-change.up{color:#f87171}.round-reveal-price.down,.round-reveal-change.down{color:#34d399}.round-reveal-price.flat,.round-reveal-change.flat{color:#fbbf24}
+.round-reveal-change{font-size:24px;font-weight:850}
+.round-reveal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0 18px}
+.round-reveal-stat{padding:16px;background:rgba(10,18,32,.76);border:1px solid rgba(148,163,184,.18);border-radius:14px}.round-reveal-stat small{display:block;color:var(--muted);margin-bottom:6px}.round-reveal-stat b{font-size:21px}
+.round-reveal-comment{min-height:32px;color:#fff;font-size:20px;font-weight:750}.round-reveal-btn{margin-top:22px;padding:13px 38px;border:0;border-radius:12px;background:var(--mint);color:#062822;font:800 15px inherit;cursor:pointer}
+@media(max-width:600px){.round-reveal-stats{grid-template-columns:1fr}.round-reveal-price{letter-spacing:-2px}.round-reveal-date{font-size:18px}}
+
+/* ===== 完成界面 ===== */
+.complete-card{background:linear-gradient(160deg,#1a2a40,#0f1628);border:1px solid var(--mint);border-radius:20px;padding:32px;margin-bottom:18px;text-align:center}
+.complete-badge{display:inline-block;font-size:12px;letter-spacing:2px;color:var(--mint);border:1px solid var(--mint);border-radius:20px;padding:5px 16px;margin-bottom:16px}
+.complete-title{font-size:28px;font-weight:800;margin:0 0 8px}
+.complete-verdict{font-size:18px;color:var(--orange);font-weight:700;margin-bottom:20px}
+.complete-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.complete-stat{background:var(--panel2);border-radius:12px;padding:16px}
+.complete-stat .cs-label{font-size:12px;color:var(--muted)}
+.complete-stat .cs-value{font-size:22px;font-weight:800;margin-top:6px}
+.compare-table{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0}
+.compare-table th,.compare-table td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}
+.compare-table th{color:var(--muted);font-weight:500;font-size:12px}
+.compare-table tr.highlight{background:var(--mint-dim)}
+.compare-table tr.highlight td{font-weight:700}
+.conclusion-box{background:var(--orange-dim);border:1px solid var(--orange);border-radius:12px;padding:18px;margin:16px 0;text-align:left}
+.conclusion-box h4{margin:0 0 8px;color:var(--orange);font-size:15px}
+.conclusion-box p{margin:0;color:#fde68a;font-size:14px;line-height:1.8}
+/* ===== 单局结束后的去向选择 ===== */
+.completion-choice-overlay{position:fixed;inset:0;z-index:360;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(3,8,18,.88);backdrop-filter:blur(8px)}
+.completion-choice-card{width:min(560px,100%);background:linear-gradient(155deg,#18263b,#0c1424);border:1px solid rgba(94,234,212,.55);border-radius:22px;padding:30px;box-shadow:0 28px 80px rgba(0,0,0,.55);text-align:center;animation:choiceIn .28s ease-out}
+@keyframes choiceIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.completion-choice-tag{display:inline-block;padding:5px 14px;border:1px solid var(--mint);border-radius:999px;color:var(--mint);font-size:11px;letter-spacing:2px}
+.completion-choice-title{margin:16px 0 8px;font-size:28px;font-weight:850}
+.completion-choice-sub{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+.completion-choice-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+.completion-choice-stat{padding:14px 10px;background:var(--panel2);border:1px solid var(--line);border-radius:12px}
+.completion-choice-stat small{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}
+.completion-choice-stat b{font-size:18px}
+.completion-choice-actions{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:10px;margin-top:20px}
+.completion-choice-btn{min-height:48px;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font:700 14px inherit;cursor:pointer;transition:.2s}
+.completion-choice-btn:hover{transform:translateY(-1px);border-color:var(--mint)}
+.completion-choice-btn.primary{background:var(--mint);border-color:var(--mint);color:#062822}
+.completion-choice-btn.exit{color:var(--muted)}
+@media(max-width:600px){.completion-choice-stats{grid-template-columns:1fr}.completion-choice-actions{grid-template-columns:1fr}.completion-choice-card{padding:24px 18px}}
+/* 风险人格成绩单 */
+.scorecard{--faction-accent:#5eead4;--faction-glow:rgba(94,234,212,.2);background:radial-gradient(circle at 50% 20%,var(--faction-glow),transparent 34%),linear-gradient(155deg,#182b47,#07101e 72%);border:2px solid var(--faction-accent);border-radius:28px;padding:28px 30px;margin-bottom:20px;position:relative;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.45),0 0 42px var(--faction-glow)}
+.scorecard.faction-jin{--faction-accent:#fbbf24;--faction-glow:rgba(251,191,36,.24)}.scorecard.faction-mu{--faction-accent:#34d399;--faction-glow:rgba(52,211,153,.23)}.scorecard.faction-shui{--faction-accent:#60a5fa;--faction-glow:rgba(96,165,250,.24)}.scorecard.faction-huo{--faction-accent:#f87171;--faction-glow:rgba(248,113,113,.24)}.scorecard.faction-tu{--faction-accent:#a78bfa;--faction-glow:rgba(167,139,250,.24)}
+.scorecard::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,var(--faction-glow),transparent 70%);pointer-events:none}
+.sc-header{text-align:center;margin-bottom:20px}
+.poster-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(148,163,184,.16)}
+.poster-player{display:flex;align-items:center;gap:12px;text-align:left}.poster-avatar{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;border:1px solid var(--faction-accent);background:#0b1424;font-size:29px;box-shadow:0 0 18px var(--faction-glow)}.poster-player b{display:block;font-size:17px}.poster-player small{color:var(--muted)}
+.poster-brand{text-align:right;color:var(--faction-accent);font-size:11px;letter-spacing:2px}.poster-brand b{display:block;color:#fff;font-size:18px;letter-spacing:0;margin-bottom:2px}
+.poster-totem{position:absolute;left:50%;top:88px;transform:translateX(-50%);font-size:260px;line-height:1;opacity:.055;filter:drop-shadow(0 0 25px var(--faction-accent));pointer-events:none}
+.poster-podium{position:relative;text-align:center;padding:8px 0 16px}.poster-medal{font-size:66px;line-height:1;filter:drop-shadow(0 0 20px rgba(251,191,36,.55));animation:posterFloat 2.4s ease-in-out infinite}@keyframes posterFloat{50%{transform:translateY(-7px) scale(1.04)}}
+.poster-rank-label{margin-top:10px;color:var(--muted);font-size:12px;letter-spacing:3px}.poster-rank-main{display:block;margin:4px 0;font-size:clamp(42px,6vw,72px);font-weight:950;letter-spacing:2px;color:#fbbf24;text-shadow:0 0 28px rgba(251,191,36,.38)}
+.poster-performance{display:flex;justify-content:center;align-items:baseline;gap:18px;margin-top:4px}.poster-return{font:900 38px monospace;color:var(--faction-accent)}.poster-beat{font-size:15px;color:#cbd5e1}.poster-beat b{color:#fbbf24;font-size:22px}
+.poster-path{margin:18px auto 22px;max-width:760px;padding:16px 20px;background:rgba(4,10,20,.62);border:1px solid rgba(148,163,184,.16);border-radius:16px}.poster-path-values{display:flex;justify-content:space-between;font:750 14px monospace;color:#cbd5e1}.poster-path-track{height:8px;margin:12px 0 7px;background:#111c2d;border-radius:99px;overflow:hidden}.poster-path-fill{height:100%;width:0;background:linear-gradient(90deg,var(--faction-accent),#fbbf24);border-radius:99px;box-shadow:0 0 15px var(--faction-accent);transition:width 1.2s cubic-bezier(.2,.8,.2,1)}.poster-path-caption{text-align:center;color:var(--muted);font-size:11px}
+.poster-title-label{text-align:center;color:var(--muted);font-size:11px;letter-spacing:3px;margin-top:6px}
+.poster-save{display:block;width:100%;margin-top:16px;padding:13px;border:1px solid var(--mint);border-radius:12px;background:rgba(94,234,212,.1);color:var(--mint);font:750 14px inherit;cursor:pointer}.poster-save:hover{background:var(--mint);color:#062822}
+.sc-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--faction-accent);border:1px solid var(--faction-accent);border-radius:20px;padding:4px 14px;margin-bottom:12px}
+.sc-personality{font-size:30px;font-weight:900;margin:3px 0 4px;color:var(--faction-accent)}
+.sc-personality-icon{font-size:36px;margin-bottom:8px}
+.sc-subtitle{font-size:13px;color:var(--muted);margin:0}
+.sc-score-row{display:flex;align-items:center;justify-content:center;gap:24px;margin:16px 0;padding:13px;background:rgba(4,10,20,.56);border-radius:14px;border:1px solid rgba(148,163,184,.14)}
+.sc-score-num{font-size:48px;font-weight:900;color:var(--faction-accent);line-height:1;font-family:monospace}
+.sc-score-label{font-size:12px;color:var(--muted);text-align:left;line-height:1.6}
+.sc-score-label b{color:var(--mint);font-size:14px}
+.sc-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.sc-metric{background:var(--panel2);border-radius:10px;padding:12px 10px;text-align:center}
+.sc-metric .sm-label{font-size:11px;color:var(--muted);margin-bottom:4px}
+.sc-metric .sm-value{font-size:18px;font-weight:800;font-family:monospace}
+.sc-metric .sm-value.positive{color:var(--mint)}
+.sc-metric .sm-value.negative{color:var(--red)}
+.sc-metric .sm-value.warning{color:var(--orange)}
+.sc-beat{display:none}
+.sc-beat b{color:var(--orange);font-size:18px}
+.sc-quote{text-align:center;margin-top:18px;padding:14px 18px;background:rgba(251,191,36,.08);border-left:3px solid var(--orange);border-radius:0 10px 10px 0;font-size:15px;font-weight:600;color:#fde68a;line-height:1.6;font-style:italic}
+.sc-rules{margin-top:14px;font-size:11px;color:#5a6a7e;line-height:1.8;text-align:left}
+.sc-rules summary{cursor:pointer;color:var(--muted);font-weight:600}
+@media(max-width:600px){.scorecard{padding:22px 18px}.sc-metrics{grid-template-columns:1fr 1fr}.sc-score-row{flex-direction:column;gap:8px}.poster-top{align-items:flex-start}.poster-totem{font-size:190px}.poster-performance{flex-direction:column;align-items:center;gap:4px}.poster-rank-main{font-size:42px}}
+.download-btn{padding:14px 32px;font-size:15px;font-weight:700;border:none;border-radius:12px;background:var(--mint);color:#062822;cursor:pointer;margin-top:16px}
+
+/* ===== 工具条 ===== */
+.toolbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.tool-btn{padding:10px 18px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--muted);cursor:pointer;font-size:13px;font-family:inherit;transition:all .2s}
+.tool-btn:hover{border-color:var(--mint);color:var(--text)}
+.tool-btn.danger{border-color:var(--red);color:var(--red)}
+
+/* ===== 小白提示 ===== */
+.tip{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--blue);color:#0a0e1a;font-size:10px;font-weight:800;cursor:help;margin-left:6px;position:relative}
+.tip:hover::after{content:attr(data-tip);position:absolute;left:24px;top:50%;transform:translateY(-50%);background:#1e293b;border:1px solid var(--blue);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--text);white-space:normal;width:240px;line-height:1.6;z-index:50;font-weight:400}
+
+/* ===== 错误提示 ===== */
+.error-box{background:#412331;border:1px solid var(--red);color:#ffd9e0;padding:16px;border-radius:12px;margin:15px 0;white-space:pre-wrap;font-size:13px}
+
+footer{margin-top:30px;color:var(--muted);font-size:12px;text-align:center}
+
+@media(max-width:800px){
+  .setup-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr}
+  .analysis-nums{grid-template-columns:repeat(2,1fr)}
+  .pos-buttons{grid-template-columns:repeat(2,1fr)}
+  .complete-stats{grid-template-columns:1fr}
+  .modal-title{font-size:24px}
+}
+
+/* ===== 阵营主题变色 ===== */
+body.faction-leader{--theme:#fbbf24;--theme-dim:rgba(251,191,36,.12);--theme-glow:rgba(251,191,36,.3)}
+body.faction-leader-jin{--theme:#fbbf24;--theme-dim:rgba(251,191,36,.12);--theme-glow:rgba(251,191,36,.3)}
+body.faction-leader-mu{--theme:#34d399;--theme-dim:rgba(52,211,153,.12);--theme-glow:rgba(52,211,153,.3)}
+body.faction-leader-shui{--theme:#60a5fa;--theme-dim:rgba(96,165,250,.12);--theme-glow:rgba(96,165,250,.3)}
+body.faction-leader-huo{--theme:#f87171;--theme-dim:rgba(248,113,113,.12);--theme-glow:rgba(248,113,113,.3)}
+body.faction-leader-tu{--theme:#a78bfa;--theme-dim:rgba(167,139,250,.12);--theme-glow:rgba(167,139,250,.3)}
+
+body.faction-leader .brand span{color:var(--theme)}
+body.faction-leader .start-btn{background:var(--theme);color:#000}
+body.faction-leader .start-btn:hover{box-shadow:0 8px 30px var(--theme-glow)}
+body.faction-leader .tool-btn{border-color:var(--theme);color:var(--theme)}
+body.faction-leader .pos-btn.selected{background:var(--theme-dim);border-color:var(--theme);color:var(--theme)}
+body.faction-leader .level-icon{color:var(--theme)}
+body.faction-leader .dot.active{background:var(--theme);box-shadow:0 0 12px var(--theme-glow)}
+body.faction-leader .hero-stat .val{color:var(--theme)}
+body.faction-leader .modal-btn{background:var(--theme);color:#000}
+body.faction-leader .modal-btn:hover{box-shadow:0 8px 30px var(--theme-glow)}
+body.faction-leader .faction-card.selected{border-color:var(--theme);box-shadow:0 0 20px var(--theme-glow)}
+body.faction-leader .rank-tab.active{background:var(--theme-dim);border-color:var(--theme);color:var(--theme)}
+body.faction-leader .icon-btn:hover{border-color:var(--theme);background:var(--theme-dim)}
+body.faction-leader .user-bar{border-color:var(--theme)}
+body.faction-leader .setup-btn.primary{background:var(--theme);color:#000}
+
+/* 霸主横幅 */
+.leader-banner{display:none;align-items:center;gap:10px;padding:10px 16px;background:linear-gradient(90deg,var(--theme-dim),transparent);border:1px solid var(--theme);border-radius:12px;margin-bottom:16px;animation:leaderGlow 2s ease-in-out infinite}
+body.faction-leader .leader-banner{display:flex}
+@keyframes leaderGlow{0%,100%{box-shadow:0 0 10px var(--theme-glow)}50%{box-shadow:0 0 25px var(--theme-glow)}}
+.leader-banner .leader-icon{font-size:24px;animation:bounce 1s ease infinite}
+.leader-banner .leader-text{flex:1;font-size:14px;font-weight:600}
+.leader-banner .leader-text span{color:var(--theme)}
+.leader-banner .leader-sub{font-size:11px;color:var(--muted)}
+
+/* 霸主头像光晕 */
+body.faction-leader #userAvatar{animation:avatarGlow 2s ease-in-out infinite}
+@keyframes avatarGlow{0%,100%{box-shadow:0 0 8px var(--theme-glow)}50%{box-shadow:0 0 20px var(--theme-glow)}}
+</style>
+</head>
+<body>
+<main>
+
+<!-- ===== 开场弹窗 ===== -->
+<div id="onboarding" class="modal-overlay">
+  <div class="modal-card">
+    <span class="modal-tag">RISKPILOT · 历史实验</span>
+    <h1 class="modal-title">如果时间回到<span>2025年4月</span><br>你会怎么选？</h1>
+    <p class="modal-sub">这不是预测游戏，是一场关于「纪律」的实验。</p>
+    <div class="modal-rules">
+      <h4>🎮 游戏规则</h4>
+      <ol>
+        <li>系统随机抽取一只<b>真实股票</b>，时间从2025年4月底开始</li>
+        <li>你只能看到<b>到今天为止</b>的行情，不知道未来涨跌</li>
+        <li>每个月决定一次：持有多少仓位（全仓/半仓/现金）</li>
+        <li>如果亏损超过你设定的预算，系统<b>强制清仓</b>，实验结束</li>
+        <li>最后对比：你的操作 vs 买入持有 vs 一直现金</li>
+      </ol>
+    </div>
+    <button class="modal-btn" onclick="closeOnboarding()">🚀 开始实验</button>
+    <span class="modal-skip" onclick="closeOnboarding()">跳过，我知道怎么玩</span>
+  </div>
+</div>
+
+<!-- ===== 每轮行情揭晓 ===== -->
+<div id="roundReveal" class="round-reveal hidden" role="dialog" aria-modal="true" aria-labelledby="roundRevealPrice">
+  <div class="round-reveal-card">
+    <div class="round-reveal-kicker">MARKET REVEAL · 行情揭晓</div>
+    <div id="roundRevealDate" class="round-reveal-date">上一节点 → 下一节点</div>
+    <div id="roundRevealStock" class="round-reveal-stock">股票名称</div>
+    <div id="roundRevealPrice" class="round-reveal-price flat">0.00</div>
+    <div id="roundRevealChange" class="round-reveal-change flat">0.00%</div>
+    <div class="round-reveal-stats">
+      <div class="round-reveal-stat"><small>账户资产变化</small><b id="roundRevealEquity">0.00 元</b></div>
+      <div class="round-reveal-stat"><small>当前账户资产</small><b id="roundRevealTotal">0.00 元</b></div>
+      <div class="round-reveal-stat"><small>距风险预算线</small><b id="roundRevealBudget">0.00 元</b></div>
+    </div>
+    <div id="roundRevealComment" class="round-reveal-comment">本轮结果已经揭晓</div>
+    <button class="round-reveal-btn" onclick="dismissRoundReveal()">继续查看 →</button>
+  </div>
+</div>
+
+<!-- ===== 止损触发全屏效果 ===== -->
+<div id="stopOverlay" class="stop-overlay hidden">
+  <div class="stop-card">
+    <div class="stop-icon">💥</div>
+    <div class="stop-title">预算超限！强制清仓！</div>
+    <div id="stopDetail" class="stop-detail"></div>
+    <button class="stop-btn" onclick="dismissStop()">查看实验结果</button>
+  </div>
+</div>
+
+<!-- ===== 单局结束后的去向选择 ===== -->
+<div id="completionChoice" class="completion-choice-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="completionChoiceTitle">
+  <div class="completion-choice-card">
+    <span id="completionChoiceTag" class="completion-choice-tag">小试牛刀完成</span>
+    <h2 id="completionChoiceTitle" class="completion-choice-title">还想挑战另一段未知行情吗？</h2>
+    <p class="completion-choice-sub">下一局会重新抽取股票并重置模拟账户；<br>你的玩家身份、阵营和排行榜成绩会保留。</p>
+    <div class="completion-choice-stats">
+      <div class="completion-choice-stat"><small>本轮期末资产</small><b id="choiceEquity">-</b></div>
+      <div class="completion-choice-stat"><small>本轮收益</small><b id="choiceReturn">-</b></div>
+      <div class="completion-choice-stat"><small>风险预算</small><b id="choiceBudget">-</b></div>
+    </div>
+    <div class="completion-choice-actions">
+      <button class="completion-choice-btn primary" onclick="continueChallenge()">🎲 继续挑战</button>
+      <button class="completion-choice-btn" onclick="reviewCompletedRun()">📊 查看复盘</button>
+      <button class="completion-choice-btn exit" onclick="exitChallenge()">退出游戏</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 用户设置弹窗 ===== -->
+<div id="userSetupModal" class="modal-overlay hidden">
+  <div class="modal-card" style="max-width:520px;position:relative">
+    <span onclick="closeUserSetup()" style="position:absolute;top:12px;right:16px;font-size:22px;cursor:pointer;color:var(--muted);z-index:10" onmouseover="this.style.color='var(--mint)'" onmouseout="this.style.color='var(--muted)'">✕</span>
+    <span class="modal-tag">RISKPILOT · 玩家档案</span>
+    <h2 class="modal-title" style="font-size:24px">创建你的玩家身份</h2>
+    <p class="modal-sub">有了身份，你的战绩才能上榜，还能加入阵营为荣誉而战！</p>
+
+    <!-- 已有账户列表 -->
+    <div id="userListSection" style="margin-bottom:16px;">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">选择已有账户，或新建一个</div>
+      <div id="userList" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+    </div>
+
+    <!-- Step 1: 昵称 -->
+    <div id="setupStep1" class="setup-step active">
+      <label style="font-size:14px;font-weight:600;display:block;margin-bottom:8px">给自己起个响亮的名字</label>
+      <input id="setupName" class="name-input" type="text" maxlength="12" placeholder="比如：股海小哪吒" value="">
+      <div class="setup-nav">
+        <span></span>
+        <button class="setup-btn primary" onclick="goSetupStep(2)">下一步 →</button>
+      </div>
+    </div>
+
+    <!-- Step 2: 头像 -->
+    <div id="setupStep2" class="setup-step">
+      <label style="font-size:14px;font-weight:600;display:block;margin-bottom:8px">选一个专属头像</label>
+      <div id="avatarGrid" class="avatar-grid"></div>
+      <div class="setup-nav">
+        <button class="setup-btn secondary" onclick="goSetupStep(1)">← 上一步</button>
+        <button id="avatarNextBtn" class="setup-btn primary" onclick="continueAfterAvatar()">下一步 →</button>
+      </div>
+    </div>
+
+    <!-- Step 3: 阵营 -->
+    <div id="setupStep3" class="setup-step">
+      <label style="font-size:14px;font-weight:600;display:block;margin-bottom:8px">选择你的五行阵营（每个阵营有独特天赋）</label>
+      <div id="factionGrid" class="faction-grid"></div>
+      <div id="factionDesc" style="font-size:12px;color:var(--muted);margin:8px 0;min-height:36px"></div>
+      <div class="setup-nav">
+        <button class="setup-btn secondary" onclick="goSetupStep(2)">← 上一步</button>
+        <button class="setup-btn primary" onclick="finishUserSetup()">🚀 完成，开始冒险！</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 阵营选择弹窗（首页进入时） ===== -->
+<div id="factionSelectModal" class="faction-select-overlay hidden">
+  <div class="faction-select-card">
+    <h2>⚔️ 选择你的五行阵营</h2>
+    <p class="fs-sub">每个阵营有独特天赋，选择后将影响你的模拟交易</p>
+    <div id="fsFactionGrid" class="faction-select-grid"></div>
+    <div id="fsFactionDesc" class="fs-desc-box">点击上方阵营卡片查看详情</div>
+    <div class="fs-actions">
+      <button class="fs-skip-btn" onclick="showExistingUsers()">跳过，已有账户 →</button>
+      <button class="fs-create-btn" onclick="createAccountFromFaction()">✨ 创建账户</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 已有账户列表弹窗 ===== -->
+<div id="userListModal" class="user-list-overlay hidden">
+  <div class="user-list-card">
+    <h3>选择你的账户</h3>
+    <div id="userListContainer"></div>
+    <button class="user-list-close" onclick="closeUserList()">取消</button>
+  </div>
+</div>
+
+<!-- ===== 排行榜遮罩 ===== -->
+<div id="rankOverlay" class="rank-overlay" onclick="closeRankPanel()"></div>
+
+<!-- ===== 排行榜面板 ===== -->
+<div id="rankPanel" class="rank-panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+    <h3 style="margin:0;font-size:20px">🏆 排行榜</h3>
+    <button class="icon-btn" onclick="closeRankPanel()" style="width:32px;height:32px;font-size:16px">✕</button>
+  </div>
+  <div class="rank-tabs">
+    <div class="rank-tab active" onclick="switchRankTab('personal')">👤 牛人榜</div>
+    <div class="rank-tab" onclick="switchRankTab('faction')">⚔️ 阵营榜</div>
+  </div>
+  <div id="personalRankList" class="rank-list"></div>
+  <div id="factionRankList" style="display:none"></div>
+  <div style="margin-top:20px;padding:12px;background:var(--panel2);border-radius:10px;font-size:11px;color:var(--muted);line-height:1.6">
+    💡 牛人榜按盈利率排名，击败第10名才能进前十。阵营榜按成员平均盈利率×人数加成计算，前三名获得专属称号和头像框。
+  </div>
+</div>
+
+<!-- ===== 排名恭喜弹窗 ===== -->
+<div id="congratsOverlay" class="congrats-overlay">
+  <div class="congrats-card">
+    <div id="congratsIcon" class="congrats-icon">🎉</div>
+    <div id="congratsTitle" class="congrats-title">恭喜进入牛人榜！</div>
+    <div id="congratsRank" class="congrats-rank">第 8 名</div>
+    <div id="congratsText" class="congrats-text">你击败了「韭菜本菜」，成功闯入牛人榜前十！继续加油，冲击三甲！</div>
+    <button class="modal-btn" onclick="closeCongrats()">太棒了！</button>
+  </div>
+</div>
+
+<!-- ===== 阵营胜利动画 ===== -->
+<div id="factionVictoryOverlay" class="faction-victory-overlay">
+  <div class="faction-victory-bg"></div>
+  <div class="faction-victory-card">
+    <div id="victoryTotem" class="faction-victory-totem">🐉</div>
+    <div id="victoryTitle" class="faction-victory-title">金阵营登顶！</div>
+    <div id="victorySub" class="faction-victory-sub">全体成员获得「五行至尊」称号 + 金色头像框</div>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:8px">
+      <button class="faction-victory-btn" onclick="closeFactionVictory(false)" style="background:none;border:1px solid var(--muted);color:var(--muted);box-shadow:none">关闭</button>
+      <button class="faction-victory-btn" onclick="closeFactionVictory(true)">查看排行榜 →</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="brand">Risk<span>Pilot</span> <small style="color:var(--muted);font-weight:400;font-size:13px">／时间穿越实验</small></div>
+  <div class="header-actions">
+    <div id="userBar" class="user-bar" style="display:none">
+      <div id="userAvatar" class="user-avatar">🎮</div>
+      <div class="user-info">
+        <div id="userName" class="user-name">玩家</div>
+        <div id="userFaction" class="user-faction">未选择阵营</div>
+      </div>
+      <span class="user-edit" onclick="openUserSetup()">切换</span>
+      <span class="user-edit" onclick="logoutUser()" style="margin-left:6px;color:#f87171">退出</span>
+    </div>
+    <button class="icon-btn" onclick="openRankPanel()" title="牛人榜" style="position:relative">
+      🏆
+      <span id="rankBadge" class="rank-badge" style="display:none">!</span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== 阵营霸主横幅 ===== -->
+<div id="leaderBanner" class="leader-banner">
+  <div class="leader-icon" id="leaderIcon">🐉</div>
+  <div>
+    <div class="leader-text">当前霸主：<span id="leaderName">金阵营</span> · <span id="leaderStyle">稳健价值派</span></div>
+    <div class="leader-sub" id="leaderSub">你的阵营正在领跑，全体成员获得金色主题！</div>
+  </div>
+</div>
+
+<nav class="mode-switch" aria-label="切换体验模式" style="margin-bottom:20px">
+  <a id="analysisModeLink" href="/">股票分析</a>
+  <a id="replayModeLink" href="/replay" aria-current="page">历史实验</a>
+</nav>
+<script>if(location.protocol==='file:'){document.getElementById('analysisModeLink').href='index.html';document.getElementById('replayModeLink').href='http://127.0.0.1:8000/replay';}</script>
+
+<!-- ===== 设置区 ===== -->
+<div id="setupSection">
+  <div class="setup-card">
+    <h2>🎯 设置你的实验</h2>
+    <p>选一只股票，设定本金和损失底线，然后穿越回2025年4月。</p>
+
+    <div class="stock-row">
+      <div>
+        <label for="stock">本轮历史样本</label>
+        <select id="stock" disabled><option value="601318">正在读取可用样本…</option></select>
+      </div>
+      <button id="draw" class="draw-btn" disabled>🎲 随机抽取</button>
+    </div>
+    <div class="stock-tools">
+      <input id="stockSearch" type="search" placeholder="搜索股票名称或6位代码" aria-label="搜索历史样本">
+      <select id="industryFilter" aria-label="按行业筛选"><option value="">全部行业</option></select>
+      <button id="demoCase" class="case-btn" type="button">🎤 Demo</button>
+    </div>
+    <p id="drawStatus" style="font-size:13px;color:var(--mint);margin:0 0 16px"></p>
+    <p id="poolNote" style="font-size:12px;color:var(--muted)"></p>
+
+    <!-- 阵营天赋提示 -->
+    <div id="factionTraitBar" class="faction-trait-bar" style="display:none;margin-bottom:16px;padding:10px 14px;border-radius:10px;font-size:13px;">
+      <span id="factionTraitIcon">🪙</span>
+      <span id="factionTraitText">金阵营天赋生效中：亏损预算放宽10%</span>
+    </div>
+
+    <div class="setup-grid">
+      <div>
+        <label for="cadence">决策节奏</label>
+        <select id="cadence">
+          <option value="monthly">⚡ 快速体验 · 每月一次（4关）</option>
+          <option value="weekly">📅 完整挑战 · 每周一次（17关）</option>
+        </select>
+        <div class="hint">均从2025-04-30开始，至2025-08-29结束</div>
+      </div>
+      <div>
+        <label for="capital">初始模拟本金（元）<span class="tip" data-tip="你在实验开始时拥有的资金，全部为现金。">?</span></label>
+        <input id="capital" type="number" min="1000" max="10000000" step="1000" value="100000">
+      </div>
+      <div>
+        <label for="budget">最大可承受亏损（元）<span class="tip" data-tip="如果账户亏损超过这个数，系统会强制卖出全部股票，实验结束。建议设为本金的2%-3%。">?</span></label>
+        <input id="budget" type="number" min="1" value="2000">
+        <div class="hint">演示默认值：本金的3%，可根据个人风险承受能力调整。</div>
+      </div>
+    </div>
+
+    <button id="start" class="start-btn">⏳ 穿越回2025年4月 →</button>
+    <button id="restart" class="start-btn hidden" style="background:var(--panel);color:var(--muted);border:1px solid var(--line)">重新开始</button>
+  </div>
+</div>
+
+<!-- ===== 游戏主界面 ===== -->
+<div id="workspace" class="hidden">
+
+  <!-- 关卡进度 -->
+  <div class="level-bar">
+    <div class="level-icon">📍</div>
+    <div class="level-info">
+      <div class="level-label" id="levelLabel">第 1 关 / 共 4 关</div>
+      <div class="level-text" id="levelText">当前只看到 2025-04-30 收盘</div>
+    </div>
+    <div class="level-dots" id="levelDots"></div>
+  </div>
+
+  <!-- 工具条 -->
+  <div class="toolbar">
+    <button class="tool-btn" onclick="openOnboarding()">📖 游戏说明</button>
+    <button class="tool-btn" onclick="autoDemo()">⚡ 一键演示（自动走完）</button>
+    <button class="tool-btn danger" onclick="confirmRestart()">🔄 重新开始</button>
+  </div>
+
+  <!-- 止损通知 -->
+  <div id="stopNotice" class="error-box hidden"></div>
+
+  <!-- 核心数字 -->
+  <div class="hero-stats">
+    <div class="hero-stat blue">
+      <div class="stat-label">💰 账户总资产</div>
+      <div class="stat-value" id="hEquity">-</div>
+      <div class="stat-sub" id="hEquitySub">现金 + 持仓市值</div>
+    </div>
+    <div class="hero-stat" id="pnlCard">
+      <div class="stat-label">📊 累计盈亏</div>
+      <div class="stat-value" id="hPnl">-</div>
+      <div class="stat-sub" id="hPnlSub">相对初始本金</div>
+    </div>
+    <div class="hero-stat orange">
+      <div class="stat-label">🛡️ 距预算线</div>
+      <div class="stat-value" id="hBudget">-</div>
+      <div class="stat-sub" id="hBudgetSub">亏损超预算即强制清仓</div>
+    </div>
+  </div>
+
+  <!-- K线图 -->
+  <div class="collapse-card open">
+    <div class="collapse-header" onclick="toggleCard(this)">
+      <span>📈 已经揭晓的价格走势</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="collapse-body">
+      <div class="collapse-inner">
+        <p id="priceText" style="color:var(--muted);font-size:13px"></p>
+        <div id="priceChart"></div>
+        <p style="font-size:11px;color:var(--muted)">不复权价格；除息可能造成价格阶跃，不等于同额账户亏损。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 操作区 -->
+  <div id="controlPanel" class="action-card">
+    <h3>🎮 第 <span id="actionLevel">1</span> 关：你想持有多少仓位？</h3>
+    <p class="action-sub">选择目标持仓比例，系统会在下一个交易日开盘时模拟执行。建议仓位不是强制上限，越界仍可继续，但会记录并影响纪律评分。</p>
+
+    <div class="pos-buttons" id="posButtons">
+      <button class="pos-btn" data-pct="0" onclick="setPosition(0)"><span class="pos-pct">0%</span><span class="pos-label">全部现金</span></button>
+      <button class="pos-btn" data-pct="30" onclick="setPosition(30)"><span class="pos-pct">30%</span><span class="pos-label">轻仓试探</span></button>
+      <button class="pos-btn" data-pct="60" onclick="setPosition(60)"><span class="pos-pct">60%</span><span class="pos-label">半仓以上</span></button>
+      <button class="pos-btn" data-pct="100" onclick="setPosition(100)"><span class="pos-pct">100%</span><span class="pos-label">满仓</span></button>
+    </div>
+    <p id="positionLimitHint" style="font-size:12px;color:var(--mint);margin:8px 0 12px"></p>
+
+    <div class="slider-row">
+      <input id="slider" type="range" min="0" step="100" value="0" aria-label="拖动调整目标持仓市值">
+      <div class="slider-val" id="targetLabel">0 元</div>
+    </div>
+    <div class="range-ends" style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:14px">
+      <span>全部现金</span><span>当前账户资产（费用前）</span>
+    </div>
+
+    <p id="actionText" style="font-size:13px;color:var(--muted)"></p>
+
+    <button id="advance" class="advance-btn">确认选择，揭晓下一关 →</button>
+
+    <div class="action-note">
+      💡 本轮收盘后确定模拟股数，下一交易日开盘执行。开盘价变化、费用或交易限制可能导致缩量或不成交。每日收盘亏损超预算后终止选择，下一可成交交易日模拟清仓。
+    </div>
+  </div>
+
+  <!-- 当时的分析 -->
+  <div class="collapse-card open">
+    <div class="collapse-header" onclick="toggleCard(this)">
+      <span>🔍 当时的分析（只用到今天为止的数据）</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="collapse-body">
+      <div class="collapse-inner" id="historicalAnalysis"></div>
+    </div>
+  </div>
+
+  <!-- 压力测试 -->
+  <div class="collapse-card">
+    <div class="collapse-header" onclick="toggleCard(this)">
+      <span>⚠️ 如果价格继续下跌（压力测试）</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="collapse-body">
+      <div class="collapse-inner">
+        <p style="color:var(--muted);font-size:13px">按当前收盘价预演调整，再假设未来价格下跌并卖出；包含假定滑点与交易费用。不是预测，也不是本轮实际成交。</p>
+        <div id="scenarios" aria-live="polite"></div>
+        <p style="font-size:11px;color:var(--muted);text-align:right">"账户损失"相对最初本金计算，负值表示仍有盈利。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 账户轨迹 -->
+  <div class="collapse-card">
+    <div class="collapse-header" onclick="toggleCard(this)">
+      <span>📉 你的账户轨迹</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="collapse-body">
+      <div class="collapse-inner">
+        <div id="equityChart"></div>
+        <p id="budgetText" style="font-size:13px;margin-top:10px"></p>
+        <p style="font-size:11px;color:var(--muted)">虚线为"初始本金－损失预算"。仅按日收盘计量；盘中损失可能更大。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 证据 -->
+  <div class="collapse-card">
+    <div class="collapse-header" onclick="toggleCard(this)">
+      <span>📄 当时已有的证据（公告文件）</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="collapse-body">
+      <div class="collapse-inner">
+        <p id="evidenceNote" style="color:var(--muted);font-size:13px"></p>
+        <div id="documents"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 流水 -->
+  <div class="collapse-card">
+    <div class="collapse-header" onclick="toggleCard(this)">
+      <span>📋 选择与账户流水</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="collapse-body">
+      <div class="collapse-inner">
+        <div id="ledger" class="ledger-table" style="overflow:auto"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 完成界面 -->
+  <div id="final" class="hidden">
+    <!-- 风险人格成绩单 -->
+    <div class="scorecard" id="scorecard">
+      <div class="poster-top">
+        <div class="poster-player">
+          <span id="posterAvatar" class="poster-avatar">🎮</span>
+          <div><b id="posterName">匿名玩家</b><small id="posterFaction">未选择阵营</small></div>
+        </div>
+        <div class="poster-brand"><b>RiskPilot</b>时间穿越成绩海报</div>
+      </div>
+      <div class="poster-totem" id="posterTotem">🏆</div>
+      <div class="poster-podium">
+        <div class="poster-medal" id="posterMedal">🏆</div>
+        <div class="poster-rank-label">本账号最新战绩</div>
+        <b class="poster-rank-main" id="posterRank">计算中</b>
+        <div class="poster-performance">
+          <span class="poster-return" id="posterReturn">+0.00%</span>
+          <span class="poster-beat">击败现场 <b id="posterBeat">0%</b> 的参与者</span>
+        </div>
+      </div>
+      <div class="poster-path">
+        <div class="poster-path-values"><span id="posterStart">100,000 元</span><span id="posterEnd">100,000 元</span></div>
+        <div class="poster-path-track"><div class="poster-path-fill" id="posterPathFill"></div></div>
+        <div class="poster-path-caption">初始本金 → 本局期末资产</div>
+      </div>
+      <div class="poster-title-label">本局获得称号</div>
+      <div class="sc-header">
+        <div class="sc-badge">风险人格</div>
+        <div class="sc-personality-icon" id="scIcon">🎯</div>
+        <h2 class="sc-personality" id="scPersonality">纪律守门员</h2>
+        <p class="sc-subtitle" id="scSubtitle">您不一定猜对了市场，但守住了账户</p>
+      </div>
+      <div class="sc-score-row">
+        <div class="sc-score-num" id="scScore">86</div>
+        <div class="sc-score-label">
+          <b>纪律评分</b><br>
+          基础80分 · 按关卡数归一化<br>
+          预算、情绪与建议仓位越界会扣分 · 回撤可控加分
+        </div>
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric"><div class="sm-label">最终收益</div><div class="sm-value" id="scReturn">+4.8%</div></div>
+        <div class="sc-metric"><div class="sm-label">最大回撤</div><div class="sm-value warning" id="scDrawdown">-2.1%</div></div>
+        <div class="sc-metric"><div class="sm-label">预算突破</div><div class="sm-value" id="scBreach">0次</div></div>
+        <div class="sc-metric"><div class="sm-label">建议仓位越界</div><div class="sm-value" id="scPositionViolation">0次</div></div>
+        <div class="sc-metric"><div class="sm-label">情绪化调整</div><div class="sm-value" id="scEmotional">1次</div></div>
+        <div class="sc-metric"><div class="sm-label">操作次数</div><div class="sm-value" id="scTrades">4次</div></div>
+        <div class="sc-metric"><div class="sm-label">累计分红</div><div class="sm-value positive" id="scDividends">0元</div></div>
+      </div>
+      <div class="sc-beat">击败现场 <b id="scBeat">73%</b> 的参与者</div>
+      <div class="sc-quote" id="scQuote">您不一定猜对了市场，但守住了账户。</div>
+      <button class="poster-save" onclick="downloadResultPoster()">📸 保存本局成绩海报</button>
+      <details class="sc-rules">
+        <summary>📖 纪律评分与人格分类规则（公开透明）</summary>
+        <div style="margin-top:8px">
+          <b>纪律评分公式：</b>基础80分 - 预算突破率×60（上限） - 情绪化率×30（上限） - 建议仓位越界率×20（上限） + 回撤可控×10 + 盈利×5，满分95分<br>
+          <b>归一化说明：</b>扣分按4关模式归一化计算，月度4关和周度17关标准一致，不会因关卡多而扣分多<br>
+          <b>情绪化调整：</b>相邻两关仓位变化超过50%视为一次情绪化调整<br>
+          <b>预算突破：</b>账户亏损超过设定的最大损失预算<br>
+          <b>建议仓位越界：</b>普通阵营建议不超过30%，火阵营建议不超过40%；不是强制上限，主动越界仍可成交，但会记录并扣纪律分<br>
+          <b>人格分类（比例制）：</b><br>
+          · 🎯 纪律守门员：预算突破率0% + 情绪化率≤15% + 评分≥80<br>
+          · 📈 趋势追踪者：持仓稳定 + 仓位变化平缓<br>
+          · 🔄 波段交易者：操作率≥50% + 预算突破率≤15%<br>
+          · 🛡️ 谨慎观望者：平均仓位<30% + 操作率≤20%<br>
+          · 🎲 情绪化玩家：情绪化率≥25% 或 预算突破率≥25%
+        </div>
+      </details>
+      <div style="text-align:center;margin-top:16px">
+        <button onclick="logoutUser()" style="padding:10px 24px;background:none;border:1px solid #f87171;color:#f87171;border-radius:10px;font-size:13px;cursor:pointer;transition:all .2s" onmouseover="this.style.background='rgba(248,113,113,.1)'" onmouseout="this.style.background='none'">🚪 退出本账户（下一位玩家请）</button>
+      </div>
+    </div>
+
+    <div class="complete-card">
+      <span class="complete-badge">实验结束</span>
+      <h2 class="complete-title" id="finalTitle">你看到了什么？</h2>
+      <div class="complete-verdict" id="finalVerdict"></div>
+      <div class="complete-stats">
+        <div class="complete-stat"><div class="cs-label">期末资产</div><div class="cs-value" id="finalEquity">-</div></div>
+        <div class="complete-stat"><div class="cs-label">累计盈亏</div><div class="cs-value" id="finalPnl">-</div></div>
+        <div class="complete-stat"><div class="cs-label">最大回撤</div><div class="cs-value" id="finalMdd">-</div></div>
+        <div class="complete-stat"><div class="cs-label">💰 累计分红</div><div class="cs-value" id="finalDividends" style="color:#34d399">-</div></div>
+      </div>
+      <div class="conclusion-box" id="finalConclusion"></div>
+      <h3 style="text-align:left;font-size:16px;margin:20px 0 10px">📊 三条路径对比</h3>
+      <div id="comparison" style="overflow:auto"></div>
+      <button id="download" class="download-btn">📥 下载本次复盘 JSON</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- 规则说明 -->
+<div class="collapse-card" style="margin-top:20px">
+  <div class="collapse-header" onclick="toggleCard(this)">
+    <span>📖 计算规则、数据来源与边界</span>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="collapse-body">
+    <div class="collapse-inner">
+      <ul id="rules" style="color:var(--muted);font-size:13px;line-height:2"></ul>
+      <p id="source" style="color:var(--muted);font-size:12px;overflow-wrap:anywhere"></p>
+      <p style="color:var(--muted);font-size:12px">公告仅为已保存资料的子集，缺失信息不由AI补写。历史研究界面不做当前买卖判断，不是投资建议或收益承诺。</p>
+    </div>
+  </div>
+</div>
+
+<footer>RiskPilot · 历史实验测试版。原版分析页面独立保留，不能用其 8 月资料解释更早节点。</footer>
+
+</main>
+
+<script>
+const API=location.protocol==='file:'?'http://127.0.0.1:8000':'';
+const $=id=>document.getElementById(id), money=n=>Number(n).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2});
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let params=null, actions=[], state=null, selected=null, busy=false, timer=null, sequence=0, poolReady=false, drawn=[], allPoolStocks=[];
+let autoDemoRunning=false, completionPromptShown=false, completionPromptPending=false;
+let roundRevealResolve=null,roundRevealTimer=null;
+const KEY='riskpilot-replay-v1';
+const DRAW_KEY='riskpilot-replay-draws-v1';
+
+function closeOnboarding(){$('onboarding').classList.add('hidden');try{localStorage.setItem('riskpilot-onboarding-done-v2','1')}catch{}}
+function openOnboarding(){$('onboarding').classList.remove('hidden')}
+try{if(localStorage.getItem('riskpilot-onboarding-done-v2'))$('onboarding').classList.add('hidden')}catch{}
+
+// ============ 用户档案与排行榜系统（多账户）============
+const USERS_KEY='riskpilot-users-v2';
+const CURRENT_USER_KEY='riskpilot-current-user-v2';
+const AVATARS=['🎮','🦊','🐱','🐶','🐼','🦁','🐯','🐸','🐵','🐰','🐨','🐷','🐮','🐭','🐹','🐻','🦄','🐲','🦅','🐬','🐙','🦋','🐝','🐢','🦖','🐳','🦉','🐺','🐗','🐴','🦒'];
+const FACTION_DATA={
+  jin:{name:'金',icon:'🪙',style:'稳健价值派',desc:'落袋为安，不赚最后一个铜板。',trait:'亏损预算放宽10%',color:'#fbbf24',totem:'🐉'},
+  mu:{name:'木',icon:'🌳',style:'成长长线派',desc:'时间是最好的朋友，好公司值得长期陪伴。',trait:'持有超2关盈利+5%',color:'#34d399',totem:'🦚'},
+  shui:{name:'水',icon:'💧',style:'灵活波段派',desc:'上善若水，顺势而为，积少成多。',trait:'交易手续费减半',color:'#60a5fa',totem:'🐋'},
+  huo:{name:'火',icon:'🔥',style:'激进短线派',desc:'生死看淡，不服就干，心跳玩家首选。',trait:'仓位上限提升至40%',color:'#f87171',totem:'🦄'},
+  tu:{name:'土',icon:'🛡️',style:'保守定投派',desc:'厚德载物，稳扎稳打，只求不亏。',trait:'强制清仓延后1关',color:'#a78bfa',totem:'🐢'},
+};
+let userProfile=null;
+let allUsers=[];
+let selectedAvatar='🎮';
+let selectedFaction='jin';
+let factionChosenBeforeSetup=false;
+let currentRankTab='personal';
+let hasSubmittedThisRun=false;
+let pendingFactionAfterRank=null;
+
+function getAllUsers(){
+  try{
+    const raw=localStorage.getItem(USERS_KEY);
+    return raw?JSON.parse(raw):[];
+  }catch{return []}
+}
+function saveAllUsers(users){
+  try{localStorage.setItem(USERS_KEY,JSON.stringify(users))}catch{}
+}
+function loadUserProfile(){
+  allUsers=getAllUsers();
+  try{
+    const currentName=localStorage.getItem(CURRENT_USER_KEY);
+    if(currentName){
+      userProfile=allUsers.find(u=>u.name===currentName)||null;
+      if(userProfile)return true;
+    }
+  }catch{}
+  return false;
+}
+function saveUserProfile(){
+  if(!userProfile)return;
+  const idx=allUsers.findIndex(u=>u.name===userProfile.name);
+  if(idx>=0){allUsers[idx]=userProfile;}
+  else{allUsers.push(userProfile);}
+  saveAllUsers(allUsers);
+  try{localStorage.setItem(CURRENT_USER_KEY,userProfile.name)}catch{}
+}
+function switchUser(name){
+  const u=allUsers.find(u=>u.name===name);
+  if(!u)return;
+  userProfile=u;
+  try{localStorage.setItem(CURRENT_USER_KEY,name)}catch{}
+  hasSubmittedThisRun=false;
+  renderUserBar();
+  refreshRankings();
+  closeUserSetup();
+}
+function renderUserBar(){
+  if(!userProfile){$('userBar').style.display='none';return;}
+  $('userBar').style.display='flex';
+  $('userAvatar').textContent=userProfile.avatar;
+  $('userName').textContent=userProfile.name;
+  const f=FACTION_DATA[userProfile.faction];
+  $('userFaction').textContent=f?f.icon+' '+f.name+'阵营 · '+f.style:'未选择阵营';
+  // 更新阵营天赋提示
+  const traitBar=$('factionTraitBar');
+  if(traitBar&&f){
+    traitBar.style.display='flex';
+    traitBar.style.alignItems='center';
+    traitBar.style.gap='8px';
+    traitBar.style.background=f.color+'18';
+    traitBar.style.border='1px solid '+f.color+'40';
+    $('factionTraitIcon').textContent=f.icon;
+    $('factionTraitText').innerHTML='<b style="color:'+f.color+'">'+f.name+'阵营天赋生效中</b>：'+f.trait;
+  }
+  updateAvatarFrame();
+}
+function updateAvatarFrame(){
+  const el=$('userAvatar');
+  if(!el||!userProfile)return;
+  el.className='user-avatar';
+  if(userProfile.rank&&userProfile.rank<=10){
+    if(userProfile.rank===1)el.classList.add('frame-gold');
+    else if(userProfile.rank<=3)el.classList.add('frame-silver');
+    else el.classList.add('frame-star');
+  }
+  if(userProfile.factionRank&&userProfile.factionRank<=3){
+    if(userProfile.factionRank===1)el.classList.add('frame-gold');
+  }
+}
+
+function closeUserSetup(){$('userSetupModal').classList.add('hidden');factionChosenBeforeSetup=false}
+function logoutUser(){
+  if(!confirm('确定退出当前账户并返回股票分析首页吗？玩家档案和排行榜成绩会保留。'))return;
+  userProfile=null;
+  try{
+    localStorage.removeItem(CURRENT_USER_KEY);
+    localStorage.removeItem(KEY);
+  }catch{}
+  $('userBar').style.display='none';
+  clearTimeout(timer);sequence++;
+  params=null;actions=[];state=null;selected=null;
+  location.href='/';
+}
+function openUserSetup(){
+  $('userSetupModal').classList.remove('hidden');
+  allUsers=getAllUsers();
+  // 渲染已有账户列表
+  const listEl=$('userList');
+  if(allUsers.length>0){
+    listEl.innerHTML=allUsers.map(u=>{
+      const f=FACTION_DATA[u.faction];
+      const isCurrent=userProfile&&u.name===userProfile.name;
+      return `<div onclick="switchUser('${u.name.replace(/'/g,"\\'")}')" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:${isCurrent?'var(--mint-dim)':'var(--panel2)'};border:1px solid ${isCurrent?'var(--mint)':'var(--line)'};border-radius:10px;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='var(--mint)'" onmouseout="this.style.borderColor='${isCurrent?'var(--mint)':'var(--line)'}'">
+        <span style="font-size:20px">${u.avatar}</span>
+        <div>
+          <div style="font-size:13px;font-weight:600">${esc(u.name)}${isCurrent?' <span style="color:var(--mint);font-size:10px">(当前)</span>':''}</div>
+          <div style="font-size:10px;color:var(--muted)">${f?f.icon+' '+f.name:'未选阵营'}</div>
+        </div>
+      </div>`;
+    }).join('')+`<div onclick="createNewUser()" style="display:flex;align-items:center;justify-content:center;padding:8px 16px;background:var(--panel2);border:1px dashed var(--mint);border-radius:10px;cursor:pointer;color:var(--mint);font-size:13px;font-weight:600;transition:all .2s;" onmouseover="this.style.background='var(--mint-dim)'" onmouseout="this.style.background='var(--panel2)'">➕ 新建玩家</div>`;
+    $('userListSection').style.display='block';
+  }else{
+    listEl.innerHTML='';
+    $('userListSection').style.display='none';
+  }
+  // 预填当前用户信息
+  if(userProfile){
+    $('setupName').value=userProfile.name;
+    selectedAvatar=userProfile.avatar;
+    selectedFaction=userProfile.faction;
+  }else{
+    $('setupName').value='';
+    selectedAvatar='🎮';
+    selectedFaction='jin';
+  }
+  goSetupStep(1);
+  renderAvatarGrid();
+  renderFactionGrid();
+}
+function createNewUser(){
+  // 不删除已有账户，只是清空表单准备新建
+  userProfile=null;
+  $('setupName').value='';
+  selectedAvatar='🎮';
+  selectedFaction='jin';
+  factionChosenBeforeSetup=false;
+  goSetupStep(1);
+  renderAvatarGrid();
+  renderFactionGrid();
+  $('setupName').focus();
+}
+function closeUserSetup(){$('userSetupModal').classList.add('hidden');factionChosenBeforeSetup=false}
+function goSetupStep(n){
+  for(let i=1;i<=3;i++){$('setupStep'+i).classList.toggle('active',i===n);}
+  if(n===2){
+    renderAvatarGrid();
+    $('avatarNextBtn').textContent=factionChosenBeforeSetup?'🚀 完成，开始冒险！':'下一步 →';
+  }
+  if(n===3){renderFactionGrid();updateFactionDesc();}
+}
+function continueAfterAvatar(){
+  if(factionChosenBeforeSetup)finishUserSetup();
+  else goSetupStep(3);
+}
+function renderAvatarGrid(){
+  $('avatarGrid').innerHTML=AVATARS.map(a=>
+    `<div class="avatar-item ${a===selectedAvatar?'selected':''}" onclick="selectAvatar('${a}')">${a}</div>`
+  ).join('');
+}
+function selectAvatar(a){selectedAvatar=a;renderAvatarGrid();}
+function renderFactionGrid(){
+  $('factionGrid').innerHTML=Object.entries(FACTION_DATA).map(([id,f])=>
+    `<div class="faction-card ${id===selectedFaction?'selected':''}" onclick="selectFaction('${id}')" style="border-color:${id===selectedFaction?f.color:'transparent'}">
+      <div class="f-icon">${f.icon}</div>
+      <div class="f-name" style="color:${f.color}">${f.name}</div>
+      <div class="f-style">${f.style}</div>
+      <div class="f-trait">${f.trait}</div>
+    </div>`
+  ).join('');
+}
+function selectFaction(id){selectedFaction=id;renderFactionGrid();updateFactionDesc();}
+function updateFactionDesc(){
+  const f=FACTION_DATA[selectedFaction];
+  $('factionDesc').innerHTML=`<b style="color:${f.color}">${f.icon} ${f.name}阵营</b> — ${f.desc}<br>天赋：<span style="color:var(--orange)">${f.trait}</span>`;
+}
+function finishUserSetup(){
+  const name=$('setupName').value.trim()||'匿名玩家';
+  // 检查是否已存在同名账户
+  const existing=allUsers.find(u=>u.name===name);
+  if(existing){
+    // 更新已有账户
+    existing.avatar=selectedAvatar;
+    existing.faction=selectedFaction;
+    userProfile=existing;
+  }else{
+    // 创建新账户
+    userProfile={name,avatar:selectedAvatar,faction:selectedFaction,games:1};
+    allUsers.push(userProfile);
+  }
+  saveUserProfile();
+  hasSubmittedThisRun=false;
+  renderUserBar();
+  closeUserSetup();
+  refreshRankings();
+}
+
+// ============ 排行榜 ============
+function openRankPanel(){
+  $('rankPanel').classList.add('open');
+  $('rankOverlay').classList.add('show');
+  refreshRankings();
+}
+function closeRankPanel(){
+  $('rankPanel').classList.remove('open');
+  $('rankOverlay').classList.remove('show');
+}
+function switchRankTab(tab){
+  currentRankTab=tab;
+  document.querySelectorAll('.rank-tab').forEach((el,i)=>el.classList.toggle('active',(tab==='personal'&&i===0)||(tab==='faction'&&i===1)));
+  $('personalRankList').style.display=tab==='personal'?'flex':'none';
+  $('factionRankList').style.display=tab==='faction'?'block':'none';
+}
+async function refreshRankings(){
+  try{
+    const [lbRes,frRes]=await Promise.all([
+      fetch(API+'/api/leaderboard?limit=20'),
+      fetch(API+'/api/faction-ranking')
+    ]);
+    const lb=await lbRes.json();
+    const fr=await frRes.json();
+    renderPersonalRank(lb);
+    renderFactionRank(fr);
+    // 更新用户排名信息
+    if(userProfile){
+      const me=lb.players.find(p=>p.name===userProfile.name&&p.is_user);
+      if(me){userProfile.rank=me.rank;}
+      const myFaction=fr.factions.find(f=>f.faction_id===userProfile.faction);
+      if(myFaction){userProfile.factionRank=myFaction.rank;}
+      saveUserProfile();
+      updateAvatarFrame();
+      // 阵营主题变色：如果用户阵营是第一名，切换主题
+      updateFactionTheme(fr, userProfile.faction);
+    }
+  }catch(e){console.warn('排行榜加载失败:',e.message)}
+}
+
+function updateFactionTheme(fr, userFactionId){
+  // 清除所有阵营主题class
+  document.body.classList.remove('faction-leader','faction-leader-jin','faction-leader-mu','faction-leader-shui','faction-leader-huo','faction-leader-tu');
+  if(!fr||!fr.factions||!userFactionId)return;
+  const leader=fr.factions[0];
+  if(!leader||leader.faction_id!==userFactionId)return;
+  // 用户阵营是第一名，切换主题
+  document.body.classList.add('faction-leader','faction-leader-'+userFactionId);
+  const f=FACTION_DATA[userFactionId];
+  if(f){
+    $('leaderIcon').textContent=f.totem;
+    $('leaderName').textContent=f.icon+' '+f.name+'阵营';
+    $('leaderStyle').textContent=f.style;
+    $('leaderSub').textContent='你的阵营正在领跑，全体成员获得'+f.name+'色主题！';
+  }
+}
+function renderPersonalRank(lb){
+  const list=lb.players.map((p,i)=>{
+    const isMe=userProfile&&p.name===userProfile.name&&p.is_user;
+    const frameClass=p.rank===1?'frame-gold':p.rank<=3?'frame-silver':p.rank<=10?'frame-star':'';
+    const virtualTag=p.is_virtual?'<span style="font-size:10px;background:rgba(120,144,156,0.2);color:#90a4ae;padding:1px 6px;border-radius:8px;margin-left:6px;">演示玩家</span>':'';
+    return `<div class="rank-item ${p.rank<=3?'top'+p.rank:''} ${isMe?'is-me':''}">
+      <div class="rank-num ${p.rank<=3?'top'+p.rank:''}">${p.rank<=3?['🥇','🥈','🥉'][p.rank-1]:p.rank}</div>
+      <div class="rank-avatar ${frameClass}">${p.avatar}</div>
+      <div class="rank-detail">
+        <div class="rank-name">${esc(p.name)}${isMe?' <span style="color:var(--mint);font-size:11px">(我)</span>':''}${virtualTag}</div>
+        <div class="rank-meta">${FACTION_DATA[p.faction]?.icon||''} ${p.games}场模拟</div>
+      </div>
+      <div class="rank-pnl ${p.pnl_pct>=0?'positive':'negative'}">${p.pnl_pct>=0?'+':''}${p.pnl_pct}%</div>
+    </div>`;
+  }).join('');
+  $('personalRankList').innerHTML=list||'<p style="color:var(--muted);text-align:center;padding:40px">暂无排名数据</p>';
+}
+function renderFactionRank(fr){
+  const list=fr.factions.map(f=>{
+    const isMyFaction=userProfile&&f.faction_id===userProfile.faction;
+    const reward=f.reward?`<div class="faction-reward">🎁 ${f.reward.title} · ${f.reward.avatar_frame==='gold'?'金色头像框':f.reward.avatar_frame==='silver'?'银色头像框':'铜色头像框'}</div>`:'';
+    return `<div class="faction-rank-item rank${f.rank}" style="${isMyFaction?'border-color:var(--mint);box-shadow:0 0 15px rgba(94,234,212,.2)':''}">
+      <div class="faction-rank-icon" style="color:${f.color}">${f.icon}</div>
+      <div class="faction-rank-info">
+        <div class="faction-rank-name" style="color:${f.color}">${f.name}阵营 ${isMyFaction?'<span style="color:var(--mint);font-size:11px">(我的阵营)</span>':''}</div>
+        <div class="faction-rank-style">${f.style} · ${f.member_count}名成员 · 平均盈利${f.avg_pnl}%</div>
+        ${reward}
+      </div>
+      <div class="faction-rank-score">
+        <div class="score-val" style="color:${f.color}">${f.score}</div>
+        <div class="score-label">阵营积分</div>
+      </div>
+    </div>`;
+  }).join('');
+  $('factionRankList').innerHTML=list;
+}
+
+// ============ 成绩提交与恭喜 ============
+async function submitSimulationScore(finalState){
+  if(!userProfile)return;
+  // 防止重复提交：用哈希记录已提交的成绩
+  const pnlPct=finalState.account?(finalState.account.pnl/finalState.capital*100):0;
+  const scoreHash=[userProfile.name,finalState.code,finalState.capital,finalState.max_loss,finalState.actions?.length||actions.length,Math.round(pnlPct*100)/100].join('|');
+  try{
+    const submitted=JSON.parse(localStorage.getItem('riskpilot-submitted-scores')||'[]');
+    if(submitted.includes(scoreHash)){
+      console.log('该成绩已提交过，跳过');
+      hasSubmittedThisRun=true;
+      return;
+    }
+  }catch{}
+  hasSubmittedThisRun=true;
+  try{
+    const res=await fetch(API+'/api/submit-score',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        name:userProfile.name,
+        avatar:userProfile.avatar,
+        faction:userProfile.faction,
+        stock_code:params.stock_code,
+        decision_mode:params.decision_mode,
+        capital:finalState.capital,
+        max_loss:params.max_loss,
+        actions:actions,
+      })
+    });
+    const result=await res.json();
+    // 记录已提交
+    try{
+      const submitted=JSON.parse(localStorage.getItem('riskpilot-submitted-scores')||'[]');
+      submitted.push(scoreHash);
+      localStorage.setItem('riskpilot-submitted-scores',JSON.stringify(submitted.slice(-100)));
+    }catch{}
+    refreshRankings();
+  }catch(e){console.warn('成绩提交失败:',e.message)}
+}
+let lastCongratsResult=null;
+function showCongrats(result){
+  lastCongratsResult=result;
+  const rank=Number(result.rank)||null;
+  $('congratsIcon').textContent=rank===1?'👑':rank&&rank<=3?'🔥':rank&&rank<=10?'🎉':'🎯';
+  $('congratsTitle').textContent=rank===1?'股神附体！':rank&&rank<=3?'三甲就位！':'本账号最新排名';
+  $('congratsRank').textContent=rank?'第 '+rank+' 名':'排名生成中';
+  $('congratsText').textContent=result.congrats||(rank?`本局成绩已计入排行榜，当前位列第 ${rank} 名。继续保持自己的投资纪律！`:'本局成绩已经记录，可前往排行榜查看完整结果。');
+  $('congratsOverlay').classList.add('show');
+  if(rank&&rank<=10)launchConfetti();
+}
+function closeCongrats(){
+  const card=document.querySelector('.congrats-card');
+  if(card&&lastCongratsResult){
+    card.classList.add('flying');
+    setTimeout(()=>{
+      $('congratsOverlay').classList.remove('show');
+      card.classList.remove('flying');
+      if(pendingFactionAfterRank){
+        const leader=pendingFactionAfterRank;
+        pendingFactionAfterRank=null;
+        lastCongratsResult=null;
+        showFactionVictory(leader);
+        return;
+      }
+      // 打开排行榜并高亮用户
+      openRankPanel();
+      switchRankTab('personal');
+      setTimeout(()=>{
+        const items=document.querySelectorAll('.rank-item');
+        items.forEach(item=>{
+          if(item.querySelector('.rank-name')?.textContent.includes(userProfile?.name||'')){
+            item.classList.add('highlight-me');
+            item.scrollIntoView({behavior:'smooth',block:'center'});
+          }
+        });
+      },400);
+      lastCongratsResult=null;
+    },800);
+  }else{
+    $('congratsOverlay').classList.remove('show');
+  }
+}
+function launchConfetti(){
+  const colors=['#fbbf24','#5eead4','#f87171','#60a5fa','#c084fc','#34d399'];
+  for(let i=0;i<60;i++){
+    const c=document.createElement('div');
+    c.className='confetti';
+    c.style.left=Math.random()*100+'vw';
+    c.style.background=colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDelay=Math.random()*0.5+'s';
+    c.style.animationDuration=(2+Math.random()*2)+'s';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+}
+function showFactionVictory(faction){
+  $('victoryTotem').textContent=faction.totem;
+  $('victoryTitle').textContent=faction.icon+' '+faction.name+'阵营登顶！';
+  $('victorySub').textContent='全体成员获得「五行至尊」称号 + 金色头像框';
+  $('factionVictoryOverlay').classList.add('show');
+  launchConfetti();
+}
+function closeFactionVictory(showRank){
+  $('factionVictoryOverlay').classList.remove('show');
+  if(showRank !== false){
+    openRankPanel();
+    switchRankTab('faction');
+  }
+}
+
+// ============ 初始化 ============
+(function initUserSystem(){
+  if(loadUserProfile()){
+    renderUserBar();
+  }
+  refreshRankings();
+  // URL参数处理
+  const urlParams=new URLSearchParams(location.search);
+  const mode=urlParams.get('mode');
+  const stockCode=urlParams.get('stock');
+  if(mode==='quick'&&stockCode){
+    // 小试牛刀：等股票池加载后锁定股票，开始按钮发光
+    const checkReady=setInterval(()=>{
+      if(poolReady){
+        clearInterval(checkReady);
+        const sel=$('stock');
+        const opt=Array.from(sel.options).find(o=>o.value===stockCode);
+        if(opt){sel.value=stockCode;}
+        sel.disabled=true;
+        sel.classList.add('stock-locked');
+        $('draw').disabled=true;
+        $('draw').style.opacity='.4';
+        $('start').classList.add('glow-guide');
+        $('drawStatus').textContent='🔒 已锁定分析的股票，点击"穿越回2025年4月"直接开始';
+      }
+    },200);
+  }else if(mode==='free'){
+    // 我先梭哈：高亮股票选择框
+    const checkReady=setInterval(()=>{
+      if(poolReady){
+        clearInterval(checkReady);
+        $('stock').classList.add('glow-guide');
+        $('draw').classList.add('glow-guide');
+        setTimeout(()=>{
+          $('stock').classList.remove('glow-guide');
+          $('draw').classList.remove('glow-guide');
+        },6000);
+      }
+    },200);
+  }
+  // 账户入口与挑战方式相互独立：从“小试牛刀”或“我先梭哈”进入也必须先确认身份。
+  if(!userProfile){
+    try{
+      $('onboarding').classList.add('hidden');
+      localStorage.setItem('riskpilot-onboarding-done-v2','1');
+    }catch(e){}
+    setTimeout(()=>{
+      if(!userProfile)openPlayerEntry();
+    },600);
+  }
+})();
+
+// ============ 阵营选择弹窗 ============
+let fsSelectedFaction='jin';
+function openPlayerEntry(){
+  // 每次进入挑战都先展示完整阵营入口；已有账户可从这里进入账户列表。
+  openFactionSelect();
+}
+function openFactionSelect(){
+  const grid=$('fsFactionGrid');
+  grid.innerHTML=Object.entries(FACTION_DATA).map(([id,f])=>
+    `<div class="faction-card ${id===fsSelectedFaction?'selected':''}" onclick="fsSelectFaction('${id}')" style="border-color:${id===fsSelectedFaction?f.color:'transparent'}">
+      <div class="f-icon">${f.icon}</div>
+      <div class="f-name">${f.name}</div>
+      <div class="f-style">${f.style}</div>
+      <div class="f-trait">天赋：${f.trait}</div>
+    </div>`
+  ).join('');
+  fsUpdateDesc();
+  $('factionSelectModal').classList.remove('hidden');
+}
+function fsSelectFaction(id){
+  fsSelectedFaction=id;
+  document.querySelectorAll('#fsFactionGrid .faction-card').forEach((el,i)=>{
+    const fid=Object.keys(FACTION_DATA)[i];
+    el.classList.toggle('selected',fid===id);
+    el.style.borderColor=fid===id?FACTION_DATA[fid].color:'transparent';
+  });
+  fsUpdateDesc();
+}
+function fsUpdateDesc(){
+  const f=FACTION_DATA[fsSelectedFaction];
+  $('fsFactionDesc').innerHTML=`<b style="color:${f.color}">${f.icon} ${f.name}阵营 · ${f.style}</b><br>${f.desc}<br>天赋：<span style="color:var(--orange)">${f.trait}</span>`;
+}
+function createAccountFromFaction(){
+  const chosenFaction=fsSelectedFaction;
+  $('factionSelectModal').classList.add('hidden');
+  openUserSetup();
+  selectedFaction=chosenFaction;
+  factionChosenBeforeSetup=true;
+  goSetupStep(1);
+  setTimeout(()=>$('setupName').focus(),100);
+}
+function showExistingUsers(){
+  const users=getAllUsers();
+  if(!users.length){alert('还没有账户，请先创建');return;}
+  const container=$('userListContainer');
+  container.innerHTML=users.map((u,i)=>{
+    const f=FACTION_DATA[u.faction]||{};
+    return `<div class="user-list-item" onclick="selectExistingUser(${i})">
+      <div class="uli-avatar">${u.avatar||'🎮'}</div>
+      <div class="uli-info">
+        <div class="uli-name">${esc(u.name)}</div>
+        <div class="uli-meta">${f.icon?f.icon+' '+f.name+'阵营':''} · ${u.games||0}场模拟</div>
+      </div>
+    </div>`;
+  }).join('');
+  $('factionSelectModal').classList.add('hidden');
+  $('userListModal').classList.remove('hidden');
+}
+function selectExistingUser(index){
+  const users=getAllUsers();
+  const u=users[index];
+  if(u){
+    userProfile=u;
+    try{localStorage.setItem(CURRENT_USER_KEY,u.name)}catch{}
+    renderUserBar();
+  }
+  $('userListModal').classList.add('hidden');
+}
+function closeUserList(){
+  $('userListModal').classList.add('hidden');
+  openFactionSelect();
+}
+
+function toggleCard(header){header.parentElement.classList.toggle('open')}
+
+function error(message){const e=$('error');if(!e)return;e.textContent=message;e.classList.toggle('hidden',!message)}
+
+function renderStress(s){
+  const scale=Math.max(s.max_loss*1.3,...s.scenarios.map(x=>Math.max(0,x.account_loss)*1.1),1);
+  $('scenarios').innerHTML=s.scenarios.map(x=>`<div class="stress-row"><b>假设再跌 ${x.decline}%</b><div class="stress-track ${x.over_budget?'over':''}"><div class="stress-fill" style="width:${Math.max(0,x.account_loss)/scale*100}%"></div><div class="stress-line" style="left:${s.max_loss/scale*100}%"></div><span class="stress-value">${x.account_loss<0?'仍盈利 ':'账户亏损 '}${money(Math.abs(x.account_loss))} 元</span></div><div class="stress-note" style="grid-column:2;font-size:12px;color:var(--muted)">${x.over_budget?'超过预算 '+money(x.over_budget)+' 元':'此情景未超过预算，不代表其他情况安全'}</div></div>`).join('')+`<p style="text-align:right;color:var(--orange);font-size:12px">橙色竖线：初始损失预算 ${money(s.max_loss)} 元</p>`;
+}
+
+function candleChart(s){
+  if(!s.candles?.length)return chart(s.prices,'close','#5eead4');
+  const all=s.candles, rows=all.slice(-60), offset=all.length-rows.length;
+  const w=1000,h=400,left=60,right=140,top=25,bottom=270,volTop=310,volBottom=370;
+  const refs=s.analysis?.ready?[[s.analysis.upside_reference,'上参考','#8bda9a'],[s.price,'当前','#60a5fa'],[s.analysis.downside_reference,'下参考','#fbbf24']]:[[s.price,'当前','#60a5fa']];
+  const averages=[5,10,20].map(n=>rows.map((r,i)=>offset+i+1<n?null:all.slice(offset+i+1-n,offset+i+1).reduce((v,x)=>v+x.close,0)/n));
+  const values=[...rows.flatMap(r=>[r.low,r.high]),...refs.map(r=>r[0]),...averages.flat().filter(v=>v!==null)];
+  let lo=Math.min(...values),hi=Math.max(...values),pad=Math.max((hi-lo)*.12,.01);lo-=pad;hi+=pad;
+  const x=i=>left+(i+.5)*(w-left-right)/rows.length,y=v=>bottom-(v-lo)/(hi-lo)*(bottom-top),bar=Math.max(2,(w-left-right)/rows.length*.58),vmax=Math.max(1,...rows.map(r=>r.volume));
+  let svg='';
+  for(let i=0;i<5;i++){const v=lo+(hi-lo)*i/4;svg+=`<line x1="${left}" x2="${w-right}" y1="${y(v)}" y2="${y(v)}" stroke="#1e2a3f"/><text x="6" y="${y(v)+4}" fill="#7a8ba0" font-size="11">${money(v)}</text>`;}
+  rows.forEach((r,i)=>{const color=r.close>=r.open?'#f46a70':'#39b4a5',height=Math.max(1,Math.abs(y(r.open)-y(r.close))),vh=r.volume/vmax*(volBottom-volTop);svg+=`<line x1="${x(i)}" x2="${x(i)}" y1="${y(r.high)}" y2="${y(r.low)}" stroke="${color}"/><rect x="${x(i)-bar/2}" y="${Math.min(y(r.open),y(r.close))}" width="${bar}" height="${height}" fill="${color}"/><rect x="${x(i)-bar/2}" y="${volBottom-vh}" width="${bar}" height="${vh}" fill="${color}" opacity=".5"/>`;});
+  averages.forEach((vals,k)=>{svg+=`<polyline points="${vals.map((v,i)=>v===null?'':x(i)+','+y(v)).filter(Boolean).join(' ')}" fill="none" stroke="${['#fbbf24','#60a5fa','#c084fc'][k]}" stroke-width="1.8"/>`;});
+  refs.forEach(([v,label,color],i)=>{svg+=`<line x1="${left}" x2="${w-right}" y1="${y(v)}" y2="${y(v)}" stroke="${color}" stroke-dasharray="6 5"/><text x="${w-right+10}" y="${30+i*22}" fill="${color}" font-size="12">${label} ${money(v)}</text>`;});
+  svg+=`<text x="${left}" y="300" fill="#7a8ba0" font-size="11">成交量</text><text x="${left}" y="395" fill="#7a8ba0" font-size="11">${esc(rows[0].date)}</text><text x="${w-right}" y="395" text-anchor="end" fill="#7a8ba0" font-size="11">${esc(rows.at(-1).date)}</text>`;
+  // 未来锁定区视觉效果
+  const remaining = (s.total_decisions||0) - (s.step||0);
+  const lockX = w - right - 90;
+  const lockW = 85;
+  if(remaining > 0 && !s.finished){
+    svg += `<defs><linearGradient id="lockGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0a0e1a" stop-opacity="0.3"/><stop offset="30%" stop-color="#0a0e1a" stop-opacity="0.85"/><stop offset="100%" stop-color="#0a0e1a" stop-opacity="0.95"/></linearGradient></defs>`;
+    svg += `<rect x="${lockX}" y="${top}" width="${lockW}" height="${bottom-top+volBottom-volTop+20}" fill="url(#lockGrad)" rx="4"/>`;
+    svg += `<line x1="${lockX}" x2="${lockX}" y1="${top}" y2="${volBottom+10}" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>`;
+    svg += `<text x="${lockX+lockW/2}" y="${(top+bottom)/2-10}" text-anchor="middle" font-size="28">🔒</text>`;
+    svg += `<text x="${lockX+lockW/2}" y="${(top+bottom)/2+12}" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">未来尚未揭晓</text>`;
+    svg += `<text x="${lockX+lockW/2}" y="${(top+bottom)/2+28}" text-anchor="middle" fill="#7a8ba0" font-size="10">还有 ${remaining} 关</text>`;
+  }
+  return '<div class="chart-legend"><span>红：收盘≥开盘　绿：收盘&lt;开盘</span><span style="color:#fbbf24">MA5</span><span style="color:#60a5fa">MA10</span><span style="color:#c084fc">MA20</span><span>虚线：历史区间参考价与当前价，非自动委托</span><span style="color:#fbbf24;margin-left:auto">🔒 右侧为未揭晓的未来</span></div><div class="chart-wrap"><svg class="chart-svg" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="截至当前节点的近60个交易日K线、均线和成交量，右侧为未揭晓的未来">'+svg+'</svg></div>';
+}
+
+function renderHistoricalAnalysis(s){
+  const a=s.analysis, ready=!!a?.ready;
+  const container=$('historicalAnalysis');
+  if(!ready){container.innerHTML=`<p style="color:var(--muted)">资料不足，暂不生成趋势和仓位测算。</p>`;return;}
+  const cautious=!a.reference_shares||a.ratio===null||a.ratio<1||a.trend==='近期偏弱';
+  container.innerHTML=`
+    <div class="analysis-hero ${cautious?'caution':''}">
+      <p class="analysis-verdict">${!a.reference_shares?'现金观望 · 暂无非零仓位参考':cautious?'谨慎评估 · 有仓位空间，不等于值得买入':'预算内的模拟方案 · 仍需自行判断'}</p>
+      <h3 class="analysis-headline">${!a.reference_shares?'本轮参考持仓 0 股':'模拟总持仓 '+a.reference_shares.toLocaleString('zh-CN')+' 股（约 '+money(a.reference_value)+' 元）'}</h3>
+      <p class="analysis-msg">${a.message} ${a.reference_shares?'若按此仓位调整，再跌至 '+money(a.downside_reference)+' 元，账户'+(a.scenario_account_loss<0?'仍盈利 ':'净亏损 ')+money(Math.abs(a.scenario_account_loss))+' 元（初始预算 '+money(s.max_loss)+' 元）。'+(a.ratio!==null?'上行情景增益与下行情景减损之比为 1 : '+a.ratio+'；这不是胜率，也不能据此推断长期收益。':'当前情景收益风险比不适用。'):''}</p>
+      <div class="analysis-trend">趋势观察：${a.trend} ｜ MA5 ${money(a.ma5)} · MA20 ${money(a.ma20)} ｜ 20日涨跌 ${a.change20}%</div>
+    </div>
+    <div class="analysis-nums">
+      <div class="analysis-num blue"><small>模拟总持仓</small><b>${a.reference_shares.toLocaleString('zh-CN')} 股</b><small>约 ${money(a.reference_value)} 元；相对当前持仓 ${(a.delta_shares>=0?'+':'')+a.delta_shares} 股</small></div>
+      <div class="analysis-num amber"><small>下行情景参考</small><b>${money(a.downside_reference)} 元</b><small>近20日最低价；不是自动止损价</small></div>
+      <div class="analysis-num ${a.scenario_account_loss>s.max_loss?'red':'green'}"><small>该情景账户净亏损</small><b>${money(a.scenario_account_loss)} 元</b><small>预算 ${money(s.max_loss)} 元；负值表示仍盈利</small></div>
+      <div class="analysis-num amber"><small>情景收益风险比</small><b>${a.ratio===null?'不适用':'1 : '+a.ratio}</b><small>上行情景价 ${money(a.upside_reference)} 元；不是预测目标</small></div>
+    </div>
+    <details><summary style="cursor:pointer;font-weight:600;color:var(--muted);font-size:13px;padding:6px 0">查看计算依据与适用边界</summary><ul style="color:var(--muted);font-size:12px;line-height:2">${a.rules.map(r=>`<li>${esc(r)}</li>`).join('')}</ul></details>
+  `;
+}
+
+function chart(points,field,color,threshold){
+  const w=500,h=150,p=20;let vals=points.map(x=>x[field]);if(threshold!==undefined)vals.push(threshold);
+  let lo=Math.min(...vals),hi=Math.max(...vals),gap=Math.max((hi-lo)*.15,hi*.002,1);lo-=gap;hi+=gap;
+  const y=v=>h-p-(v-lo)/(hi-lo)*(h-2*p),x=i=>p+i/Math.max(1,points.length-1)*(w-2*p);
+  const line=points.map((r,i)=>`${x(i)},${y(r[field])}`).join(' ');
+  return `<svg class="chart-svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="已揭晓的历史曲线">${threshold!==undefined?`<line x1="${p}" x2="${w-p}" y1="${y(threshold)}" y2="${y(threshold)}" stroke="#f87171" stroke-dasharray="5 5"/>`:''}<polyline points="${line}" fill="none" stroke="${color}" stroke-width="2.5"/><circle cx="${x(points.length-1)}" cy="${y(points.at(-1)[field])}" r="4" fill="${color}"/><text x="${p}" y="13" fill="#7a8ba0" font-size="11">${money(Math.max(...vals))}</text><text x="${p}" y="148" fill="#7a8ba0" font-size="11">${money(Math.min(...vals))}</text></svg><div class="chart-legend"><span>${esc(points[0].date)}</span><span>${esc(points.at(-1).date)}</span></div>`;
+}
+
+function renderPreview(s){
+  $('hEquitySub').textContent=`现金 ${money(s.account.cash)} + 持仓 ${s.account.shares}股${s.account.dividends>0?' · 累计分红 '+money(s.account.dividends)+'元 💰':''}`;
+  renderStress(s);
+  const guidance=positionGuidance(selected,s);
+  $('positionLimitHint').textContent=selected===null
+    ? `建议仓位：不超过当前资产的 ${Math.round((Number(s.position_limit)||.30)*100)}%；保持原仓位不会新增越界记录。`
+    : guidance.text;
+  $('positionLimitHint').style.color=guidance.violation?'var(--orange)':'var(--mint)';
+  $('actionText').textContent=selected===null?`本轮保持 ${s.account.shares} 股，不重新平衡。`:`按当前价及费用估计持仓 ${s.preview_shares} 股；实际以推进后的成交记录为准。`;
+}
+
+function getVerdict(s){
+  if(s.stop)return {title:'预算超限 · 实验提前结束', emoji:'🛑', color:'var(--red)'};
+  const pnl=s.account.pnl;
+  if(pnl>0)return {title:'实验完成 · 你盈利了', emoji:'🎉', color:'var(--mint)'};
+  if(pnl===0)return {title:'实验完成 · 不赚不亏', emoji:'😐', color:'var(--orange)'};
+  return {title:'实验完成 · 你亏损了', emoji:'📉', color:'var(--orange)'};
+}
+
+function getEvaluation(s, benchmarks){
+  if(!s.benchmarks||s.benchmarks.length<3)return '';
+  const mine=s.benchmarks[0], hold=s.benchmarks[1], cash=s.benchmarks[2];
+  let lines=[];
+  if(s.stop){
+    lines.push('强制止损在这次模拟中触发了。这说明"最大损失约束"确实在保护你——如果没有止损纪律，亏损可能更大。');
+    if(hold.pnl<mine.pnl)lines.push(`对比"买入持有"（亏 ${money(Math.abs(hold.pnl))} 元），你的纪律性操作少亏了 ${money(hold.pnl-mine.pnl)} 元。`);
+  }else{
+    if(mine.pnl>hold.pnl)lines.push(`你的操作（${mine.pnl>=0?'赚':'亏'} ${money(Math.abs(mine.pnl))} 元）比"买入持有"（${hold.pnl>=0?'赚':'亏'} ${money(Math.abs(hold.pnl))} 元）表现更好。`);
+    else if(mine.pnl<hold.pnl)lines.push(`"买入持有"（${hold.pnl>=0?'赚':'亏'} ${money(Math.abs(hold.pnl))} 元）比你的操作（${mine.pnl>=0?'赚':'亏'} ${money(Math.abs(mine.pnl))} 元）表现更好。这说明在这段行情中，频繁操作未必优于持有。`);
+    else lines.push('你的操作与"买入持有"结果相同。');
+  }
+  if(mine.max_drawdown_pct<hold.max_drawdown_pct){
+    lines.push(`你的最大回撤（${mine.max_drawdown_pct}%）小于"买入持有"（${hold.max_drawdown_pct}%），风险控制更优。`);
+  }
+  return lines.join(' ');
+}
+
+// ============ 风险人格成绩单 ============
+function renderScorecard(s, a){
+  const pnlPct = a.equity>0 ? (a.pnl/s.capital*100) : 0;
+  const breachDays = s.benchmarks?.[0]?.breach_days || 0;
+  const breachCount = breachDays > 0 ? (breachDays > 5 ? 2 : 1) : 0; // 简化：突破天数映射为次数
+
+  // 计算情绪化调整和操作次数
+  let emotionalCount = 0;
+  let tradeCount = 0;
+  let avgPositionPct = 0;
+  const allActions = actions.length > 0 ? actions : (s.actions || []);
+  if(allActions.length >= 2){
+    for(let i=1;i<allActions.length;i++){
+      const prev = allActions[i-1].target_value || 0;
+      const curr = allActions[i].target_value || 0;
+      const equity = s.capital * 0.9; // 估算
+      const change = Math.abs(curr - prev) / Math.max(equity, 1);
+      if(change > 0.5) emotionalCount++;
+      if(Math.abs(curr - prev) > 100) tradeCount++;
+    }
+  }
+  if(allActions.length > 0){
+    const totalPos = allActions.reduce((sum, act) => sum + (act.target_value || 0), 0);
+    avgPositionPct = totalPos / allActions.length / Math.max(s.capital, 1) * 100;
+  }
+  tradeCount = Math.max(tradeCount, allActions.filter(act => (act.target_value||0) > 0).length);
+
+  // 纪律评分（公开公式 · 按关卡数归一化，4关/17关通用）
+  const totalLevels = s.total_decisions || 4;
+  const breachRate = breachCount / totalLevels;
+  const emotionalRate = totalLevels > 1 ? emotionalCount / (totalLevels - 1) : 0;
+  const tradeRate = tradeCount / totalLevels;
+  const positionViolationCount = Number(s.position_violation_count || 0);
+  const positionViolationRate = positionViolationCount / totalLevels;
+
+  let score = 80; // 基础分
+  score -= 15 * Math.min(breachRate * 4, 4); // 预算突破：按4关归一化，最多扣60分
+  score -= 5 * Math.min(emotionalRate * 4, 6); // 情绪化调整：按4关归一化，最多扣30分
+  score -= 20 * Math.min(positionViolationRate * 4, 1); // 建议仓位越界：归一化后最多扣20分
+  if(Math.abs(a.max_drawdown_pct) <= (s.max_loss/s.capital*100)) score += 10; // 回撤可控
+  if(a.pnl > 0) score += 5; // 盈利
+  score = Math.max(0, Math.min(95, Math.round(score))); // 满分95分
+
+  // 风险人格分类（比例制，4关/17关通用）
+  let personality, icon, quote;
+  if(emotionalRate >= 0.25 || breachRate >= 0.25 || positionViolationRate >= 0.25){
+    personality = '情绪化玩家'; icon = '🎲';
+    quote = '市场不惩罚聪明人，只惩罚管不住手的人。';
+  } else if(breachRate === 0 && emotionalRate <= 0.15 && score >= 80){
+    personality = '纪律守门员'; icon = '🎯';
+    quote = '您不一定猜对了市场，但守住了账户。';
+  } else if(avgPositionPct < 30 && tradeRate <= 0.2){
+    personality = '谨慎观望者'; icon = '🛡️';
+    quote = '不操作也是一种操作，现金永远是选择权。';
+  } else if(tradeRate >= 0.5 && breachRate <= 0.15){
+    personality = '波段交易者'; icon = '🔄';
+    quote = '高抛低吸说起来容易，做起来需要纪律。';
+  } else {
+    personality = '趋势追踪者'; icon = '📈';
+    quote = '让利润奔跑，让亏损止步。';
+  }
+
+  // 击败百分比（基于12个虚拟玩家+用户）
+  const virtualPnls = [22.7, 18.9, 15.2, 13.6, 11.3, 6.8, 4.2, 2.1, -1.8, -3.2, -5.7, -8.5];
+  const beatCount = virtualPnls.filter(p => pnlPct > p).length;
+  const beatPct = Math.round(beatCount / virtualPnls.length * 100);
+
+  // 渲染
+  $('scIcon').textContent = icon;
+  $('scPersonality').textContent = personality;
+  $('scSubtitle').textContent = `本金 ${money(s.capital)} · 最大可承受损失 ${money(s.max_loss)}`;
+  $('scScore').textContent = score;
+  const returnEl = $('scReturn');
+  returnEl.textContent = (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(1) + '%';
+  returnEl.className = 'sm-value ' + (pnlPct >= 0 ? 'positive' : 'negative');
+  $('scDrawdown').textContent = a.max_drawdown_pct + '%';
+  $('scBreach').textContent = breachCount + '次';
+  $('scBreach').className = 'sm-value ' + (breachCount > 0 ? 'negative' : 'positive');
+  $('scPositionViolation').textContent = positionViolationCount + '次';
+  $('scPositionViolation').className = 'sm-value ' + (positionViolationCount > 0 ? 'warning' : 'positive');
+  $('scEmotional').textContent = emotionalCount + '次';
+  $('scEmotional').className = 'sm-value ' + (emotionalCount > 0 ? 'warning' : 'positive');
+  $('scTrades').textContent = tradeCount + '次';
+  $('scDividends').textContent = a.dividends > 0 ? money(a.dividends) + '元' : '无';
+  $('scBeat').textContent = beatPct + '%';
+  $('scQuote').textContent = quote;
+  const faction=userProfile?FACTION_DATA[userProfile.faction]:null;
+  const scorecard=$('scorecard');
+  scorecard.className='scorecard'+(userProfile?.faction?' faction-'+userProfile.faction:'');
+  $('posterAvatar').textContent=userProfile?.avatar||'🎮';
+  $('posterName').textContent=userProfile?.name||'匿名玩家';
+  $('posterFaction').textContent=faction?faction.icon+' '+faction.name+'阵营 · '+faction.style:'历史模拟参与者';
+  $('posterTotem').textContent=faction?.totem||'🏆';
+  $('posterMedal').textContent='🏆';
+  $('posterReturn').textContent=(pnlPct>=0?'+':'')+pnlPct.toFixed(2)+'%';
+  $('posterReturn').style.color=pnlPct>=0?'var(--faction-accent)':'var(--red)';
+  $('posterBeat').textContent=beatPct+'%';
+  $('posterStart').textContent=money(s.capital)+' 元';
+  $('posterEnd').textContent=money(a.equity)+' 元';
+  const pathWidth=Math.max(12,Math.min(100,50+pnlPct*2));
+  $('posterPathFill').style.width='0';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>$('posterPathFill').style.width=pathWidth+'%'));
+  $('posterRank').textContent='计算中';
+}
+
+function playRoundReveal(before,after,quick=false){
+  if(!before||!after)return Promise.resolve();
+  clearTimeout(roundRevealTimer);
+  const oldPrice=Number(before.price)||0,newPrice=Number(after.price)||0;
+  const pricePct=oldPrice?(newPrice-oldPrice)/oldPrice*100:0;
+  const equityDelta=Number(after.account?.equity||0)-Number(before.account?.equity||0);
+  const tone=pricePct>0.005?'up':pricePct<-0.005?'down':'flat';
+  $('roundRevealDate').textContent=before.cutoff+' → '+after.cutoff;
+  $('roundRevealStock').textContent=after.name+'（'+after.code+'）';
+  $('roundRevealPrice').textContent=money(newPrice)+' 元';
+  $('roundRevealPrice').className='round-reveal-price '+tone;
+  $('roundRevealChange').textContent=(pricePct>=0?'+':'')+pricePct.toFixed(2)+'%';
+  $('roundRevealChange').className='round-reveal-change '+tone;
+  $('roundRevealEquity').textContent=(equityDelta>=0?'+':'')+money(equityDelta)+' 元';
+  $('roundRevealEquity').style.color=equityDelta>=0?'var(--mint)':'var(--red)';
+  $('roundRevealTotal').textContent=money(after.account.equity)+' 元';
+  $('roundRevealBudget').textContent=(after.account.budget_headroom>=0?'+':'')+money(after.account.budget_headroom)+' 元';
+  $('roundRevealBudget').style.color=after.account.budget_headroom>=0?'var(--orange)':'var(--red)';
+  let comment='市场横盘，本轮更考验耐心。';
+  if(equityDelta>1)comment='判断奏效：本轮账户增加 '+money(equityDelta)+' 元。';
+  else if(equityDelta<-1)comment='市场给出反击：本轮账户减少 '+money(Math.abs(equityDelta))+' 元。';
+  else if(Number(before.account?.position_value||0)<1)comment='保持现金也是选择：本轮账户基本未受波动影响。';
+  $('roundRevealComment').textContent=comment;
+  $('roundReveal').classList.remove('hidden');
+  return new Promise(resolve=>{
+    roundRevealResolve=resolve;
+    roundRevealTimer=setTimeout(dismissRoundReveal,quick?1500:3800);
+  });
+}
+function dismissRoundReveal(){
+  clearTimeout(roundRevealTimer);
+  $('roundReveal').classList.add('hidden');
+  const done=roundRevealResolve;roundRevealResolve=null;
+  if(done)done();
+}
+
+function downloadResultPoster(){
+  if(!state?.finished)return;
+  const a=state.account,pct=state.capital?Number(a.pnl)/Number(state.capital)*100:0;
+  const faction=userProfile?FACTION_DATA[userProfile.faction]:null;
+  const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+  const accent=pct>=0?'#5eead4':'#f87171';
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675"><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#182b47"/><stop offset="1" stop-color="#07101e"/></linearGradient></defs><rect width="1200" height="675" rx="36" fill="url(#bg)"/><rect x="28" y="28" width="1144" height="619" rx="28" fill="none" stroke="#5eead4" stroke-width="2"/><text x="70" y="88" fill="#5eead4" font-size="24" font-family="Arial">RISKPILOT · 时间穿越成绩海报</text><text x="70" y="155" fill="#fff" font-size="42" font-weight="700" font-family="Arial">${safe((userProfile?.avatar||'🎮')+' '+(userProfile?.name||'匿名玩家'))}</text><text x="70" y="195" fill="#94a3b8" font-size="24" font-family="Arial">${safe(faction?faction.icon+' '+faction.name+'阵营 · '+faction.style:'历史模拟参与者')}</text><text x="70" y="285" fill="#94a3b8" font-size="24" font-family="Arial">本局最终收益率</text><text x="70" y="385" fill="${accent}" font-size="92" font-weight="900" font-family="Arial">${pct>=0?'+':''}${pct.toFixed(2)}%</text><text x="730" y="285" fill="#94a3b8" font-size="24" font-family="Arial">牛人榜最新排名</text><text x="730" y="365" fill="#fbbf24" font-size="60" font-weight="800" font-family="Arial">${safe($('posterRank').textContent)}</text><text x="70" y="485" fill="#fff" font-size="32" font-weight="700" font-family="Arial">${safe($('scIcon').textContent+' '+$('scPersonality').textContent)}</text><text x="70" y="535" fill="#cbd5e1" font-size="23" font-family="Arial">期末资产 ${safe(money(a.equity))} 元　纪律评分 ${safe($('scScore').textContent)} 分</text><text x="70" y="590" fill="#64748b" font-size="18" font-family="Arial">历史数据模拟 · 不构成投资建议或收益承诺</text></svg>`;
+  const blob=new Blob([svg],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+  link.href=url;link.download='RiskPilot_'+(userProfile?.name||'玩家')+'_成绩海报.svg';link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+function render(s){
+  state=s;
+  renderHistoricalAnalysis(s);
+
+  // 止损通知
+  $('stopNotice').classList.toggle('hidden',!s.stop);
+  if(s.stop){
+    $('stopNotice').textContent=s.stop.message+'\n'+s.stop.trigger_date+' 收盘累计净亏损 '+money(s.stop.trigger_loss)+' 元，超过预算 '+money(s.max_loss)+' 元。'+(s.stop.status==='cash'?'已于 '+s.stop.liquidation_date+' 模拟清仓，账户全部转为现金。':'当前无法完成清仓，持仓仍在，状态：待清仓。')+'\n本轮已结束，不能继续操作；跳空及交易费用可能使最终亏损超过预算。';
+  }
+
+  // 关卡进度
+  const total=s.total_decisions;
+  $('levelLabel').textContent=`第 ${Math.min(s.step+1,total)} 关 / 共 ${total} 关`;
+  $('levelText').textContent=`当前只看到 ${s.cutoff} 收盘 · ${s.name}（${s.code}）`;
+  $('actionLevel').textContent=Math.min(s.step+1,total);
+  let dots='';
+  for(let i=0;i<total;i++){
+    dots+=`<div class="dot ${i<s.step?'done':i===s.step?'active':''}"></div>`;
+  }
+  $('levelDots').innerHTML=dots;
+
+  // 核心数字
+  const a=s.account;
+  $('hEquity').textContent=money(a.equity)+' 元';
+  const pnlEl=$('hPnl');
+  pnlEl.textContent=(a.pnl>=0?'+':'')+money(a.pnl)+' 元';
+  pnlEl.style.color=a.pnl>=0?'var(--mint)':'var(--red)';
+  $('hPnlSub').textContent=`已实现 ${money(a.realized)} + 浮动 ${money(a.unrealized)}`;
+  $('pnlCard').className='hero-stat '+(a.pnl>=0?'green':'red');
+  const budgetEl=$('hBudget');
+  budgetEl.textContent=(a.budget_headroom>=0?'+':'')+money(a.budget_headroom)+' 元';
+  budgetEl.style.color=a.budget_headroom>=0?'var(--orange)':'var(--red)';
+  $('hBudgetSub').textContent=`历史收盘突破预算 ${a.breach_days} 天`;
+
+  // 进度文字
+  $('progressText')&&($('progressText').textContent=s.mode_label+' · 已确认 '+s.step+' / '+total+' 次选择');
+
+  // K线
+  $('priceText').textContent=s.name+' · '+s.code+' · 收盘 '+money(s.price)+' 元';
+  $('priceChart').innerHTML=candleChart(s);
+
+  // 账户轨迹
+  $('equityChart').innerHTML=chart(s.equity_curve,'equity','#60a5fa',s.capital-s.max_loss);
+  const bt=$('budgetText');
+  bt.textContent=(a.budget_headroom>=0?'距预算线还有 '+money(a.budget_headroom)+' 元':'已经超出预算 '+money(-a.budget_headroom)+' 元')+'；历史收盘突破预算 '+a.breach_days+' 天。';
+  bt.style.color=a.budget_headroom<0?'var(--red)':'var(--mint)';
+
+  // 证据
+  $('evidenceNote').textContent=s.evidence_note;
+  $('documents').innerHTML=s.documents.map(d=>`<a href="${API}${esc(d.url)}" target="_blank" rel="noopener" style="display:block;margin:10px 0;color:var(--mint)">${esc(d.title)} ↗<br><small style="color:var(--muted)">公开日期 ${esc(d.published_date)}</small></a>`).join('')||'<p style="color:var(--muted)">当前节点尚无已保存公告，不能补用未来资料。</p>';
+
+  // 规则
+  $('rules').innerHTML=s.assumptions.map(v=>`<li>${esc(v)}</li>`).join('');
+  $('source').textContent='数据：'+s.source.name+'；抓取：'+s.source.retrieved_at+'；行情 SHA-256：'+s.source.file_sha256;
+
+  // 流水
+  $('ledger').innerHTML=s.ledger.length?'<table class="ledger-table"><thead><tr><th>日期</th><th>事项</th><th>数量／金额</th><th>成交价</th><th>费用</th><th>说明</th></tr></thead><tbody>'+s.ledger.map(e=>{
+    const isDividend=e.kind&&e.kind.includes('分红');
+    const rowStyle=isDividend?'style="background:rgba(52,211,153,0.08)"':'';
+    const kindDisplay=isDividend?'💰 '+esc(e.kind):esc(e.kind);
+    return `<tr ${rowStyle}><td>${e.date}</td><td>${kindDisplay}</td><td>${e.amount!==undefined?money(e.amount)+'元':e.shares+'股'}</td><td>${e.price?money(e.price):'—'}</td><td>${e.fee!==undefined?money(e.fee):'—'}</td><td>${esc(e.note)}</td></tr>`;
+  }).join('')+'</tbody></table>':'<p style="color:var(--muted)">尚未提交选择。初始账户全部为现金。</p>';
+
+  // 操作区
+  $('slider').max=Math.max(0,Math.floor(a.equity/100)*100);
+  selected=null;
+  $('slider').value=Math.round(a.position_value);
+  $('targetLabel').textContent=money(a.position_value)+' 元';
+  updatePosButtons(a.position_value, a.equity);
+  renderPreview(s);
+
+  // 显示/隐藏
+  $('workspace').classList.remove('hidden');
+  $('setupSection').classList.add('hidden');
+  $('start').classList.add('hidden');
+  $('restart').classList.remove('hidden');
+  $('capital').disabled=true;
+  $('budget').disabled=true;
+
+  // 完成界面
+  const finished=s.finished;
+  $('controlPanel').classList.toggle('hidden',finished);
+  $('final').classList.toggle('hidden',!finished);
+  $('advance').textContent=s.step===total-1?'确认最后一关，揭晓结果 →':'确认选择，揭晓下一关 →';
+
+  if(finished){
+    // 渲染风险人格成绩单
+    renderScorecard(s, a);
+    const v=getVerdict(s);
+    $('finalTitle').textContent=v.title;
+    $('finalEquity').textContent=money(a.equity)+' 元';
+    $('finalPnl').textContent=(a.pnl>=0?'+':'')+money(a.pnl)+' 元';
+    $('finalPnl').style.color=a.pnl>=0?'var(--mint)':'var(--red)';
+    $('finalMdd').textContent=money(a.max_drawdown)+' ('+a.max_drawdown_pct+'%)';
+    $('finalDividends').textContent=a.dividends>0?money(a.dividends)+' 元':'无';
+    const evalText=getEvaluation(s);
+    $('finalVerdict').textContent=evalText?'':'实验结束，看看三条路径的对比。';
+    $('finalConclusion').innerHTML=evalText?`<h4>💡 实验结论</h4><p>${esc(evalText)}</p>`:'';
+    $('comparison').innerHTML='<table class="compare-table"><thead><tr><th>路径</th><th>期末资产</th><th>累计盈亏</th><th>最大收盘回撤</th><th>超预算天数</th><th>交易费用</th></tr></thead><tbody>'+s.benchmarks.map((b,i)=>`<tr class="${i===0?'highlight':''}"><td>${esc(b.name)}${i===0?' 👈':''}</td><td>${money(b.equity)}</td><td style="color:${b.pnl>=0?'var(--mint)':'var(--red)'}">${b.pnl>=0?'+':''}${money(b.pnl)}</td><td>${money(b.max_drawdown)} (${b.max_drawdown_pct}%)</td><td>${b.breach_days}</td><td>${money(b.fees)}</td></tr>`).join('')+'</tbody></table>';
+    // 提交成绩到排行榜
+    submitSimulationScore(s).finally(()=>showCompletionChoice(s));
+  }
+}
+
+async function showCompletionChoice(s){
+  if(completionPromptShown||completionPromptPending||!s?.finished)return;
+  const a=s.account;
+  const pnlPct=s.capital?Number(a.pnl)/Number(s.capital)*100:0;
+  $('completionChoiceTag').textContent=Number(a.pnl)>0?'试炼完成，离开新手村':Number(a.pnl)<0?'不服就练，继续磨刀':'小试牛刀完成';
+  $('choiceEquity').textContent=money(a.equity)+' 元';
+  $('choiceReturn').textContent=(pnlPct>=0?'+':'')+pnlPct.toFixed(2)+'%';
+  $('choiceReturn').style.color=pnlPct>=0?'var(--mint)':'var(--red)';
+  $('choiceBudget').textContent=s.stop?'已触发':'已守住';
+  $('choiceBudget').style.color=s.stop?'var(--red)':'var(--mint)';
+  completionPromptPending=true;
+  // 结果反馈：每局结束都按最新阵营榜第一名播放对应登顶动画。
+  try{
+    const [frRes,lbRes]=await Promise.all([
+      fetch(API+'/api/faction-ranking'),
+      fetch(API+'/api/leaderboard?limit=100')
+    ]);
+    const fr=frRes.ok?await frRes.json():null;
+    const lb=lbRes.ok?await lbRes.json():null;
+    pendingFactionAfterRank=fr?.factions?.[0]||null;
+    const me=lb?.players?.find(p=>userProfile&&p.name===userProfile.name&&p.is_user);
+    $('posterRank').textContent=me?.rank?'全场第 '+me.rank+' 名':'暂未上榜';
+    $('posterMedal').textContent=me?.rank===1?'🥇':me?.rank===2?'🥈':me?.rank===3?'🥉':me?.rank?'🏅':'🎯';
+    showCongrats({rank:me?.rank||null,congrats:null});
+  }catch(e){console.warn('阵营登顶动画加载失败:',e.message)}
+  const reveal=()=>{
+    const anotherOverlay=
+      !$('stopOverlay').classList.contains('hidden')||
+      $('factionVictoryOverlay').classList.contains('show')||
+      $('congratsOverlay').classList.contains('show')||
+      $('rankOverlay').classList.contains('show');
+    if(anotherOverlay){
+      setTimeout(reveal,300);
+      return;
+    }
+    completionPromptPending=false;
+    completionPromptShown=true;
+    $('completionChoice').classList.remove('hidden');
+  };
+  setTimeout(reveal,300);
+}
+
+function resetCompletedRun(message){
+  clearTimeout(timer);sequence++;
+  dismissRoundReveal();
+  try{localStorage.removeItem(KEY)}catch{}
+  params=null;actions=[];state=null;selected=null;
+  hasSubmittedThisRun=false;
+  pendingFactionAfterRank=null;
+  completionPromptShown=false;
+  completionPromptPending=false;
+  $('completionChoice').classList.add('hidden');
+  $('workspace').classList.add('hidden');
+  $('final').classList.add('hidden');
+  $('setupSection').classList.remove('hidden');
+  $('start').classList.remove('hidden');
+  $('restart').classList.add('hidden');
+  $('capital').disabled=false;
+  $('budget').disabled=false;
+  $('drawStatus').textContent=message||'上一轮已经结束，可以开始新的挑战。';
+  setBusy(false);
+}
+
+async function continueChallenge(){
+  resetCompletedRun('正在为你抽取下一只未重复股票…');
+  await draw();
+  $('setupSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function reviewCompletedRun(){
+  $('completionChoice').classList.add('hidden');
+  $('final').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function exitChallenge(){
+  $('completionChoice').classList.add('hidden');
+  clearTimeout(timer);sequence++;
+  try{
+    localStorage.removeItem(KEY);
+    localStorage.removeItem(CURRENT_USER_KEY);
+  }catch{}
+  params=null;actions=[];state=null;selected=null;
+  userProfile=null;
+  pendingFactionAfterRank=null;
+  completionPromptShown=false;
+  completionPromptPending=false;
+  location.href='/';
+}
+
+function updatePosButtons(positionValue, equity){
+  const pct=equity>0?Math.round(positionValue/equity*100):0;
+  document.querySelectorAll('.pos-btn').forEach(btn=>{
+    const bp=parseInt(btn.dataset.pct);
+    btn.classList.toggle('selected',Math.abs(bp-pct)<=5);
+  });
+}
+
+function setPosition(pct){
+  if(!state||state.finished||busy)return;
+  const equity=state.account.equity;
+  const target=Math.floor(equity*pct/100/100)*100;
+  selected=target;
+  $('slider').value=target;
+  $('targetLabel').textContent=money(target)+' 元';
+  updatePosButtons(target, equity);
+  debouncePreview();
+}
+
+function positionGuidance(targetValue, snapshot=state){
+  if(!snapshot||targetValue===null)return {violation:false,text:''};
+  const equity=Number(snapshot.account?.equity)||0;
+  const limit=Number(snapshot.position_limit)||.30;
+  const actualPct=equity>0?targetValue/equity*100:0;
+  const violation=actualPct>limit*100+.01;
+  return {
+    violation,
+    text:violation
+      ? `⚠️ 当前选择约 ${actualPct.toFixed(0)}%，超过 ${Math.round(limit*100)}% 建议仓位。本次不会拦截，但确认后将记录一次纪律越界并扣分。`
+      : `✅ 当前选择约 ${actualPct.toFixed(0)}%，未超过 ${Math.round(limit*100)}% 建议仓位。建议仓位仅用于风险教育，不是强制限制。`
+  };
+}
+
+function setBusy(value){
+  busy=value;
+  for(const id of ['start','restart','advance','keep','cash','target','slider'])$(id)&&($(id).disabled=value);
+  document.querySelectorAll('.pos-btn').forEach(b=>b.disabled=value);
+  document.querySelectorAll('[data-ratio]').forEach(b=>b.disabled=value);
+  $('cadence').disabled=value||!!state;
+  $('stock').disabled=value||!!state||!poolReady;
+  $('draw').disabled=value||!!state||!poolReady;
+  $('start').disabled=value||!poolReady;
+}
+
+async function fetchState(nextActions,target=null){
+  const factionId=userProfile?userProfile.faction:null;
+  const r=await fetch(API+'/api/replay',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...params,actions:nextActions,preview_target:target,faction:factionId})});
+  let data;try{data=await r.json()}catch{throw Error('服务返回格式不正确，请使用连续模拟专用启动入口。')}
+  if(!r.ok)throw Error(typeof data.detail==='string'?data.detail:'参数不合法，请检查本金、预算和目标金额。');
+  return data;
+}
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify({params,actions}))}catch{}}
+
+function debouncePreview(){
+  $('actionText').textContent='正在按当前数据复核模拟股数与费用…';
+  $('scenarios').style.opacity='.45';
+  clearTimeout(timer);
+  const ticket=++sequence;
+  timer=setTimeout(async()=>{
+    try{
+      const s=await fetchState(actions,selected);
+      if(ticket===sequence){renderPreview(s);$('scenarios').style.opacity='1';}
+    }catch(e){if(ticket===sequence)console.warn(e)}
+  },160);
+}
+
+$('start').onclick=start;
+$('slider').oninput=e=>{
+  if(!state||state.finished||busy)return;
+  const raw=Number(e.target.value);
+  if(!Number.isFinite(raw))return;
+  selected=Math.max(0,Math.min(raw,state.account.equity));
+  $('targetLabel').textContent=money(selected)+' 元';
+  updatePosButtons(selected, state.account.equity);
+  debouncePreview();
+};
+document.querySelectorAll('.pos-btn').forEach(b=>b.onclick=()=>setPosition(parseInt(b.dataset.pct)));
+
+$('advance').onclick=async()=>{
+  if(busy||state.finished)return;
+  clearTimeout(timer);sequence++;setBusy(true);
+  const next=[...actions,{target_value:selected}];
+  try{
+    const before=state;
+    const s=await fetchState(next);
+    actions=next;
+    await playRoundReveal(before,s);
+    render(s);save();
+    // 止损触发戏剧效果
+    if(s.stop&&!s.stop._shown){
+      s.stop._shown=true;
+      showStopOverlay(s);
+    }else{
+      $(s.stop?'stopNotice':'levelText').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  }catch(e){alert('本轮未推进，原进度保留：'+e.message)}
+  finally{setBusy(false)}
+};
+
+function showStopOverlay(s){
+  $('stopDetail').innerHTML=`触发日期：<b>${s.stop.trigger_date}</b><br>累计亏损：<b style="color:var(--red)">${money(s.stop.trigger_loss)} 元</b>（预算 ${money(s.max_loss)} 元）<br>${s.stop.status==='cash'?'已于 '+s.stop.liquidation_date+' 模拟清仓':'当前待清仓，下一交易日继续尝试'}`;
+  $('stopOverlay').classList.remove('hidden');
+}
+function dismissStop(){$('stopOverlay').classList.add('hidden');$('stopNotice').scrollIntoView({behavior:'smooth',block:'start'})}
+
+$('restart').onclick=confirmRestart;
+function confirmRestart(){
+  if(!confirm('确定要重新开始吗？当前进度将被清空。'))return;
+  clearTimeout(timer);sequence++;
+  try{localStorage.removeItem(KEY)}catch{}
+  params=null;actions=[];state=null;selected=null;
+  hasSubmittedThisRun=false;
+  completionPromptShown=false;
+  completionPromptPending=false;
+  $('workspace').classList.add('hidden');
+  $('final').classList.add('hidden');
+  $('setupSection').classList.remove('hidden');
+  $('start').classList.remove('hidden');
+  $('restart').classList.add('hidden');
+  $('capital').disabled=false;
+  $('budget').disabled=false;
+  $('drawStatus').textContent='已结束上一轮，可重新抽取股票。';
+  setBusy(false);
+}
+
+$('download').onclick=()=>{
+  if(!state?.finished)return;
+  const blob=new Blob([JSON.stringify({inputs:params,actions,result:state},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='RiskPilot_历史复盘.json';a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+
+// 一键演示
+async function autoDemo(){
+  if(autoDemoRunning||!state||state.finished)return;
+  if(!confirm('一键演示将自动走完所有关卡，使用30%固定仓位。确定开始吗？'))return;
+  autoDemoRunning=true;
+  $('advance').textContent='演示中…';
+  while(state&&!state.finished){
+    const equity=state.account.equity;
+    const target=Math.floor(equity*0.3/100)*100;
+    selected=target;
+    const next=[...actions,{target_value:target}];
+    try{
+      const before=state;
+      const s=await fetchState(next);
+      actions=next;
+      await playRoundReveal(before,s,true);
+      render(s);save();
+      await new Promise(r=>setTimeout(r,250));
+    }catch(e){alert('演示中断：'+e.message);break;}
+  }
+  autoDemoRunning=false;
+  $('advance').textContent='确认选择，揭晓下一关 →';
+}
+
+async function draw(){
+  if(busy||state||!poolReady)return;
+  setBusy(true);
+  try{
+    const r=await fetch(API+'/api/replay/draw',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({drawn,industry:$('industryFilter').value||null})});
+    const d=await r.json();
+    if(!r.ok)throw Error(d.detail||'抽取失败');
+    $('stock').value=d.stock.code;
+    drawn=d.drawn;
+    try{localStorage.setItem(DRAW_KEY,JSON.stringify(drawn))}catch{}
+    $('drawStatus').textContent=(d.new_cycle?'已开始新一组抽取。':'')+'本次抽到 '+d.stock.name+'（'+d.stock.code+'）· '+d.stock.industry+'。本组还剩 '+d.remaining+' 只未抽取。';
+  }catch(e){alert('抽取未完成：'+e.message)}
+  finally{setBusy(false)}
+}
+$('draw').onclick=draw;
+$('stock').onchange=()=>{$('drawStatus').textContent='已手动选择 '+$('stock').selectedOptions[0].textContent+'；点击"穿越回2025年4月"开始实验。'};
+function renderStockOptions(){
+  const q=$('stockSearch').value.trim().toLowerCase(), industry=$('industryFilter').value;
+  const filtered=allPoolStocks.filter(s=>(!industry||s.industry===industry)&&(!q||s.code.includes(q)||s.name.toLowerCase().includes(q)));
+  const old=$('stock').value;
+  $('stock').innerHTML=filtered.length?filtered.map(s=>`<option value="${esc(s.code)}">${esc(s.name)}（${esc(s.code)}）· ${esc(s.industry)}</option>`).join(''):'<option value="">没有匹配的股票</option>';
+  if(filtered.some(s=>s.code===old))$('stock').value=old;
+  $('start').disabled=busy||!poolReady||!filtered.length;
+  $('draw').disabled=busy||!!state||!poolReady||!filtered.length;
+}
+$('stockSearch').oninput=renderStockOptions;
+$('industryFilter').onchange=renderStockOptions;
+$('demoCase').onclick=()=>{
+  if(state){alert('请先点击重新开始，再加载固定案例。');return}
+  $('stockSearch').value='';$('industryFilter').value='';renderStockOptions();
+  $('stock').value='000876';$('cadence').value='monthly';$('capital').value='100000';$('budget').value='3000';
+  $('drawStatus').textContent='固定案例已加载：新希望（000876），10万元本金、3000元预算、月度模式。开始后首轮选择100%持仓，后续保持，可稳定演示预算退出。';
+};
+
+async function start(){
+  if(busy||!poolReady)return;
+  const c=Number($('capital').value),b=Number($('budget').value);
+  if(!Number.isFinite(c)||c<1000||c>10000000||!Number.isFinite(b)||b<=0||b>c){alert('本金须为1,000至10,000,000元，损失预算须大于0且不超过本金。');return;}
+  params={stock_code:$('stock').value,decision_mode:$('cadence').value,capital:c,max_loss:b};
+  setBusy(true);
+  try{
+    const s=await fetchState([]);
+    actions=[];render(s);save();
+    $('drawStatus').textContent='本轮已锁定 '+s.mode_label+' · '+s.name+'（'+s.code+'）。完成后可重新开始并抽取另一只。';
+  }catch(e){alert('未能开始：'+e.message+'\n请先运行后端服务（python main.py）。')}
+  finally{setBusy(false)}
+}
+
+// 初始化
+(async()=>{
+  setBusy(true);
+  try{
+    const controller = new AbortController();
+    const timeout = setTimeout(()=>controller.abort(), 8000);
+    const response=await fetch(API+'/api/replay/stocks',{signal:controller.signal});
+    clearTimeout(timeout);
+    if(!response.ok)throw Error('服务返回异常状态：'+response.status);
+    const pool=await response.json();
+    if(!pool.stocks.length)throw Error('没有通过证据校验的股票样本。');
+    allPoolStocks=pool.stocks;
+    const industries=[...new Set(pool.stocks.map(s=>s.industry))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
+    $('industryFilter').innerHTML='<option value="">全部行业（'+industries.length+'类）</option>'+industries.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');
+    renderStockOptions();
+    poolReady=true;
+    $('poolNote')&&($('poolNote').textContent='已接入 '+pool.stocks.length+' 只真实历史样本。新增样本使用二级数据源，税前分红假设除息日到账；尚未逐份核验官方公告。仅供历史模拟测试。');
+    try{drawn=JSON.parse(localStorage.getItem(DRAW_KEY)||'[]');if(!Array.isArray(drawn))drawn=[];drawn=drawn.filter(c=>pool.stocks.some(s=>s.code===c)).slice(-200)}catch{}
+    const raw=localStorage.getItem(KEY);
+    if(!raw)return;
+    const saved=JSON.parse(raw);
+    params=saved.params;
+    params.stock_code=params.stock_code||'601318';
+    params.decision_mode=params.decision_mode||'monthly';
+    $('cadence').value=params.decision_mode;
+    if(!pool.stocks.some(s=>s.code===params.stock_code))throw Error('上次股票不在可用样本池，无法恢复。');
+    actions=saved.actions;
+    $('stock').value=params.stock_code;
+    $('capital').value=params.capital;
+    $('budget').value=params.max_loss;
+    const restored=await fetchState(actions);
+    render(restored);
+    $('drawStatus').textContent='已恢复 '+restored.name+'（'+restored.code+'）的模拟进度。';
+  }catch(e){
+    actions=[];
+    console.warn('初始化：',e.message);
+    $('stock').innerHTML='<option value="">加载失败，请检查后端服务</option>';
+    $('drawStatus').innerHTML='<span style="color:var(--red)">⚠️ 样本加载失败。请确认：1）后端服务已启动（python main.py）；2）通过 http://localhost:8000/replay 访问，不要双击打开HTML文件；3）后端端口是8000。</span>';
+  }finally{setBusy(false)}
+})();
+</script>
+</body>
+</html>

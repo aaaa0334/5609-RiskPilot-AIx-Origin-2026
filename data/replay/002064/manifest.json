@@ -1,0 +1,40 @@
+{
+  "code": "002064",
+  "name": "华峰化学",
+  "industry": "化工",
+  "retrieved_at": "2026-09-03T16:25:41.392966+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-15",
+      "ex_date": "2025-05-16",
+      "pay_date": "2025-05-16",
+      "gross_per_share": 0.15,
+      "reference_adjustment": 0.15,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002064",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002064",
+    "https://data.eastmoney.com/yjfp/detail/002064.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "c481cf6e70a8885577c4564bb666a25b32ba97666f22c5c01649c1131cc9520e",
+    "price_daily.csv": "919d2567bb14d679191b9f93c2ab0f0b8daaee6a1d8e08bc27bfd41c20decedc",
+    "price_qfq_check.csv": "ee84c3f1068f052085d2856291457a2ff51b98a2ae1cb43cd3a7e9310f0f8efc",
+    "retrieval.json": "7e04f4d57f749d8855d9a38515df7abc6c96898ea7d8a9491acf61e105b473bd",
+    "tencent_daily_raw.json": "f9c60c23c47c528c2b03828040e81395827a35ff8f36e961179819fbfdfe4a08",
+    "tencent_qfq_raw.json": "44b91eb31169c5f7c59b3569d8b6dbf6623adc38aaeb1561152db59f602ba306"
+  }
+}

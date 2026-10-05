@@ -1,0 +1,48 @@
+{
+  "code": "600015",
+  "name": "华夏银行",
+  "industry": "银行",
+  "retrieved_at": "2026-09-03T15:28:18.465095+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-21",
+      "ex_date": "2025-01-22",
+      "pay_date": "2025-01-22",
+      "gross_per_share": 0.1,
+      "reference_adjustment": 0.1,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-06-25",
+      "ex_date": "2025-06-26",
+      "pay_date": "2025-06-26",
+      "gross_per_share": 0.305,
+      "reference_adjustment": 0.305,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600015",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600015",
+    "https://data.eastmoney.com/yjfp/detail/600015.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "7e719c7c39ac9499ba630667cd5449d9b85fb7690a3d2ac6f21791dcd2994f9f",
+    "price_daily.csv": "0c6453467f46e8ee611c70d37ac614ddb6177ae4055aa47ac5646573b78f0fac",
+    "price_qfq_check.csv": "e82dc63fcf3ff726f47da71af3131113965a941f3ec3618e1e190955ab710635",
+    "retrieval.json": "dc74315f78b913933c77733407cd1c2f1aaf4bb3a562a336a0d1bf7dd36e34df",
+    "tencent_daily_raw.json": "3c9b55c7a496a86aaf75ab235b2ac1c82031016cc23980b9290b9493f02fe263",
+    "tencent_qfq_raw.json": "663a6a33d487474358b7dd4ea9d6bf06fca12fe640473f90ef0dd9367a60bc49"
+  }
+}

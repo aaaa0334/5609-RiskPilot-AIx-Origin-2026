@@ -1,0 +1,53 @@
+{
+  "code": "000876",
+  "name": "新希望",
+  "retrieved_at": "2026-09-03T03:28:43.515466+00:00",
+  "sources": [
+    "AKShare stock_zh_a_hist / 东方财富",
+    "AKShare stock_zh_a_disclosure_report_cninfo / 巨潮资讯"
+  ],
+  "price_parameters": {
+    "symbol": "000876",
+    "period": "daily",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "sha256": {
+    "1223314073.pdf": "7a8bb2db4fb1cc40244ecfbaa6884b175ebb5c0f2ed0005f54a3b78d00f1df72",
+    "1224203220.pdf": "bc531c564d35ae00865020cacac3fec97a37fd9a59aea1691e951ce9bcd65161",
+    "announcement_index.csv": "47c490be45efb4995fd7d0b5b4305405eed457400e82a0e511c2f178cf5616a8",
+    "price_daily.csv": "002dadc03c67d1c194cec01e6eba293b0d576770402f2b6fbeab9bb78b41e813",
+    "price_qfq_check.csv": "4aa8b2356b098c34567b7b8ed1e839ece5e737653672bf4d8354e5865f49d6d3"
+  },
+  "adjust": "",
+  "industry": "农牧",
+  "upstream": "东方财富 / AKShare stock_zh_a_hist",
+  "price_file": "price_daily.csv",
+  "documents": [
+    {
+      "title": "新希望2024年年度报告摘要",
+      "published_date": "2025-04-26",
+      "id": "1223314073",
+      "file": "1223314073.pdf",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223314073.PDF"
+    },
+    {
+      "title": "新希望2024年年度分红派息实施公告",
+      "published_date": "2025-07-18",
+      "id": "1224203220",
+      "file": "1224203220.pdf",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2025-07-18/1224203220.PDF"
+    }
+  ],
+  "dividends": [
+    {
+      "record_date": "2025-07-24",
+      "ex_date": "2025-07-25",
+      "pay_date": "2025-07-25",
+      "gross_per_share": 0.0241245,
+      "reference_adjustment": 0.0241245
+    }
+  ],
+  "review_note": "按2025年1至8月公告索引核对现金分红实施；本股池不支持送转股或配股。摘要不替代完整年报。"
+}

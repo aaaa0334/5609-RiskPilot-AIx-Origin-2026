@@ -1,0 +1,40 @@
+{
+  "code": "000938",
+  "name": "紫光股份",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:25:23.856749+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-12",
+      "ex_date": "2025-06-13",
+      "pay_date": "2025-06-13",
+      "gross_per_share": 0.075,
+      "reference_adjustment": 0.075,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000938",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000938",
+    "https://data.eastmoney.com/yjfp/detail/000938.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "8112b445d37c458373cbf334641eea2c3c344b8e176ec25003167d27ddfb120d",
+    "price_daily.csv": "039192ef723795cb3859eefe471da4b66d7b1a410eca4438b2341116a77aaa0b",
+    "price_qfq_check.csv": "f6d72c2198bcb8421cc8d5dc354c1e34ee8d4583f7d2f379ae882b50a6fb1ab7",
+    "retrieval.json": "b415649bcc002d84432ed597e4f4756b9d4b69bb726e6904edb9004d16255b43",
+    "tencent_daily_raw.json": "3d85c2dec3763ea8feb50331c5aea0a978251ada09c7395e0fa818a5cfb2d123",
+    "tencent_qfq_raw.json": "3065e935963dd889117e9584937e7c8766202753dabbeb89979093412c6444f2"
+  }
+}

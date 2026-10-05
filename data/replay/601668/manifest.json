@@ -1,0 +1,40 @@
+{
+  "code": "601668",
+  "name": "中国建筑",
+  "industry": "建筑",
+  "retrieved_at": "2026-09-03T15:32:18.568538+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-16",
+      "ex_date": "2025-07-17",
+      "pay_date": "2025-07-17",
+      "gross_per_share": 0.27149999999999996,
+      "reference_adjustment": 0.27149999999999996,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601668",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601668",
+    "https://data.eastmoney.com/yjfp/detail/601668.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "9d079cb99e2a493e7b753da978c8396bb7842d190d3010b0438b5e2a8fb9cd8d",
+    "price_daily.csv": "843ac86fef20f2ac9783aa388f553bd90309a856a91c770cea27f5ac07b20df6",
+    "price_qfq_check.csv": "26885f28172dab864e4a941f8f86fc178c234c2ad4f3eae6cc7a1aa2807cc9bb",
+    "retrieval.json": "87c4b676d348701c8ddb620fc1af6d2327703f80c77b14dd17e5728c3df8ce9b",
+    "tencent_daily_raw.json": "340c9ebeeef1195a8be9bba70d475b939a496721b5495b6c1e3550438274db47",
+    "tencent_qfq_raw.json": "bbfb02ab4b30d414c7a8dc831b597a06593eb32d35b968c42569ac3bb7b078d9"
+  }
+}

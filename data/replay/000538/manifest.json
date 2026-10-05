@@ -1,0 +1,40 @@
+{
+  "code": "000538",
+  "name": "云南白药",
+  "industry": "医药",
+  "retrieved_at": "2026-09-03T16:25:03.406742+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-04-29",
+      "ex_date": "2025-04-30",
+      "pay_date": "2025-04-30",
+      "gross_per_share": 1.185,
+      "reference_adjustment": 1.185,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000538",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000538",
+    "https://data.eastmoney.com/yjfp/detail/000538.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "8f506f818954e3c0fc3b2d093c09fceb8fc40e1f288578deac246e1d70414c01",
+    "price_daily.csv": "0f05d714ef497b167ab7c50537594a817f469120b3de8cadb215c40ead382163",
+    "price_qfq_check.csv": "3ea4e9e4699149ff2ff27acff0aefa272dfdf8c93b1fbfedc94d2492beff8cf2",
+    "retrieval.json": "c90c520656d865ebf77071401bc96a4d0587696206e984b9669c9428584f376d",
+    "tencent_daily_raw.json": "f2adea84f8411f97fd45989d54c9cc1d14d74a08095b8468e5352a6c3be2570f",
+    "tencent_qfq_raw.json": "aba1cf8d000008b28a3b8b17caffe1e7ba2ed3be26a0a5dc6f7f75db02303353"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "code": "002415",
+  "name": "海康威视",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:26:10.044644+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-19",
+      "ex_date": "2025-05-20",
+      "pay_date": "2025-05-20",
+      "gross_per_share": 0.7,
+      "reference_adjustment": 0.7,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002415",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002415",
+    "https://data.eastmoney.com/yjfp/detail/002415.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "74dccffe393eda5c3bec3a822dea03a640c861241538dd85a3578d0635846ac4",
+    "price_daily.csv": "44bc7de85fb8f126a6eeba07414b1bfe2c5b41bc804ac6bed1dc3d1baf2a692a",
+    "price_qfq_check.csv": "1f6f1f628cc2ae4427762fb912611ca05cc824ae16b9635972b31d700ee79cdb",
+    "retrieval.json": "cfb352c0267098f8a9ed1220be7820f730068aed54ad063506fff326bac1df42",
+    "tencent_daily_raw.json": "9f71caa53293cdfefe0347cfe25f829125df3ba85dff53edb7b481774f28bb40",
+    "tencent_qfq_raw.json": "02059fc08d5d8ea239df61a828d5d3861bf3d7e7a423661d7a259e6abc51e91e"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "code": "002304",
+  "name": "洋河股份",
+  "industry": "食品饮料",
+  "retrieved_at": "2026-09-03T16:26:01.293820+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-24",
+      "ex_date": "2025-01-27",
+      "pay_date": "2025-01-27",
+      "gross_per_share": 2.33,
+      "reference_adjustment": 2.33,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-06-26",
+      "ex_date": "2025-06-27",
+      "pay_date": "2025-06-27",
+      "gross_per_share": 2.317,
+      "reference_adjustment": 2.317,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002304",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002304",
+    "https://data.eastmoney.com/yjfp/detail/002304.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "8cecd89e6602c6c44fcaf3458aec1f3856da800e3ce6140bbb88e1e07404cb4f",
+    "price_daily.csv": "5ddc405c142f7b3311f55ea54208b20853a6a125112a28285a1eff8c90cc21a3",
+    "price_qfq_check.csv": "03287fa68e0e55c9e3659ec50eb4d0eb363de1e981f81962bc7f2e27560d1c15",
+    "retrieval.json": "b870e988850888246e499ed49800532f70f357f309a188b995664f03e931e46c",
+    "tencent_daily_raw.json": "3c6c09d1dd2dcdb584682049bf0fcdae9f22d98a8a5bef0b3c24463d03d7f291",
+    "tencent_qfq_raw.json": "a2169675e08ea736689b70ed9cf359e9252e0ca83b652c4a1870295c4be3a3e4"
+  }
+}

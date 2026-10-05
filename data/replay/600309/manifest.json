@@ -1,0 +1,40 @@
+{
+  "code": "600309",
+  "name": "万华化学",
+  "industry": "化工",
+  "retrieved_at": "2026-09-03T15:31:15.616659+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-29",
+      "ex_date": "2025-05-30",
+      "pay_date": "2025-05-30",
+      "gross_per_share": 0.73,
+      "reference_adjustment": 0.73,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600309",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600309",
+    "https://data.eastmoney.com/yjfp/detail/600309.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "0e3a67b6460654f9f8ed14358e7ed95c9bf054d741659ce1922e3789560a3a25",
+    "price_daily.csv": "c2a26a2b27e70994dbeae068b4e9b7ab1bb83428afe287322ee7d3827d45c26b",
+    "price_qfq_check.csv": "bdf7120abe83950c24bb61bf9ee2e7418771e9aaf1bb74eca362a40087d8fc7c",
+    "retrieval.json": "78150e1c1bed9f1547ba3f0d0ebdf65e6dab02ad79873f3d69566ce52e20bca6",
+    "tencent_daily_raw.json": "93f1e557163a2cca26765b9ae0f63b6d93323b929189e3d2f13fc67efa8931d8",
+    "tencent_qfq_raw.json": "046bdf641daa35f93a2b1ba50ebdc077de0100c3d22925ed1955fe7b7d6d9660"
+  }
+}

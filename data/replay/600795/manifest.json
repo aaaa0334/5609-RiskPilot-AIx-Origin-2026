@@ -1,0 +1,40 @@
+{
+  "code": "600795",
+  "name": "国电电力",
+  "industry": "电力",
+  "retrieved_at": "2026-09-03T15:31:45.726592+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-09",
+      "ex_date": "2025-07-10",
+      "pay_date": "2025-07-10",
+      "gross_per_share": 0.11000000000000001,
+      "reference_adjustment": 0.11000000000000001,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600795",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600795",
+    "https://data.eastmoney.com/yjfp/detail/600795.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "fcf287e5a5ecda52fe1bc08df06b6a45cdf1c488575b2c48d0d8af52d9ba061f",
+    "price_daily.csv": "9e6f1c360c7baa31fedabede4e06231095f7f663f6f664994094a8a0099fe885",
+    "price_qfq_check.csv": "d110d63bdaab73bf6b04a11669c990ecea27d80689173c153865fb395cccff55",
+    "retrieval.json": "5d37f39cc9eb39428797fd36c778750d8bfb9634dfa521de166476e1ccdf2058",
+    "tencent_daily_raw.json": "7289cfdf6d151bab6e605a1f65f31cc447a4bf3e45a2c67efb10e7d44e68c2bc",
+    "tencent_qfq_raw.json": "0fd22a03702a16d88c5c3d670e8bb3ad3a704c55eb7e002b05745cae36c51777"
+  }
+}

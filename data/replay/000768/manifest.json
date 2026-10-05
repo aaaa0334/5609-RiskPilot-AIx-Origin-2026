@@ -1,0 +1,40 @@
+{
+  "code": "000768",
+  "name": "中航西飞",
+  "industry": "航空",
+  "retrieved_at": "2026-09-03T16:25:15.082193+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-20",
+      "ex_date": "2025-06-23",
+      "pay_date": "2025-06-23",
+      "gross_per_share": 0.12,
+      "reference_adjustment": 0.12,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000768",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000768",
+    "https://data.eastmoney.com/yjfp/detail/000768.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "3d5093aaaa2465e27c1e5a9c7cb23695d87c58b836f3929e9c90073b296c09af",
+    "price_daily.csv": "0045a780da5c2628979d8e8a865c3faa1cd61fddbab9339e58864efeccf5b9b7",
+    "price_qfq_check.csv": "a0bac883bcb87dd34d743eae4b449a7e7f9fd41946ddc846b1154762204e4a8b",
+    "retrieval.json": "177e761d8030c366f965caf9c21d2283b59e3666ebcb0f37415111d947bd4a63",
+    "tencent_daily_raw.json": "5aec68ed0d715a14ee6896c26ffd9528c4573c427af7cd1ca64df650ea7151e9",
+    "tencent_qfq_raw.json": "9e53b41a7ab9c78075fda25b24df4977404c1d78dce9c075e73a4252e079d41d"
+  }
+}

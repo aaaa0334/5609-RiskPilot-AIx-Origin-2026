@@ -1,0 +1,40 @@
+{
+  "code": "600050",
+  "name": "中国联通",
+  "industry": "通信",
+  "retrieved_at": "2026-09-03T15:28:26.111237+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-26",
+      "ex_date": "2025-06-27",
+      "pay_date": "2025-06-27",
+      "gross_per_share": 0.0621,
+      "reference_adjustment": 0.0621,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600050",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600050",
+    "https://data.eastmoney.com/yjfp/detail/600050.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "32134b0cdaa87f9a2b62bd0451ebcd17953835c29a038855bb17cb47b333d077",
+    "price_daily.csv": "e596d1f6d9dafeb8aa17909c9ba0b066d394b940a0f120c07eaa28e389e59f1c",
+    "price_qfq_check.csv": "a896c2ca41500dabb2874820efeeac907664573dced7c3988db382a334c0aa46",
+    "retrieval.json": "60ff522b0697b8954ab2188c5b07c7be6d615bad67e6a47d8fb4ffb09385250d",
+    "tencent_daily_raw.json": "10cba915f6e60497496aa7806dff1031ef57edbee603cf9958c51a077673b73a",
+    "tencent_qfq_raw.json": "a65aabdfbd5c35c0e07101d96fd62c35f4a6aca7338db1017c9bc24eb47c94b9"
+  }
+}

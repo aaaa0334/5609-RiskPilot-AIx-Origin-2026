@@ -1,0 +1,40 @@
+{
+  "code": "000425",
+  "name": "徐工机械",
+  "industry": "机械",
+  "retrieved_at": "2026-09-03T16:25:01.224934+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-08",
+      "ex_date": "2025-07-09",
+      "pay_date": "2025-07-09",
+      "gross_per_share": 0.18,
+      "reference_adjustment": 0.18,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000425",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000425",
+    "https://data.eastmoney.com/yjfp/detail/000425.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "55b487829057eccb60c824d3eaa1cbb28e35cfe4a1f61ca81d2be47b82472a69",
+    "price_daily.csv": "a2f58887eb2302a84200b914584c320bbd18a060147787f454ef918ad7d1d9a7",
+    "price_qfq_check.csv": "7c620cf465a0b092d27cfe08aaf346448fce64f31ec904200888dd9f67b43df6",
+    "retrieval.json": "d6246d525bbca3dc8b40e7d3f9c9b476aa030ebf2d6da4a68f3f3e0dde6e7322",
+    "tencent_daily_raw.json": "9151aadfe8bf4ff062b751baefce86a3064c50b88a2d5e940880cd469f0fd527",
+    "tencent_qfq_raw.json": "8bfc3278e44173024c431dde6d2bcb3f494c665c4bfa87ceabbb5a2c698bc76f"
+  }
+}

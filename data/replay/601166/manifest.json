@@ -1,0 +1,40 @@
+{
+  "code": "601166",
+  "name": "兴业银行",
+  "industry": "银行",
+  "retrieved_at": "2026-09-03T15:32:03.367981+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-19",
+      "ex_date": "2025-06-20",
+      "pay_date": "2025-06-20",
+      "gross_per_share": 1.06,
+      "reference_adjustment": 1.06,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601166",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601166",
+    "https://data.eastmoney.com/yjfp/detail/601166.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "0b5800c2ae8aa97bff0e6db8d37fd72705fc15bf949b39daf76dcb4b852aa0f2",
+    "price_daily.csv": "8228ecf222dd4a93071ed170f37366c0fd69a958c5e49ffc4d2eba33d6eae04b",
+    "price_qfq_check.csv": "690102b7692c5d184ac96f9a7a51e95c7844df896a903cbd9735df77f14fed89",
+    "retrieval.json": "319c5e0668004a37ab60e068dc51febbce17a02c4cc49cb1218cde676725c1c8",
+    "tencent_daily_raw.json": "37757f6c938094a6a35f8958da8de72f165b22c03320bfe01d82fe1a83be8fb8",
+    "tencent_qfq_raw.json": "ca35525e26c141abffdb38b713e8c590f4bf826e2b7fb8a5bef57d5b74ddf081"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "code": "000333",
+  "name": "美的集团",
+  "industry": "家电",
+  "retrieved_at": "2026-09-03T16:24:30.716026+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-11",
+      "ex_date": "2025-06-12",
+      "pay_date": "2025-06-12",
+      "gross_per_share": 3.5,
+      "reference_adjustment": 3.5,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000333",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000333",
+    "https://data.eastmoney.com/yjfp/detail/000333.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "dc6fb68bc26b4343397bb80d1bbb250de3b9519e66a3cd6af8e813f72fc4c35b",
+    "price_daily.csv": "387dd6fb4f3b5a7a363b5033f775431e546bc2ce84c2271a8bdb8c0ca61ba21a",
+    "price_qfq_check.csv": "1ff81adc97132f3df46b62e8e455fc85a17375869bad1c10e769e4598025426d",
+    "retrieval.json": "bc6234eab14cf3058af1c233af32a188f496104c954c7ee738928a6004486568",
+    "tencent_daily_raw.json": "65250fefdadcd7a55d885a0fcf089a92abccf79d847b37effe3d5382c40616e0",
+    "tencent_qfq_raw.json": "fde9ae7f2d2a1c4601b3b2a20b21c2434ef8150084fdc8b911a24078eb21be6f"
+  }
+}

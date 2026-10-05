@@ -1,0 +1,40 @@
+{
+  "code": "601006",
+  "name": "大秦铁路",
+  "industry": "交通运输",
+  "retrieved_at": "2026-09-03T15:31:57.454548+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-10",
+      "ex_date": "2025-07-11",
+      "pay_date": "2025-07-11",
+      "gross_per_share": 0.13999999999999999,
+      "reference_adjustment": 0.13999999999999999,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601006",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601006",
+    "https://data.eastmoney.com/yjfp/detail/601006.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "69bfc79ef14f90d811e93c24524b7681803ac6f2a4787fed2f0a5f994ac9e90c",
+    "price_daily.csv": "75eddfb8a66a34084c1131e38a5cfcb9eaa2ac84497081d886bfd97ef1d0e509",
+    "price_qfq_check.csv": "c05f5f86c0313108398a44ac5535112cf29e56a8ff1f41130ad6637eeec0ebc8",
+    "retrieval.json": "5c5b3b8bb9a900edec4d1a53dece83cdc144a8b35b5b410691efd07f1f4ea5c2",
+    "tencent_daily_raw.json": "2c41196e5b7b1fa37dd396a0fbf31b58f7405b6bf86b991d3fcd4044fad5b801",
+    "tencent_qfq_raw.json": "de8366b2559af7b32a91991ef9e1d33e159d5d8e0b29ec24629dc57b11e4cd16"
+  }
+}

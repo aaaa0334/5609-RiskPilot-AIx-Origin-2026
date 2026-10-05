@@ -1,0 +1,40 @@
+{
+  "code": "600066",
+  "name": "宇通客车",
+  "industry": "汽车",
+  "retrieved_at": "2026-09-03T16:24:46.081285+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-13",
+      "ex_date": "2025-05-14",
+      "pay_date": "2025-05-14",
+      "gross_per_share": 1.0,
+      "reference_adjustment": 1.0,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600066",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600066",
+    "https://data.eastmoney.com/yjfp/detail/600066.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "783465272d83d9b1b021d18e33dabdc8313a392439b7b048c7aaaa5cac72e324",
+    "price_daily.csv": "66bc20b4995b95ed0512bc66594e995494976258d3a1b8a8c74db40a9f9c4050",
+    "price_qfq_check.csv": "d39a908485973cd9a836cf09fd468d7dd18265e753f0d0f7c6c8df17a3e5bb7d",
+    "retrieval.json": "4bb2f0cfc92af7abf436c49da595c94f7b723ecd3afb01e4c1e277bac3dfdd07",
+    "tencent_daily_raw.json": "9a570cbef6b407656b790818179c2fe38c381f149d6d72a609c2b180caada488",
+    "tencent_qfq_raw.json": "c6c14feeb18764a58252d12f7f2b191efc3e23463ce23300a100b252164ffd71"
+  }
+}

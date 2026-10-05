@@ -1,0 +1,48 @@
+{
+  "code": "000858",
+  "name": "五粮液",
+  "industry": "食品饮料",
+  "retrieved_at": "2026-09-03T16:24:37.425074+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-22",
+      "ex_date": "2025-01-23",
+      "pay_date": "2025-01-23",
+      "gross_per_share": 2.576,
+      "reference_adjustment": 2.576,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-07-17",
+      "ex_date": "2025-07-18",
+      "pay_date": "2025-07-18",
+      "gross_per_share": 3.169,
+      "reference_adjustment": 3.169,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000858",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000858",
+    "https://data.eastmoney.com/yjfp/detail/000858.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "73c6f3ea8d4b8076295076d7e167ae091f8c6fedd8cbc9bc072741a9ea1aeb0f",
+    "price_daily.csv": "46190714884a5df50409e6d04f1c6a5576414f9767ff62af3ffafc5b02550f57",
+    "price_qfq_check.csv": "0a97f206f680ed0b0525f625663658dd6e4af5e7927ed389629e95d5f6f7abc9",
+    "retrieval.json": "0af7fd630feced231d5f40d75f1c790fd63a187043f221a7e2ac1d6caf1b6320",
+    "tencent_daily_raw.json": "e3fbf5185f09c93921da1ddaa05d53fc7d00c26a7169874b7f9fd3dad88f23f9",
+    "tencent_qfq_raw.json": "40a223093765d1ba30052e3f00135f636d9f42c5e07ec59537571de0c25ac977"
+  }
+}

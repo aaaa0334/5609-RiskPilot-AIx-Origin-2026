@@ -1,0 +1,31 @@
+{
+  "code": "002180",
+  "name": "纳思达",
+  "industry": "计算机",
+  "retrieved_at": "2026-09-03T16:25:47.865336+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [],
+  "price_parameters": {
+    "symbol": "002180",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002180",
+    "https://data.eastmoney.com/yjfp/detail/002180.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "9fb67ac5e3b5f1f46b219477f3c961aa85b39a9df9b9f5ccd9172078a2fc23fe",
+    "price_daily.csv": "3b16c1fc3a9f8092e2e0d882da600bf218e5d1aed63c420dcdf32e68cab4ba24",
+    "price_qfq_check.csv": "3b16c1fc3a9f8092e2e0d882da600bf218e5d1aed63c420dcdf32e68cab4ba24",
+    "retrieval.json": "399853356cdb4e20c0a20c70f46b4cb6a2323b96b4f16c5dd40a65bc69076e65",
+    "tencent_daily_raw.json": "97e797ee79f89a98524f931f2259b1aec89e2efa7aac0c8473589e205f1c3c3c",
+    "tencent_qfq_raw.json": "2af526615fbcbc4c38dfa5266b2e9a2d5552d3d4aa0eeafa4da6e121920e29a4"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "code": "002236",
+  "name": "大华股份",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:25:54.616365+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-04-29",
+      "ex_date": "2025-04-30",
+      "pay_date": "2025-04-30",
+      "gross_per_share": 0.458,
+      "reference_adjustment": 0.458,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002236",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002236",
+    "https://data.eastmoney.com/yjfp/detail/002236.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "3e91dd65261be02ea3bdb2e4c8ee3fa69a6b1f287598fe46f4cf9151ae013e96",
+    "price_daily.csv": "ac83559da129ce8f5286bcb08b4febfe4f6b043eea6e428e2484c81fd88b7ac9",
+    "price_qfq_check.csv": "18e309ec39a9c7ce31c011c6078590e47c624837a8f1afb18625790695a7fdde",
+    "retrieval.json": "331de2e9be61a4f37c00848a3357ea11399e6bdba4c09873903892449dc1079f",
+    "tencent_daily_raw.json": "632ea3f7d65497465ef7269f23ff8b3a9adfc1398af71331b4d4fde397d20a80",
+    "tencent_qfq_raw.json": "892ec4a323712b9f1c3a870c4aa3bc0b14a3ad1ae36882d7314f079e26ef0031"
+  }
+}

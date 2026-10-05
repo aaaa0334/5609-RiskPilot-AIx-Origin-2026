@@ -1,0 +1,40 @@
+{
+  "code": "002142",
+  "name": "宁波银行",
+  "industry": "银行",
+  "retrieved_at": "2026-09-03T16:25:43.571959+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-15",
+      "ex_date": "2025-07-16",
+      "pay_date": "2025-07-16",
+      "gross_per_share": 0.9,
+      "reference_adjustment": 0.9,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002142",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002142",
+    "https://data.eastmoney.com/yjfp/detail/002142.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "503a31e788aec435730c77a4638031b1e134906613e39b473a23132a7bf1e79f",
+    "price_daily.csv": "be7d9572539d9bed258f0a0a4f1bb569dfc8eaf54d3bceac8e2773eefd1bd65c",
+    "price_qfq_check.csv": "d42c3ab3f18ebd016933ee4d53fe61b5ee9d8d710f9bd159ea46b6f9b22a03d2",
+    "retrieval.json": "e32a15a51aeb1a69dcdd5bd94a271caea9d52d30f7982b20d5704a4042318f74",
+    "tencent_daily_raw.json": "0783c60e58891530048d28dc0cb048e1cdfcd786f79582ba2f3d69c78f3ed9b9",
+    "tencent_qfq_raw.json": "16ac970404e8e3ee950d99cd4fac465470569f2ce65f8ff0068ea9002dd2ee25"
+  }
+}

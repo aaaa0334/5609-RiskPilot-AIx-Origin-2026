@@ -1,0 +1,40 @@
+{
+  "code": "601857",
+  "name": "中国石油",
+  "industry": "能源",
+  "retrieved_at": "2026-09-03T15:32:30.603825+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-24",
+      "ex_date": "2025-06-25",
+      "pay_date": "2025-06-25",
+      "gross_per_share": 0.25,
+      "reference_adjustment": 0.25,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601857",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601857",
+    "https://data.eastmoney.com/yjfp/detail/601857.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "95618fa98de449b8ac4f3f0af67572c11a9a2f7e091690d95c13b176f81ae81e",
+    "price_daily.csv": "0e4cbc5e77009ae79cefcc0c1765612e72f0077f223166cadaf5f4edc242a26b",
+    "price_qfq_check.csv": "1d25aa7e3e162db235c62d46aeec655172a2859f499aa6e562202739ae3f4c95",
+    "retrieval.json": "7197102a704e182888aadcc72615fa1b5297a979ff8b5da3a5370abc0050c378",
+    "tencent_daily_raw.json": "c238cf32d41089940484aebed1bf98cbae32c0b0fa3a2305d5894897ca4d1a1b",
+    "tencent_qfq_raw.json": "00a5ce0d463d558a049fcaa89cb7d271327d50ff8d6d164307ed2e611e4674b9"
+  }
+}

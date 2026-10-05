@@ -1,0 +1,40 @@
+{
+  "code": "600009",
+  "name": "上海机场",
+  "industry": "交通运输",
+  "retrieved_at": "2026-09-03T16:24:39.681890+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-08-07",
+      "ex_date": "2025-08-08",
+      "pay_date": "2025-08-08",
+      "gross_per_share": 0.3,
+      "reference_adjustment": 0.3,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600009",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600009",
+    "https://data.eastmoney.com/yjfp/detail/600009.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "df6891abb88f0d94ed3eb44d99f7a2dfd557ae339923b5f960183f33a4503311",
+    "price_daily.csv": "ed441d5849f6c273c47463f25ba27adb76bdfea8039815bb2d93305b92e8da9f",
+    "price_qfq_check.csv": "4197ca23813c5fd0c443da9ef8b3d4ae84b5be3c7befaf4b528719af89cdddfb",
+    "retrieval.json": "0c25a2a9e4eb998070a3d1042db513f7e8f1cb2016901e5c67a69c970a80070a",
+    "tencent_daily_raw.json": "e0a47340287bad920237e7ecff2418721cdfaea0623fd830461701420f7f9def",
+    "tencent_qfq_raw.json": "ad07b32de358745f708f1d7db3c4ad5405f356299e3c7eb6e172a4493c4c391c"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "code": "600588",
+  "name": "用友网络",
+  "industry": "软件",
+  "retrieved_at": "2026-09-03T15:31:36.380757+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [],
+  "price_parameters": {
+    "symbol": "600588",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600588",
+    "https://data.eastmoney.com/yjfp/detail/600588.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "5881835bb1f3c3e9c89993793ee4fa9685d54e9218003ddeca2e1cd3043067b5",
+    "price_daily.csv": "fb2b5605c2801171691deb1c1fdda18642f384dec41d4ae98998cc8eda950a8d",
+    "price_qfq_check.csv": "fb2b5605c2801171691deb1c1fdda18642f384dec41d4ae98998cc8eda950a8d",
+    "retrieval.json": "c654f7595b751f4bc1380c35aa8bfc78c30ec096ac7841c3c7fe33f79f6c55d5",
+    "tencent_daily_raw.json": "7550e585a20751a3ad6869b175bcb1a922cfb368a14c9702f14709da06c312e2",
+    "tencent_qfq_raw.json": "b32b7b0d00d9ae2f95cd7cb384694ae3c17ab342339e5ea701faeeb378263eb2"
+  }
+}

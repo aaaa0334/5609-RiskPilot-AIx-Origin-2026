@@ -1,0 +1,40 @@
+{
+  "code": "002460",
+  "name": "赣锋锂业",
+  "industry": "有色金属",
+  "retrieved_at": "2026-09-03T16:26:12.194614+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-16",
+      "ex_date": "2025-07-17",
+      "pay_date": "2025-07-17",
+      "gross_per_share": 0.15,
+      "reference_adjustment": 0.15,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002460",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002460",
+    "https://data.eastmoney.com/yjfp/detail/002460.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "7755c77396df90cb38eaa52f75bab01da47c2212491788ec638a3daf9033c71f",
+    "price_daily.csv": "c6a55c7220dd604466c72c9eba43f97ece8d5db13c76f68a944d1adb1720cee3",
+    "price_qfq_check.csv": "14be56556dc38f478c044a2cce4403fc5583971d384591315f8628f459498240",
+    "retrieval.json": "d20b6bf18fea83040171ff74f9f0b3c5ea9d3c456b1426821d2180f823275d84",
+    "tencent_daily_raw.json": "4a120507ca78801c0657db8c9b213d6ef16ad2db58651320c1aedab9a0ff81a0",
+    "tencent_qfq_raw.json": "6995743c63626b14cfc7ab76d40d5df99e35b0886af910a0c0656e2e951f4b70"
+  }
+}

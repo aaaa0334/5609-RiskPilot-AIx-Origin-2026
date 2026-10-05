@@ -1,0 +1,48 @@
+{
+  "code": "600900",
+  "name": "长江电力",
+  "industry": "电力",
+  "retrieved_at": "2026-09-03T15:31:54.617849+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-23",
+      "ex_date": "2025-01-24",
+      "pay_date": "2025-01-24",
+      "gross_per_share": 0.21000000000000002,
+      "reference_adjustment": 0.21000000000000002,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-07-17",
+      "ex_date": "2025-07-18",
+      "pay_date": "2025-07-18",
+      "gross_per_share": 0.733,
+      "reference_adjustment": 0.733,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600900",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600900",
+    "https://data.eastmoney.com/yjfp/detail/600900.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "9f7425af30a94627ff458275832386ff6b3ae53f76699824bfca4c4c6a11f41d",
+    "price_daily.csv": "3a1d5fd237386f7bb0e4168eb5ee69f3b656eaccdbe9093e6dca98d0cb631827",
+    "price_qfq_check.csv": "73f5ec7774c65e0f4b179bd2600d252f6c43ee5a4fa34c042fbcd6b5e4dbddeb",
+    "retrieval.json": "31ec0b851d0d9472df3759b26c4f7cbf0ced2a13e77165e2aa2abe0c7071865f",
+    "tencent_daily_raw.json": "1552a88ae39091f8d8ab2b64e4bd2b00f6ccd2e43c41927d755ea2f89b82e855",
+    "tencent_qfq_raw.json": "ded5bceeb0105e1cd3933a7bf0465615950813826434c4a1ab2f980e7a34e5aa"
+  }
+}

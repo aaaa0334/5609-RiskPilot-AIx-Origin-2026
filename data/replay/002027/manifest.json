@@ -1,0 +1,40 @@
+{
+  "code": "002027",
+  "name": "分众传媒",
+  "industry": "传媒",
+  "retrieved_at": "2026-09-03T16:25:34.843444+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-08-21",
+      "ex_date": "2025-08-22",
+      "pay_date": "2025-08-22",
+      "gross_per_share": 0.22999999999999998,
+      "reference_adjustment": 0.22999999999999998,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002027",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002027",
+    "https://data.eastmoney.com/yjfp/detail/002027.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "25032cb2ebcf7840aa625e857f0cf26c46c58ae648f79ced4516630257ef2443",
+    "price_daily.csv": "01c1f0c81de864fcd2aa7b43771de9370661e5b5fede946d6e894979b7c19bd2",
+    "price_qfq_check.csv": "bd68e5b75378833b45fd92bdaef470529a47449d492e15e0e08328fc416adce2",
+    "retrieval.json": "92a9f5944fee42d9c81e8598342e76a446f0dac8c190d68be0623ec3565fc89e",
+    "tencent_daily_raw.json": "39f7219cad8ec3278cd37a48e092b14153e25cde3c2b4347a89cc441d61af1d4",
+    "tencent_qfq_raw.json": "55763e2b128510d60ff1465046e1c585766bbbde62be7039ca40660c30f3fb54"
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "601318": {
+    "name": "中国平安",
+    "industry": "保险",
+    "board": "main"
+  },
+  "000876": {
+    "name": "新希望",
+    "industry": "农牧",
+    "board": "main"
+  },
+  "600010": {
+    "name": "包钢股份",
+    "industry": "钢铁",
+    "board": "main"
+  },
+  "600000": {
+    "name": "浦发银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "600036": {
+    "name": "招商银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "600016": {
+    "name": "民生银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "600015": {
+    "name": "华夏银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "600019": {
+    "name": "宝钢股份",
+    "industry": "钢铁",
+    "board": "main"
+  },
+  "600028": {
+    "name": "中国石化",
+    "industry": "能源",
+    "board": "main"
+  },
+  "600030": {
+    "name": "中信证券",
+    "industry": "证券",
+    "board": "main"
+  },
+  "600031": {
+    "name": "三一重工",
+    "industry": "机械",
+    "board": "main"
+  },
+  "600048": {
+    "name": "保利发展",
+    "industry": "地产",
+    "board": "main"
+  },
+  "600050": {
+    "name": "中国联通",
+    "industry": "通信",
+    "board": "main"
+  },
+  "600089": {
+    "name": "特变电工",
+    "industry": "电气设备",
+    "board": "main"
+  },
+  "600104": {
+    "name": "上汽集团",
+    "industry": "汽车",
+    "board": "main"
+  },
+  "600111": {
+    "name": "北方稀土",
+    "industry": "有色金属",
+    "board": "main"
+  },
+  "600161": {
+    "name": "天坛生物",
+    "industry": "医药",
+    "board": "main"
+  },
+  "600176": {
+    "name": "中国巨石",
+    "industry": "建材",
+    "board": "main"
+  },
+  "600183": {
+    "name": "生益科技",
+    "industry": "电子",
+    "board": "main"
+  },
+  "600188": {
+    "name": "兖矿能源",
+    "industry": "能源",
+    "board": "main"
+  },
+  "600196": {
+    "name": "复星医药",
+    "industry": "医药",
+    "board": "main"
+  },
+  "600219": {
+    "name": "南山铝业",
+    "industry": "有色金属",
+    "board": "main"
+  },
+  "600276": {
+    "name": "恒瑞医药",
+    "industry": "医药",
+    "board": "main"
+  },
+  "600309": {
+    "name": "万华化学",
+    "industry": "化工",
+    "board": "main"
+  },
+  "600346": {
+    "name": "恒力石化",
+    "industry": "化工",
+    "board": "main"
+  },
+  "600406": {
+    "name": "国电南瑞",
+    "industry": "电气设备",
+    "board": "main"
+  },
+  "600436": {
+    "name": "片仔癀",
+    "industry": "医药",
+    "board": "main"
+  },
+  "600438": {
+    "name": "通威股份",
+    "industry": "光伏",
+    "board": "main"
+  },
+  "600519": {
+    "name": "贵州茅台",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "600585": {
+    "name": "海螺水泥",
+    "industry": "建材",
+    "board": "main"
+  },
+  "600588": {
+    "name": "用友网络",
+    "industry": "软件",
+    "board": "main"
+  },
+  "600690": {
+    "name": "海尔智家",
+    "industry": "家电",
+    "board": "main"
+  },
+  "600741": {
+    "name": "华域汽车",
+    "industry": "汽车",
+    "board": "main"
+  },
+  "600795": {
+    "name": "国电电力",
+    "industry": "电力",
+    "board": "main"
+  },
+  "600809": {
+    "name": "山西汾酒",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "600887": {
+    "name": "伊利股份",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "600900": {
+    "name": "长江电力",
+    "industry": "电力",
+    "board": "main"
+  },
+  "601006": {
+    "name": "大秦铁路",
+    "industry": "交通运输",
+    "board": "main"
+  },
+  "601166": {
+    "name": "兴业银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601169": {
+    "name": "北京银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601288": {
+    "name": "农业银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601328": {
+    "name": "交通银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601398": {
+    "name": "工商银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601668": {
+    "name": "中国建筑",
+    "industry": "建筑",
+    "board": "main"
+  },
+  "601766": {
+    "name": "中国中车",
+    "industry": "轨道交通",
+    "board": "main"
+  },
+  "601800": {
+    "name": "中国交建",
+    "industry": "建筑",
+    "board": "main"
+  },
+  "601818": {
+    "name": "光大银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "601857": {
+    "name": "中国石油",
+    "industry": "能源",
+    "board": "main"
+  },
+  "601888": {
+    "name": "中国中免",
+    "industry": "商贸",
+    "board": "main"
+  },
+  "601988": {
+    "name": "中国银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "000001": {
+    "name": "平安银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "000333": {
+    "name": "美的集团",
+    "industry": "家电",
+    "board": "main"
+  },
+  "000651": {
+    "name": "格力电器",
+    "industry": "家电",
+    "board": "main"
+  },
+  "000725": {
+    "name": "京东方A",
+    "industry": "电子",
+    "board": "main"
+  },
+  "000858": {
+    "name": "五粮液",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "600009": {
+    "name": "上海机场",
+    "industry": "交通运输",
+    "board": "main"
+  },
+  "600011": {
+    "name": "华能国际",
+    "industry": "电力",
+    "board": "main"
+  },
+  "600027": {
+    "name": "华电国际",
+    "industry": "电力",
+    "board": "main"
+  },
+  "600066": {
+    "name": "宇通客车",
+    "industry": "汽车",
+    "board": "main"
+  },
+  "600132": {
+    "name": "重庆啤酒",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "600660": {
+    "name": "福耀玻璃",
+    "industry": "汽车",
+    "board": "main"
+  },
+  "000063": {
+    "name": "中兴通讯",
+    "industry": "通信",
+    "board": "main"
+  },
+  "000100": {
+    "name": "TCL科技",
+    "industry": "电子",
+    "board": "main"
+  },
+  "000157": {
+    "name": "中联重科",
+    "industry": "机械",
+    "board": "main"
+  },
+  "000338": {
+    "name": "潍柴动力",
+    "industry": "机械",
+    "board": "main"
+  },
+  "000425": {
+    "name": "徐工机械",
+    "industry": "机械",
+    "board": "main"
+  },
+  "000538": {
+    "name": "云南白药",
+    "industry": "医药",
+    "board": "main"
+  },
+  "000568": {
+    "name": "泸州老窖",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "000625": {
+    "name": "长安汽车",
+    "industry": "汽车",
+    "board": "main"
+  },
+  "000630": {
+    "name": "铜陵有色",
+    "industry": "有色金属",
+    "board": "main"
+  },
+  "000709": {
+    "name": "河钢股份",
+    "industry": "钢铁",
+    "board": "main"
+  },
+  "000768": {
+    "name": "中航西飞",
+    "industry": "航空",
+    "board": "main"
+  },
+  "000783": {
+    "name": "长江证券",
+    "industry": "证券",
+    "board": "main"
+  },
+  "000792": {
+    "name": "盐湖股份",
+    "industry": "化工",
+    "board": "main"
+  },
+  "000895": {
+    "name": "双汇发展",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "000938": {
+    "name": "紫光股份",
+    "industry": "电子",
+    "board": "main"
+  },
+  "000963": {
+    "name": "华东医药",
+    "industry": "医药",
+    "board": "main"
+  },
+  "000977": {
+    "name": "浪潮信息",
+    "industry": "计算机",
+    "board": "main"
+  },
+  "002007": {
+    "name": "华兰生物",
+    "industry": "医药",
+    "board": "main"
+  },
+  "002027": {
+    "name": "分众传媒",
+    "industry": "传媒",
+    "board": "main"
+  },
+  "002049": {
+    "name": "紫光国微",
+    "industry": "电子",
+    "board": "main"
+  },
+  "002050": {
+    "name": "三花智控",
+    "industry": "机械",
+    "board": "main"
+  },
+  "002064": {
+    "name": "华峰化学",
+    "industry": "化工",
+    "board": "main"
+  },
+  "002142": {
+    "name": "宁波银行",
+    "industry": "银行",
+    "board": "main"
+  },
+  "002179": {
+    "name": "中航光电",
+    "industry": "电子",
+    "board": "main"
+  },
+  "002180": {
+    "name": "纳思达",
+    "industry": "计算机",
+    "board": "main"
+  },
+  "002202": {
+    "name": "金风科技",
+    "industry": "风电",
+    "board": "main"
+  },
+  "002230": {
+    "name": "科大讯飞",
+    "industry": "软件",
+    "board": "main"
+  },
+  "002236": {
+    "name": "大华股份",
+    "industry": "电子",
+    "board": "main"
+  },
+  "002241": {
+    "name": "歌尔股份",
+    "industry": "电子",
+    "board": "main"
+  },
+  "002271": {
+    "name": "东方雨虹",
+    "industry": "建材",
+    "board": "main"
+  },
+  "002304": {
+    "name": "洋河股份",
+    "industry": "食品饮料",
+    "board": "main"
+  },
+  "002311": {
+    "name": "海大集团",
+    "industry": "农牧",
+    "board": "main"
+  },
+  "002352": {
+    "name": "顺丰控股",
+    "industry": "物流",
+    "board": "main"
+  },
+  "002415": {
+    "name": "海康威视",
+    "industry": "电子",
+    "board": "main"
+  },
+  "002460": {
+    "name": "赣锋锂业",
+    "industry": "有色金属",
+    "board": "main"
+  },
+  "002475": {
+    "name": "立讯精密",
+    "industry": "电子",
+    "board": "main"
+  },
+  "002493": {
+    "name": "荣盛石化",
+    "industry": "化工",
+    "board": "main"
+  },
+  "002601": {
+    "name": "龙佰集团",
+    "industry": "化工",
+    "board": "main"
+  },
+  "002648": {
+    "name": "卫星化学",
+    "industry": "化工",
+    "board": "main"
+  }
+}

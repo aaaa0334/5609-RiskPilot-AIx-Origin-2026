@@ -1,0 +1,40 @@
+{
+  "code": "000063",
+  "name": "中兴通讯",
+  "industry": "通信",
+  "retrieved_at": "2026-09-03T16:24:52.549762+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-04-15",
+      "ex_date": "2025-04-16",
+      "pay_date": "2025-04-16",
+      "gross_per_share": 0.617,
+      "reference_adjustment": 0.617,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000063",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000063",
+    "https://data.eastmoney.com/yjfp/detail/000063.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "f607cf9ac4d693d1edc445f01fd3ca58cab39f19a28e4016b48f53beb227959f",
+    "price_daily.csv": "76ea60e8582c0be8f1bddfa9ef23a8e1aaea1a8a312bebbeb654241aaa1d5e9f",
+    "price_qfq_check.csv": "633e61829fd15252ca95c8e259132123b0b11353c0a802317353d39ba38e3936",
+    "retrieval.json": "74b736984d6ee3c414660642f3bce030ef513c021342a21ff03bd7eba2034a40",
+    "tencent_daily_raw.json": "8af5eae99a605bd1f5bdf0bfbd0f5c10f74ceb3a57853ed9a4d1fa66eed6290d",
+    "tencent_qfq_raw.json": "93ab5f1c665662c16cbaa016f03c8c418d18f11ed3e49388db3c581a09315418"
+  }
+}

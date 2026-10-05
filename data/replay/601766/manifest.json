@@ -1,0 +1,40 @@
+{
+  "code": "601766",
+  "name": "中国中车",
+  "industry": "轨道交通",
+  "retrieved_at": "2026-09-03T15:32:21.658641+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-08-13",
+      "ex_date": "2025-08-14",
+      "pay_date": "2025-08-14",
+      "gross_per_share": 0.21000000000000002,
+      "reference_adjustment": 0.21000000000000002,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "601766",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh601766",
+    "https://data.eastmoney.com/yjfp/detail/601766.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "a53112d082ffd54302724f0c74acaa7be676bcfe9d4fb1857c5d7840d731f14f",
+    "price_daily.csv": "bd164ebbf87a82b5b92141693b6bb9305bbfb81d3422840969140f61eb8fd9ca",
+    "price_qfq_check.csv": "583e9cfbafa048bec69ffeb98e4c705da9e2388fd7b600169ee4a2823959b001",
+    "retrieval.json": "f645f36d329f7e3a9996f09c73a543368e2d9358814183dc9f081f9643ebf48e",
+    "tencent_daily_raw.json": "bd9c70fe90eb327306d1b12342ad0976e51b0c856a780daa638d40503d48d429",
+    "tencent_qfq_raw.json": "ac4e8f0bd77b1ce4fca3c2c38a3b444d0696fa5b84fc669f4994bf9ff9e976db"
+  }
+}

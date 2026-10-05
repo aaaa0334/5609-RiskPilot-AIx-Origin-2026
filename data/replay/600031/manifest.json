@@ -1,0 +1,40 @@
+{
+  "code": "600031",
+  "name": "三一重工",
+  "industry": "机械",
+  "retrieved_at": "2026-09-03T15:28:23.324145+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-10",
+      "ex_date": "2025-06-11",
+      "pay_date": "2025-06-11",
+      "gross_per_share": 0.36,
+      "reference_adjustment": 0.36,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600031",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600031",
+    "https://data.eastmoney.com/yjfp/detail/600031.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "2681e10a6d97b14257dafcd1d5b7ee3b325461607a504a6c547a2bc1a491b393",
+    "price_daily.csv": "b0a3e13c245af90b6c7e9fcd326b91a56979d9d5122e8d251060cf58859c2b18",
+    "price_qfq_check.csv": "1f76200634d593f91b9883d89d4edb9af379872c8fce49bbc5442583f8a12fd8",
+    "retrieval.json": "7349ba34d95280355a855f85647d1644253a3209bdf87ad941740595c2330be4",
+    "tencent_daily_raw.json": "164ec763005e1e1ba5747f3f660b0612eb4aa7553ac9da561cc1c087834e18d4",
+    "tencent_qfq_raw.json": "184e61815bad66fe4226ab440acae0d0510371628207c7e43c806d6de5ac3283"
+  }
+}

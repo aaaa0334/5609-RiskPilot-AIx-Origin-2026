@@ -1,0 +1,40 @@
+{
+  "code": "002050",
+  "name": "三花智控",
+  "industry": "机械",
+  "retrieved_at": "2026-09-03T16:25:39.148539+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-05-21",
+      "ex_date": "2025-05-22",
+      "pay_date": "2025-05-22",
+      "gross_per_share": 0.25,
+      "reference_adjustment": 0.25,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002050",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002050",
+    "https://data.eastmoney.com/yjfp/detail/002050.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "8cb5277517663d9963d4064d1c21f99f216d4609070454c1993a9bf4b7aeba08",
+    "price_daily.csv": "9f67013637b106038b0e57d9172deb734a6e354897c95bb204b327d0ecc9f6dc",
+    "price_qfq_check.csv": "953790453040cb0247c124ef97304e8bd89e7a765df937e5d833035ef1961ab2",
+    "retrieval.json": "e64bfa409dc5717f2f8bc8d5a6516eb7fd87fe68bb1a4e92bb6bf9ce50237872",
+    "tencent_daily_raw.json": "a4568a0a95a3d458fd2f6960954bd1af43f2858fc5846a69d2604edb7ac481da",
+    "tencent_qfq_raw.json": "57e80ff95ef1db4b40ab5cdfb0d1beae53e65da76eddbde39bda82c83373a11f"
+  }
+}

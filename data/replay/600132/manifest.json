@@ -1,0 +1,40 @@
+{
+  "code": "600132",
+  "name": "重庆啤酒",
+  "industry": "食品饮料",
+  "retrieved_at": "2026-09-03T16:24:48.260642+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-19",
+      "ex_date": "2025-06-20",
+      "pay_date": "2025-06-20",
+      "gross_per_share": 0.9,
+      "reference_adjustment": 0.9,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600132",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600132",
+    "https://data.eastmoney.com/yjfp/detail/600132.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "49647dd1d01cf15ec700e690a7be74720ca75cb12a7e33913eddc43d655aca1f",
+    "price_daily.csv": "8f433076db40c46208d779193afef7208616ffd964785a96020921b5b84fee6c",
+    "price_qfq_check.csv": "87438fae009d24b3d2bd6544f1faf4d81d91a24d38bc8a8c66c800d864e5dd9f",
+    "retrieval.json": "f39ea293013d51ecf91ae8cf3c083de1ec86e46f05c436519c67d600c84d949c",
+    "tencent_daily_raw.json": "38f20a467ce3ebb554eef10becaa5e95b1a32ac4b6d45447065309bd318e003f",
+    "tencent_qfq_raw.json": "2f5df700731406e99bf0a399123240884126fe3b26a45a65d4dc6bcad05e6b62"
+  }
+}

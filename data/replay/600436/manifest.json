@@ -1,0 +1,40 @@
+{
+  "code": "600436",
+  "name": "片仔癀",
+  "industry": "医药",
+  "retrieved_at": "2026-09-03T15:31:24.955655+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-30",
+      "ex_date": "2025-07-31",
+      "pay_date": "2025-07-31",
+      "gross_per_share": 1.8199999999999998,
+      "reference_adjustment": 1.8199999999999998,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600436",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600436",
+    "https://data.eastmoney.com/yjfp/detail/600436.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "52e5fcea6144e28df0a6fad9ea9b35dba14dd00389a05a84903b03354da4e029",
+    "price_daily.csv": "b953d54ade82a1f0b130fe82ee29e06f7fab2f478d3a6e9a48b3e9aa52b9b9f4",
+    "price_qfq_check.csv": "e54ea9cfede45a37424d24a415142a315c576d4a2775e8fb49acdb056e557a5b",
+    "retrieval.json": "139d46bb7f9f755c2c2975db435de4ae7846f2acaa5fb35092caec3da0cb27ec",
+    "tencent_daily_raw.json": "54723047d28c3c0ab7fe039ce16374aee5a6a4feeeb2a33b6715b1e106e49309",
+    "tencent_qfq_raw.json": "d886041f8e3e9d03062d3657968cde11bb6acc62a2bfd1f529ec6aec5afd2f41"
+  }
+}

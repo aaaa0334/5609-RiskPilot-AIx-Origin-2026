@@ -1,0 +1,48 @@
+{
+  "code": "000977",
+  "name": "浪潮信息",
+  "industry": "计算机",
+  "retrieved_at": "2026-09-03T16:25:28.235880+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-01-16",
+      "ex_date": "2025-01-17",
+      "pay_date": "2025-01-17",
+      "gross_per_share": 0.045,
+      "reference_adjustment": 0.045,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    },
+    {
+      "record_date": "2025-05-22",
+      "ex_date": "2025-05-23",
+      "pay_date": "2025-05-23",
+      "gross_per_share": 0.11499999999999999,
+      "reference_adjustment": 0.11499999999999999,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000977",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000977",
+    "https://data.eastmoney.com/yjfp/detail/000977.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "2b998be84bd75f17f16f0d3183174d148b22313aca5e4b58e56a312101df0139",
+    "price_daily.csv": "7f61ac6332db7f267bc14f756375a57bd756b61de248c9e995d00d1694ac14ad",
+    "price_qfq_check.csv": "2890182a35e1629efa019567ed9042f790487b88a1fcb7a0e8080cdea69501fc",
+    "retrieval.json": "8ae7abbfdde48b2be9c3e20305b334a67847fcf84908610f15cf8b11178a8670",
+    "tencent_daily_raw.json": "fe35e576eb3939b30d07e37fecd6f4b9e33412dbf4f2d00d94226bd4df56767b",
+    "tencent_qfq_raw.json": "371c56029282a6a1c7e816c2f8073f51d34495293d5e2b92469589275672e5a7"
+  }
+}

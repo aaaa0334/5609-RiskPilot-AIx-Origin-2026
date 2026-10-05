@@ -1,0 +1,40 @@
+{
+  "code": "002241",
+  "name": "歌尔股份",
+  "industry": "电子",
+  "retrieved_at": "2026-09-03T16:25:56.839464+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-04",
+      "ex_date": "2025-06-05",
+      "pay_date": "2025-06-05",
+      "gross_per_share": 0.15,
+      "reference_adjustment": 0.15,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "002241",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz002241",
+    "https://data.eastmoney.com/yjfp/detail/002241.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "162aab70cc9676fbd2e4242efb2a71c9a203d3686c0246d585ac920f40ab844e",
+    "price_daily.csv": "0dadd9fbe6c143c344442664c267bd92295a52df5efa136c44ac227b4e23b2b9",
+    "price_qfq_check.csv": "bfc9e4a35b12111da968b1c84daea526dac3e09ffc468f761c809805debe15d8",
+    "retrieval.json": "8c6c042f51832629403803dcb6d513c2c893571c5260c6fd53f459fe5f54644a",
+    "tencent_daily_raw.json": "5bb46a07f8e2a3f59e962d070e9cd8a8ecc190ec457fd057b76395e33a049bdb",
+    "tencent_qfq_raw.json": "e90e5fd3c46589fce67db4c577c08b1caf2f32b24ce230e29cdaa89abeb576d3"
+  }
+}

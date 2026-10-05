@@ -1,0 +1,40 @@
+{
+  "code": "600690",
+  "name": "海尔智家",
+  "industry": "家电",
+  "retrieved_at": "2026-09-03T15:31:39.193580+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-24",
+      "ex_date": "2025-07-25",
+      "pay_date": "2025-07-25",
+      "gross_per_share": 0.9650399999999999,
+      "reference_adjustment": 0.9650399999999999,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600690",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600690",
+    "https://data.eastmoney.com/yjfp/detail/600690.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "020679284b81a22a45f445d86eec1f4cbfa7b0700258c3739481245ac25d403c",
+    "price_daily.csv": "6a6dc591ad82ab39f1077894915bac73a375a1c8daadd64cd001788aa0199a89",
+    "price_qfq_check.csv": "aa539387405ec9c8c2ffa02b8f2ed12686a087399518362e1e7701dfc94b2104",
+    "retrieval.json": "dfde5279fc2ebd6b9d3a2c6ee9ba9b6a0e8a234b60835f33bc87571e1bdc1ee6",
+    "tencent_daily_raw.json": "ff8249704a88f1b7e1b25f4c5322e875a670c8cf63813b4f7807e13d6540c56d",
+    "tencent_qfq_raw.json": "2396cdb4d7f8aa40be00a614f43ca0542c0e542b903813d44f2870b9428eabfc"
+  }
+}

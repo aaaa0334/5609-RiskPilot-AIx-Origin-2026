@@ -1,0 +1,40 @@
+{
+  "code": "600196",
+  "name": "复星医药",
+  "industry": "医药",
+  "retrieved_at": "2026-09-03T15:28:37.413074+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-08-01",
+      "ex_date": "2025-08-04",
+      "pay_date": "2025-08-04",
+      "gross_per_share": 0.32,
+      "reference_adjustment": 0.32,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600196",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600196",
+    "https://data.eastmoney.com/yjfp/detail/600196.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "5886ae588340bdeb122ca0aadabd1ad769d6d9e4add2d684227b57661daa96d9",
+    "price_daily.csv": "ddb61bfee6ecb0046bddad39c2a45e146df2c0a843f2c5b445a277883f530e6e",
+    "price_qfq_check.csv": "3f85ffe59d6b65046a0fc0b28209771eff4bae9f82f1a3730a243c7d0ebd43e1",
+    "retrieval.json": "ce8a814945a0528de1ada17a15e7b484877c89af924b6cdf8221059aed1f70f2",
+    "tencent_daily_raw.json": "6f669f032fc3a13a6b4f4bcfee262692eabc63a7343ca7dc998e8c3987358c6b",
+    "tencent_qfq_raw.json": "9f5a696c3c1b4c192699d41e022a1e35c47093cd25dbf21a9c4cc19abfd664e3"
+  }
+}

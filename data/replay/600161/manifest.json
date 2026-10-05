@@ -1,0 +1,40 @@
+{
+  "code": "600161",
+  "name": "天坛生物",
+  "industry": "医药",
+  "retrieved_at": "2026-09-03T15:28:32.428921+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-19",
+      "ex_date": "2025-06-20",
+      "pay_date": "2025-06-20",
+      "gross_per_share": 0.1,
+      "reference_adjustment": 0.1,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600161",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600161",
+    "https://data.eastmoney.com/yjfp/detail/600161.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "69263787729fb4830720aff233428bf41eb4eae97d7ee233c520cca117b8caa0",
+    "price_daily.csv": "9364aee6e8132c970bba38225ef5c73e7463ed401f2fddb3a6dcdf16170311b4",
+    "price_qfq_check.csv": "ffa6ad9af77dd760f6f7bc9257f36f498805508f7c39ae101ae6433e79d5fca1",
+    "retrieval.json": "d3377a71eeb594199b529df0f418cbd72af408ff0619f0d1528da7b9d81ff315",
+    "tencent_daily_raw.json": "aa3e4642d7ca8280347a8f889e8174791520e1bee25afb51b2bd5a782bc9b2d8",
+    "tencent_qfq_raw.json": "71652afeb681f11f33a7a5212223f6d8f33a48c0869c6ecd5accba1a4f1f76d2"
+  }
+}

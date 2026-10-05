@@ -1,0 +1,40 @@
+{
+  "code": "600111",
+  "name": "北方稀土",
+  "industry": "有色金属",
+  "retrieved_at": "2026-09-03T15:28:29.940583+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-06-19",
+      "ex_date": "2025-06-20",
+      "pay_date": "2025-06-20",
+      "gross_per_share": 0.034999999999999996,
+      "reference_adjustment": 0.034999999999999996,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "600111",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sh600111",
+    "https://data.eastmoney.com/yjfp/detail/600111.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "ed0fa503d39467445864c6bec1848f14ac95f7333687f01b0e8509dba760d7a8",
+    "price_daily.csv": "dc01ad4153682128c2b39b786b73352dd5b24599fb385d9b9616467f63d20cda",
+    "price_qfq_check.csv": "b4a9763faa08c99e75f071213f42d8373310e9043254799edee56f94e77fd0e7",
+    "retrieval.json": "8acb17dbd365e0f3e579e4263644448b233f9b12dae635d58e42a6f0d3653061",
+    "tencent_daily_raw.json": "9076817c48562a2d29c96e5d94509be81675dde8d5e96a502f86e7b51a6d562b",
+    "tencent_qfq_raw.json": "60d637a7db34be01553ceea5d4391a4f0849f72642c34cca04d315b194b776c5"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "code": "000625",
+  "name": "长安汽车",
+  "industry": "汽车",
+  "retrieved_at": "2026-09-03T16:25:08.231238+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [
+    {
+      "record_date": "2025-07-22",
+      "ex_date": "2025-07-23",
+      "pay_date": "2025-07-23",
+      "gross_per_share": 0.29500000000000004,
+      "reference_adjustment": 0.29500000000000004,
+      "payment_date_assumption": "测试模型假设除息日到账，未核验实际派息日"
+    }
+  ],
+  "price_parameters": {
+    "symbol": "000625",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000625",
+    "https://data.eastmoney.com/yjfp/detail/000625.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "aedb4c8d0ed46b49efbb81c48817c089cf1345c270cf22af55f7d6a6064a372b",
+    "price_daily.csv": "cb82bda1afdce7ead860b997f9870ec2a7b1d83d804a0aec43cfffef60f7561a",
+    "price_qfq_check.csv": "490bd7f48a677799ec313121370f03c3bce58747e2c8eadcd935d02c1e1b05a2",
+    "retrieval.json": "e012424575951fc8c5c796172473aa860eea5217657f178ec53fff5a3e216ce4",
+    "tencent_daily_raw.json": "b072428d5655576c6b6acf06a275b9383ead7de3d9a375f2204bea64a4dea33f",
+    "tencent_qfq_raw.json": "1776accec3ee9dc71c56fad208741bef464a7a8a8cf3073170d0b10aa746a3b4"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "code": "000792",
+  "name": "盐湖股份",
+  "industry": "化工",
+  "retrieved_at": "2026-09-03T16:25:19.426624+00:00",
+  "akshare_version": "1.18.94",
+  "adjust": "",
+  "upstream": "腾讯证券历史日线 / 东方财富分红送配数据中心",
+  "price_file": "price_daily.csv",
+  "documents": [],
+  "dividends": [],
+  "price_parameters": {
+    "symbol": "000792",
+    "start_date": "20250101",
+    "end_date": "20250831",
+    "adjust": ""
+  },
+  "source_urls": [
+    "https://gu.qq.com/sz000792",
+    "https://data.eastmoney.com/yjfp/detail/000792.html"
+  ],
+  "review_note": "测试扩容样本：二级数据源；未逐份核验官方公告。税前分红假设除息日到账，除权参考价按每股现金分红简化。无真实交易。",
+  "sha256": {
+    "dividends_raw.json": "22d88b89d53f25a04da72b2c88e5931c5131899ee6096f7494650900ff5ba1f2",
+    "price_daily.csv": "72309cb992c317025ca1e1044099036940ed92808839b6aea7a1868248f84d24",
+    "price_qfq_check.csv": "72309cb992c317025ca1e1044099036940ed92808839b6aea7a1868248f84d24",
+    "retrieval.json": "055febded6abcf87f0773cc1e664c8b51d162b605ef13654005a032c378edf65",
+    "tencent_daily_raw.json": "9f455f469f597f7d8f1c543c2cb8dc8d81311c9a39744cb444313da1c069a4bd",
+    "tencent_qfq_raw.json": "bef3abf60b785011ef5bd06487d74e3b00869d344a127641575a8e680aa0baff"
+  }
+}
